@@ -66,11 +66,12 @@ async function buildHtml() {
 
     addSlide('The Teaching-Learning Process', `<div class="title-slide"><h2>The Teaching-Learning Process</h2></div>`, 'presenter-1', '#fdfdfd');
     addSlide('The Teaching-Learning Process', `<div class="content-slide"><div class="doc-content">
-        <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 2rem;">
+        <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1rem;">
             <li style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
             <li style="margin-bottom: 1.5rem;"><strong>The Teacher:</strong> The prime mover. Directs the flow, facilitates, and controls the process.</li>
             <li style="margin-bottom: 1.5rem;"><strong>The Learner:</strong> The key participant and primary subject. Their acquired knowledge determines if objectives are met.</li>
-            <li style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.</li>
+            <li style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.
+            <br><img src="images/img_1.png" style="max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 10px;"></li>
         </ul>
     </div></div>`, 'presenter-1', stickyColors[1]);
 
@@ -87,63 +88,103 @@ async function buildHtml() {
         </ul>
     </div></div>`, 'presenter-2', stickyColors[2]);
 
-    addSlide('Learning Styles', `<div class="title-slide"><h2>Learning Styles</h2></div>`, 'presenter-3', '#fdfdfd');
-    addSlide('Learning Styles', `<div class="content-slide"><div class="doc-content">
-        <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 2rem;">
-            <li style="margin-bottom: 1.5rem;"><strong>Visual:</strong> Learns by seeing (pictures, charts, diagrams). Fast talkers, easily visualize ideas.</li>
-            <li style="margin-bottom: 1.5rem;"><strong>Aural:</strong> Learns by hearing (lectures, discussions). Natural listeners, slow speakers.</li>
-            <li style="margin-bottom: 1.5rem;"><strong>Read/Write:</strong> Prefers written text. Enjoys reading/writing.</li>
-            <li style="margin-bottom: 1.5rem;"><strong>Kinesthetic:</strong> Learns through hands-on approaches (trial and error). Uses all senses.</li>
+    addSlide('Visual Learning Style', `<div class="title-slide"><h2>Visual Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
+    addSlide('Visual Learning Style', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
+            <li style="margin-bottom: 1.5rem;">Learns by seeing (pictures, charts, diagrams).</li>
+            <li style="margin-bottom: 1.5rem;">Fast talkers, easily visualize ideas.</li>
         </ul>
     </div></div>`, 'presenter-3', stickyColors[3]);
 
-    addSlide('Multiple Intelligences', `<div class="title-slide"><h2>Multiple Intelligences</h2></div>`, 'presenter-4', '#fdfdfd');
-    addSlide('Multiple Intelligences', `<div class="content-slide"><div class="doc-content">
-        <ul style="font-size: 1.3rem; line-height: 1.6; margin-top: 1rem;">
-            <li style="margin-bottom: 0.8rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
+    addSlide('Aural Learning Style', `<div class="title-slide"><h2>Aural Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
+    addSlide('Aural Learning Style', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
+            <li style="margin-bottom: 1.5rem;">Learns by hearing (lectures, discussions).</li>
+            <li style="margin-bottom: 1.5rem;">Natural listeners, slow speakers.</li>
+        </ul>
+    </div></div>`, 'presenter-3', stickyColors[0]);
+
+    addSlide('Read/Write Learning Style', `<div class="title-slide"><h2>Read/Write Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
+    addSlide('Read/Write Learning Style', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
+            <li style="margin-bottom: 1.5rem;">Prefers written text.</li>
+            <li style="margin-bottom: 1.5rem;">Enjoys reading and writing extensively.</li>
+        </ul>
+    </div></div>`, 'presenter-3', stickyColors[1]);
+
+    addSlide('Kinesthetic Learning Style', `<div class="title-slide"><h2>Kinesthetic Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
+    addSlide('Kinesthetic Learning Style', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
+            <li style="margin-bottom: 1.5rem;">Learns through hands-on approaches (trial and error).</li>
+            <li style="margin-bottom: 1.5rem;">Uses all senses to engage in learning.</li>
+        </ul>
+    </div></div>`, 'presenter-3', stickyColors[2]);
+
+    addSlide('Multiple Intelligences Part 1', `<div class="title-slide"><h2>Multiple Intelligences Part 1</h2></div>`, 'presenter-4', '#fdfdfd');
+    addSlide('Multiple Intelligences Part 1', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
+            <li style="margin-bottom: 1rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
+            <li style="margin-bottom: 1rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
+            <li style="margin-bottom: 1rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
+            <li style="margin-bottom: 1rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
+        </ul>
+    </div></div>`, 'presenter-4', stickyColors[3]);
+
+    addSlide('Multiple Intelligences Part 2', `<div class="title-slide"><h2>Multiple Intelligences Part 2</h2></div>`, 'presenter-4', '#fdfdfd');
+    addSlide('Multiple Intelligences Part 2', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
+            <li style="margin-bottom: 1rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
+            <li style="margin-bottom: 1rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
+            <li style="margin-bottom: 1rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
+            <li style="margin-bottom: 1rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
         </ul>
     </div></div>`, 'presenter-4', stickyColors[0]);
 
-    addSlide('Thorndike\'s Laws of Learning', `<div class="title-slide"><h2>Thorndike\'s Laws of Learning</h2></div>`, 'presenter-5', '#fdfdfd');
-    addSlide('Thorndike\'s Laws of Learning', `<div class="content-slide"><div class="doc-content">
-        <ul style="font-size: 1.4rem; line-height: 1.7; margin-top: 1rem;">
-            <li style="margin-bottom: 1rem;"><strong>Law of Readiness ("Get Ready"):</strong> Learning starts with a prepared mindset; forced learning fails.</li>
-            <li style="margin-bottom: 1rem;"><strong>Law of Exercise ("Practice"):</strong> Repetition strengthens brain connections; lack of use causes rust.</li>
-            <li style="margin-bottom: 1rem;"><strong>Law of Effect ("Repeat Winners"):</strong> We repeat actions that lead to rewards/success and avoid those that lead to failure.</li>
-            <li style="margin-bottom: 1rem;"><strong>Secondary Laws:</strong>
-                <ul style="margin-top: 0.5rem;">
-                    <li><em>Belongingness:</em> Natural association of stimuli speeds learning.</li>
-                    <li><em>Intensity:</em> Vivid experiences are remembered more deeply.</li>
-                    <li><em>Forgetting:</em> Unused skills fade over time.</li>
-                </ul>
-            </li>
+    addSlide("Thorndike's Laws of Learning", `<div class="title-slide"><h2>Thorndike's Laws of Learning</h2></div>`, 'presenter-5', '#fdfdfd');
+    addSlide("Thorndike's Laws of Learning", `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:center; gap: 15px;">
+            <img src="images/img_2.jpeg" style="width: 120px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Law of Readiness:</strong> Learning starts with a prepared mindset; forced learning fails.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap: 15px;">
+            <img src="images/img_3.jpeg" style="width: 120px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Law of Exercise:</strong> Repetition strengthens brain connections; lack of use causes rust.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap: 15px;">
+            <img src="images/img_4.jpeg" style="width: 120px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Law of Effect:</strong> We repeat actions that lead to rewards and avoid those that lead to failure.</p>
+        </div>
+        <ul style="font-size: 1.3rem; margin-top: 0.5rem; margin-left: 1.5rem;">
+            <li><em>Secondary Laws:</em> Belongingness, Intensity, Forgetting.</li>
         </ul>
     </div></div>`, 'presenter-5', stickyColors[1]);
 
-    addSlide('Other Learning Theories', `<div class="title-slide"><h2>Other Learning Theories</h2></div>`, 'presenter-6', '#fdfdfd');
-    addSlide('Other Learning Theories', `<div class="content-slide"><div class="doc-content">
-        <ul style="font-size: 1.2rem; line-height: 1.5; margin-top: 1rem;">
-            <li style="margin-bottom: 0.8rem;"><strong>Operant Conditioning (B.F. Skinner):</strong> Learning through rewards and consequences.
-                <ul style="margin-top: 0.3rem;"><li>Primary (food/water) & Secondary (money/praise) rewards. Escape/Avoidance.</li></ul>
-            </li>
-            <li style="margin-bottom: 0.8rem;"><strong>Cognitive Perspective:</strong> Learning is an internal mental activity, not just behavior. Mind works like a computer.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Gestalt Theory:</strong> People perceive objects as complete wholes. "The whole is greater than the sum of its parts."</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
-            <li style="margin-bottom: 0.8rem;"><strong>Intelligence Theories:</strong>
-                <ul style="margin-top: 0.3rem;">
-                    <li><em>Alfred Binet:</em> Intelligence is reasoning/problem-solving and can improve through education.</li>
-                    <li><em>Charles Spearman:</em> Proposed a general "g-factor" (overall mental ability) and "s-factor" (specific unique talents).</li>
-                </ul>
-            </li>
-        </ul>
+    addSlide('Other Learning Theories Part 1', `<div class="title-slide"><h2>Other Learning Theories Part 1</h2></div>`, 'presenter-6', '#fdfdfd');
+    addSlide('Other Learning Theories Part 1', `<div class="content-slide"><div class="doc-content">
+        <div style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+            <img src="images/img_5.jpeg" style="width: 100px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Operant Conditioning:</strong> Learning through rewards and consequences.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+            <img src="images/img_6.jpeg" style="width: 100px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Cognitive Perspective:</strong> Learning is an internal mental activity. Mind works like a computer.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+            <img src="images/img_7.jpeg" style="width: 100px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Gestalt Theory:</strong> People perceive objects as complete wholes.</p>
+        </div>
     </div></div>`, 'presenter-6', stickyColors[2]);
+
+    addSlide('Other Learning Theories Part 2', `<div class="title-slide"><h2>Other Learning Theories Part 2</h2></div>`, 'presenter-6', '#fdfdfd');
+    addSlide('Other Learning Theories Part 2', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.4rem; line-height: 1.8; margin-top: 1.5rem;">
+            <li style="margin-bottom: 1rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
+        </ul>
+        <div style="display:flex; align-items:center; gap: 15px; margin-top: 1.5rem;">
+            <img src="images/img_8.png" style="width: 120px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Intelligence Theories:</strong><br><em>Alfred Binet:</em> Intelligence is reasoning, can improve.<br><em>Charles Spearman:</em> Proposed "g-factor" and "s-factor".</p>
+        </div>
+    </div></div>`, 'presenter-6', stickyColors[3]);
 
     // --- ASSESSMENT SLIDES (CHALK DUST MECHANIC) ---
     const assessmentQuestions = [
