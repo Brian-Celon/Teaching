@@ -1,0 +1,19 @@
+{
+  "name": "teaching-20260709t212657z-2-001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "mammoth": "^1.12.0",
+    "pdf-parse": "^2.4.5",
+    "pptxgenjs": "^4.0.1"
+  }
+}
