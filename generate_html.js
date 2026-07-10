@@ -448,14 +448,6 @@ async function buildHtml() {
             #titleOverlay h1 { font-size: 2.5rem; }
             #titleOverlay h2 { font-size: 1.5rem; }
 
-            .card {
-                width: 85vw; max-height: none;
-                padding: 25px 20px;
-            }
-            .card .doc-content { font-size: 1.1rem; line-height: 1.6; }
-            .title-slide h2 { font-size: 2rem; }
-            .title-slide { min-height: 200px; }
-
             .top-bar { top: 10px; left: 10px; padding: 6px 14px; font-size: 0.8rem; border-radius: 14px; }
             .controls { bottom: 15px; gap: 8px; }
             .nav-btn { padding: 8px 16px; font-size: 0.8rem; }
@@ -618,8 +610,9 @@ async function buildHtml() {
             
             visitedClusters.add(slide.clusterTitle);
             
-            const mobileScale = window.innerWidth < 768 ? (window.innerWidth / 800) * 1.05 : 1;
-            canvas.style.transform = \`scale(\${mobileScale}) translate(\${-slide.x}px, \${-slide.y}px)\`;
+            const isMobile = window.innerWidth < 768;
+            const zoomScale = isMobile ? window.innerWidth / 850 : 1;
+            canvas.style.transform = \`scale(\${zoomScale}) translate(\${-slide.x}px, \${-slide.y}px)\`;
             currentTopicLabel.textContent = slide.title;
             
             cards.forEach((c, i) => {
