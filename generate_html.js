@@ -64,13 +64,14 @@ async function buildHtml() {
     addSlide('Objectives', `<div class="title-slide"><h2>Objectives of the Lesson</h2></div>`, 'presenter-0', '#fdfdfd');
     addSlide('Objectives', `<div class="content-slide"><div class="doc-content focus-group"><h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2rem; margin-bottom:1rem;">Objectives</h2><ul><li><strong>Understand</strong> the core elements of the teaching-learning process.</li><li><strong>Identify</strong> the various roles of a teacher in a classroom.</li><li><strong>Explore</strong> different learning styles and multiple intelligences.</li><li><strong>Apply</strong> Thorndike's Laws of Learning and other learning theories.</li></ul></div></div>`, 'presenter-0', stickyColors[0]);
 
+    
     addSlide('The Teaching-Learning Process', `<div class="title-slide"><h2>The Teaching-Learning Process</h2></div>`, 'presenter-1', '#fdfdfd');
     addSlide('The Teaching-Learning Process', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1rem;">
-            <li style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
-            <li style="margin-bottom: 1.5rem;"><strong>The Teacher:</strong> The prime mover. Directs the flow, facilitates, and controls the process.</li>
-            <li style="margin-bottom: 1.5rem;"><strong>The Learner:</strong> The key participant and primary subject. Their acquired knowledge determines if objectives are met.</li>
-            <li style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.
+            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Teacher:</strong> The prime mover. Directs the flow, facilitates, and controls the process.</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Learner:</strong> The key participant and primary subject. Their acquired knowledge determines if objectives are met.</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.
             <br><img src="images/img_1.png" style="max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 10px;"></li>
         </ul>
     </div></div>`, 'presenter-1', stickyColors[1]);
@@ -78,98 +79,100 @@ async function buildHtml() {
     addSlide('Roles of the Teacher', `<div class="title-slide"><h2>Roles of the Teacher</h2></div>`, 'presenter-2', '#fdfdfd');
     addSlide('Roles of the Teacher', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order.</li>
-            <li style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
-            <li style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security and emotional well-being.</li>
-            <li style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges.</li>
-            <li style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
-            <li style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages external stakeholders.</li>
-            <li style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security and emotional well-being.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages external stakeholders.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction.</li>
         </ul>
     </div></div>`, 'presenter-2', stickyColors[2]);
 
     addSlide('Visual Learning Style', `<div class="title-slide"><h2>Visual Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Visual Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li style="margin-bottom: 1.5rem;">Learns by seeing (pictures, charts, diagrams).</li>
-            <li style="margin-bottom: 1.5rem;">Fast talkers, easily visualize ideas.</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns by seeing (pictures, charts, diagrams).</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;">Fast talkers, easily visualize ideas.</li>
         </ul>
     </div></div>`, 'presenter-3', stickyColors[3]);
 
     addSlide('Aural Learning Style', `<div class="title-slide"><h2>Aural Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Aural Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li style="margin-bottom: 1.5rem;">Learns by hearing (lectures, discussions).</li>
-            <li style="margin-bottom: 1.5rem;">Natural listeners, slow speakers.</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns by hearing (lectures, discussions).</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;">Natural listeners, slow speakers.</li>
         </ul>
     </div></div>`, 'presenter-3', stickyColors[0]);
 
     addSlide('Read/Write Learning Style', `<div class="title-slide"><h2>Read/Write Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Read/Write Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li style="margin-bottom: 1.5rem;">Prefers written text.</li>
-            <li style="margin-bottom: 1.5rem;">Enjoys reading and writing extensively.</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;">Prefers written text.</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;">Enjoys reading and writing extensively.</li>
         </ul>
     </div></div>`, 'presenter-3', stickyColors[1]);
 
     addSlide('Kinesthetic Learning Style', `<div class="title-slide"><h2>Kinesthetic Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Kinesthetic Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li style="margin-bottom: 1.5rem;">Learns through hands-on approaches (trial and error).</li>
-            <li style="margin-bottom: 1.5rem;">Uses all senses to engage in learning.</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns through hands-on approaches (trial and error).</li>
+            <li class="focus-group" style="margin-bottom: 1.5rem;">Uses all senses to engage in learning.</li>
         </ul>
     </div></div>`, 'presenter-3', stickyColors[2]);
 
     addSlide('Multiple Intelligences Part 1', `<div class="title-slide"><h2>Multiple Intelligences Part 1</h2></div>`, 'presenter-4', '#fdfdfd');
     addSlide('Multiple Intelligences Part 1', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
-            <li style="margin-bottom: 1rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
-            <li style="margin-bottom: 1rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
-            <li style="margin-bottom: 1rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
-            <li style="margin-bottom: 1rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
         </ul>
     </div></div>`, 'presenter-4', stickyColors[3]);
 
     addSlide('Multiple Intelligences Part 2', `<div class="title-slide"><h2>Multiple Intelligences Part 2</h2></div>`, 'presenter-4', '#fdfdfd');
     addSlide('Multiple Intelligences Part 2', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
-            <li style="margin-bottom: 1rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
-            <li style="margin-bottom: 1rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
-            <li style="margin-bottom: 1rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
-            <li style="margin-bottom: 1rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
         </ul>
     </div></div>`, 'presenter-4', stickyColors[0]);
 
     addSlide("Thorndike's Laws of Learning", `<div class="title-slide"><h2>Thorndike's Laws of Learning</h2></div>`, 'presenter-5', '#fdfdfd');
     addSlide("Thorndike's Laws of Learning", `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; gap:10px;">
-        <div style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_2.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Readiness:</strong> Learning starts with a prepared mindset; forced learning fails.</p>
         </div>
-        <div style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_3.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Exercise:</strong> Repetition strengthens brain connections; lack of use causes rust.</p>
         </div>
-        <div style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_4.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Effect:</strong> We repeat actions that lead to rewards and avoid those that lead to failure.</p>
         </div>
         <ul style="font-size: 1.3rem; margin-top: 0.5rem; margin-left: 1.5rem;">
-            <li><em>Secondary Laws:</em> Belongingness, Intensity, Forgetting.</li>
+            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Belongingness:</strong> Learning is faster and stronger when the learner perceives a natural connection between stimuli involved.</li>
+            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Intensity:</strong> An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one.</li>
+            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Forgetting:</strong> Skills and knowledge that are not used or reviewed over time gradually fade from memory.</li>
         </ul>
     </div></div>`, 'presenter-5', stickyColors[1]);
 
     addSlide('Other Learning Theories Part 1', `<div class="title-slide"><h2>Other Learning Theories Part 1</h2></div>`, 'presenter-6', '#fdfdfd');
     addSlide('Other Learning Theories Part 1', `<div class="content-slide"><div class="doc-content">
-        <div style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_5.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Operant Conditioning:</strong> Learning through rewards and consequences.</p>
         </div>
-        <div style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_6.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Cognitive Perspective:</strong> Learning is an internal mental activity. Mind works like a computer.</p>
         </div>
-        <div style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_7.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Gestalt Theory:</strong> People perceive objects as complete wholes.</p>
         </div>
@@ -178,14 +181,13 @@ async function buildHtml() {
     addSlide('Other Learning Theories Part 2', `<div class="title-slide"><h2>Other Learning Theories Part 2</h2></div>`, 'presenter-6', '#fdfdfd');
     addSlide('Other Learning Theories Part 2', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.4rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li style="margin-bottom: 1rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
+            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
         </ul>
-        <div style="display:flex; align-items:center; gap: 15px; margin-top: 1.5rem;">
+        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-top: 1.5rem;">
             <img src="images/img_8.png" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Intelligence Theories:</strong><br><em>Alfred Binet:</em> Intelligence is reasoning, can improve.<br><em>Charles Spearman:</em> Proposed "g-factor" and "s-factor".</p>
         </div>
     </div></div>`, 'presenter-6', stickyColors[3]);
-
     // --- ASSESSMENT SLIDES (CHALK DUST MECHANIC) ---
     const assessmentQuestions = [
         { q: "The systematic interaction among the teacher, learner, and environment.", a: "Teaching-Learning Process" },
