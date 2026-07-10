@@ -542,7 +542,7 @@ async function buildHtml() {
         const topBar = document.getElementById('topBar');
         const focusModal = document.getElementById('focusModal');
         
-        const slidesData = \${JSON.stringify(allSlides.map(s => ({ id: s.id, x: s.x, y: s.y, title: s.title, clusterTitle: s.clusterTitle, indexInCluster: s.indexInCluster })))};
+        const slidesData = ${JSON.stringify(allSlides.map(s => ({ id: s.id, x: s.x, y: s.y, title: s.title, clusterTitle: s.clusterTitle, indexInCluster: s.indexInCluster })))};
         
         let state = 'TITLE'; // TITLE, OVERVIEW, SLIDE
         let currentIndex = -1;
