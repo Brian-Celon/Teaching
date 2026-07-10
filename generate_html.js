@@ -318,14 +318,14 @@ async function buildHtml() {
         }
 
         #spotlight {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at 50% 50%, transparent 25%, rgba(0,0,0,0.85) 100%);
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100dvh;
+            background: radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(0,0,0,0.85) 100%);
             pointer-events: none;
             z-index: 100;
             transition: background 1.2s cubic-bezier(0.65, 0, 0.15, 1);
         }
         body.overview-state #spotlight {
-            background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(0,0,0,0.95) 100%);
+            background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0,0,0,0.95) 100%);
         }
 
         #titleOverlay {
@@ -445,6 +445,13 @@ async function buildHtml() {
 
         /* ====== MOBILE RESPONSIVE ====== */
         @media (max-width: 768px) {
+            #spotlight {
+                background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,0.75) 100%);
+            }
+            body.overview-state #spotlight {
+                background: radial-gradient(ellipse at 50% 50%, transparent 70%, rgba(0,0,0,0.9) 100%);
+            }
+
             #titleOverlay h1 { font-size: 2.5rem; }
             #titleOverlay h2 { font-size: 1.5rem; }
 
