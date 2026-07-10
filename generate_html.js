@@ -292,7 +292,7 @@ async function buildHtml() {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Demo Teaching Presentation</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -309,23 +309,16 @@ async function buildHtml() {
             color: var(--text-main);
             overflow: hidden;
             width: 100vw; height: 100dvh;
+            overscroll-behavior: none;
+            touch-action: none;
         }
+
+        .focus-board, .focus-layout { touch-action: auto; }
 
         body::before {
             content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.05"/></svg>');
             pointer-events: none; z-index: 0;
-        }
-
-        #spotlight {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100dvh;
-            background: radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(0,0,0,0.85) 100%);
-            pointer-events: none;
-            z-index: 100;
-            transition: background 1.2s cubic-bezier(0.65, 0, 0.15, 1);
-        }
-        body.overview-state #spotlight {
-            background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0,0,0,0.95) 100%);
         }
 
         #titleOverlay {
@@ -445,13 +438,6 @@ async function buildHtml() {
 
         /* ====== MOBILE RESPONSIVE ====== */
         @media (max-width: 768px) {
-            #spotlight {
-                background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,0.75) 100%);
-            }
-            body.overview-state #spotlight {
-                background: radial-gradient(ellipse at 50% 50%, transparent 70%, rgba(0,0,0,0.9) 100%);
-            }
-
             #titleOverlay h1 { font-size: 2.5rem; }
             #titleOverlay h2 { font-size: 1.5rem; }
 
@@ -505,7 +491,6 @@ async function buildHtml() {
 </head>
 <body class="overview-state">
 
-    <div id="spotlight"></div>
     <div id="titleOverlay" onclick="startPresentation()">
         <h1>Teaching and Learning Process</h1>
         <h2>Group 2</h2>
@@ -559,9 +544,12 @@ async function buildHtml() {
         
         const slidesData = ${JSON.stringify(allSlides.map(s => ({ x: s.x, y: s.y, title: s.title, clusterTitle: s.clusterTitle, indexInCluster: s.indexInCluster })))};
         
-        let state = 'TITLE';
-        let currentIndex = 0;
-        const visitedClusters = new Set();
+        let state = 'TITLE'; // TITLE, OVERVIEW, SLIDE
+        let currentIndex = -1;
+        let visitedClusters = new Set();
+        let overviewScale = 1;
+        let panX = 0;
+        let panY = 0;
 
         function startPresentation() {
             if (state !== 'TITLE') return;
@@ -581,17 +569,12 @@ async function buildHtml() {
                 if (s.x < minX) minX = s.x; if (s.y < minY) minY = s.y;
             });
             
-            minX -= 1000; minY -= 1000; maxX += 1000; maxY += 1000;
-            const centerX = -((maxX + minX) / 2);
-            const centerY = -((maxY + minY) / 2);
-            const boardWidth = (maxX - minX) + 1000;
-            const boardHeight = (maxY - minY) + 1000;
-            const scaleX = window.innerWidth / boardWidth;
-            const scaleY = window.innerHeight / boardHeight;
-            let finalScale = Math.min(scaleX, scaleY); 
-            
-            canvas.style.transform = \`scale(\${finalScale}) translate(\${centerX}px, \${centerY}px)\`;
-            currentTopicLabel.textContent = "Knowledge Map";
+            // On mobile, allow the overview to be larger so it's readable. Users can pan around.
+            overviewScale = window.innerWidth < 768 ? Math.min(window.innerWidth / 1500, window.innerHeight / 2000) : Math.min(window.innerWidth / 4000, window.innerHeight / 2000);
+            panX = 0;
+            panY = 0;
+            canvas.style.transform = \`scale(\${overviewScale}) translate(0px, 0px)\`;
+            currentTopicLabel.innerText = 'Overview';
             
             if (visitedClusters.size === 0 && slidesData.length > 0) {
                 visitedClusters.add(slidesData[0].clusterTitle);
@@ -610,6 +593,20 @@ async function buildHtml() {
             prevBtn.disabled = false;
             nextBtn.disabled = false;
         }
+
+        // Panning logic for overview
+        let isPanning = false;
+        let lastX, lastY;
+        const viewport = document.getElementById('viewport');
+        viewport.addEventListener('pointerdown', (e) => { if (state === 'OVERVIEW') { isPanning = true; lastX = e.clientX; lastY = e.clientY; viewport.style.cursor = 'grabbing'; } });
+        window.addEventListener('pointermove', (e) => {
+            if (!isPanning || state !== 'OVERVIEW') return;
+            panX += (e.clientX - lastX) / overviewScale;
+            panY += (e.clientY - lastY) / overviewScale;
+            canvas.style.transform = \`scale(\${overviewScale}) translate(\${panX}px, \${panY}px)\`;
+            lastX = e.clientX; lastY = e.clientY;
+        });
+        window.addEventListener('pointerup', () => { isPanning = false; viewport.style.cursor = 'default'; });
 
         function zoomToSlide(index) {
             // Prevent clicking directly on Ice Breaker stack cards to bypass the Next button
