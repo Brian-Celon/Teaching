@@ -68,10 +68,10 @@ async function buildHtml() {
     addSlide('The Teaching-Learning Process', `<div class="title-slide"><h2>The Teaching-Learning Process</h2></div>`, 'presenter-1', '#fdfdfd');
     addSlide('The Teaching-Learning Process', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Teacher:</strong> The prime mover. Directs the flow, facilitates, and controls the process.</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Learner:</strong> The key participant and primary subject. Their acquired knowledge determines if objectives are met.</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.
+            <li class="focus-group" data-detail="Teaching and learning involves the process of transferring knowledge from the one who is giving to the one who is receiving. Teaching process cannot be performed if there is one element that is missing among the three of the teaching and learning elements. These elements are necessary to be able to make teaching and learning possible. Without one of these elements, there could be no teaching-learning process." style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
+            <li class="focus-group" data-detail="The teacher is the prime mover or facilitator of the educational process. The teacher serves as the person who directs the flow of the teaching and learning, by providing materials for the learners to work on, implementing effective teaching strategies, and controlling the overall process." style="margin-bottom: 1.5rem;"><strong>The Teacher:</strong> The prime mover. Directs the flow, facilitates, and controls the process.</li>
+            <li class="focus-group" data-detail="The learner is the key participant in the teaching and learning process. They are the primary subject of the educational process. The acquired knowledge of the learner is what determines whether or not the objectives of the lesson have been met." style="margin-bottom: 1.5rem;"><strong>The Learner:</strong> The key participant and primary subject. Their acquired knowledge determines if objectives are met.</li>
+            <li class="focus-group" data-detail="The favorable environment participates in the teaching-learning process by providing a place where there is a smooth flow of communication, avoiding some common barriers between the teacher and the learner. The presence of a good environment is so much important in the teaching and learning process. The good environment provides a smooth flow of communication between the learners and the teachers, thus it facilitates a well executed teaching and learning process." style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.
             <br><img src="images/img_1.png" style="max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 10px;"></li>
         </ul>
     </div></div>`, 'presenter-1', stickyColors[1]);
@@ -79,100 +79,109 @@ async function buildHtml() {
     addSlide('Roles of the Teacher', `<div class="title-slide"><h2>Roles of the Teacher</h2></div>`, 'presenter-2', '#fdfdfd');
     addSlide('Roles of the Teacher', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security and emotional well-being.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages external stakeholders.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction.</li>
+            <li class="focus-group" data-detail="As a manager, the teacher is responsible for maintaining a systematic order within the classroom. This involves organizing resources, managing time, setting rules, and ensuring that the classroom environment is conducive to learning." style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order.</li>
+            <li class="focus-group" data-detail="As a leader, the teacher acts as a director, coach, and supporter. They guide students through the learning process, motivate them to achieve their goals, and provide direction when students face challenges." style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
+            <li class="focus-group" data-detail="As a surrogate parent, the teacher provides a sense of security and emotional well-being to the students, especially younger learners. They create a safe space where students feel comfortable to learn and express themselves." style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security and emotional well-being.</li>
+            <li class="focus-group" data-detail="As a counselor, the teacher offers guidance for personal challenges that students may face. They help students navigate academic difficulties, social issues, and emotional problems, serving as a trusted advisor." style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges.</li>
+            <li class="focus-group" data-detail="As a model, the teacher serves as an exemplar for behavior and judgment. Students look up to their teachers and often emulate their actions, values, and attitudes. Teachers must therefore demonstrate integrity and professionalism." style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
+            <li class="focus-group" data-detail="As a public relations specialist, the teacher manages relationships with external stakeholders including parents, administrators, and the community. They communicate student progress and advocate for educational resources." style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages external stakeholders.</li>
+            <li class="focus-group" data-detail="As a facilitator and instructor, the teacher guides core instruction by designing lessons, presenting content, and facilitating discussions. They create opportunities for active learning and ensure all students can access the curriculum." style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction.</li>
         </ul>
     </div></div>`, 'presenter-2', stickyColors[2]);
+
+    addSlide('The Learning Environment', `<div class="title-slide"><h2>What is the Learning Environment?</h2></div>`, 'presenter-3', '#fdfdfd');
+    addSlide('The Learning Environment', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 1.5rem;">
+            <li class="focus-group" data-detail="The learning environment refers to the entire setting in which students learn. This includes not just the physical classroom space, but also the psychological atmosphere, the arrangement of furniture, the availability of learning materials, and the overall climate that affects how students feel and behave." style="margin-bottom: 1.2rem;">Refers to the classroom or surroundings where students learn.</li>
+            <li class="focus-group" data-detail="The learning environment is composed of multiple elements: teachers who guide instruction, classmates who contribute to collaborative learning, facilities such as libraries and laboratories, and the overall learning atmosphere including classroom culture and norms. All of these work together to shape the student experience." style="margin-bottom: 1.2rem;">Includes teachers, classmates, facilities, and learning atmosphere.</li>
+            <li class="focus-group" data-detail="Research shows that a positive learning environment significantly improves student outcomes. When students feel safe, respected, and engaged, their focus sharpens, their motivation increases, and their participation in classroom activities rises. Positive environments also reduce anxiety and promote risk-taking in learning." style="margin-bottom: 1.2rem;">A positive environment improves focus, motivation, and participation.</li>
+        </ul>
+    </div></div>`, 'presenter-3', stickyColors[0]);
 
     addSlide('Visual Learning Style', `<div class="title-slide"><h2>Visual Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Visual Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns by seeing (pictures, charts, diagrams).</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Fast talkers, easily visualize ideas.</li>
+            <li class="focus-group" data-detail="Visual learners learn best by seeing information presented in pictures, charts, diagrams, maps, and other visual formats. They tend to think in images and can easily visualize concepts. They prefer to see the teacher's body language and facial expression to fully understand the content of a lesson. They may prefer to sit at the front of the classroom." style="margin-bottom: 1.5rem;">Learns by seeing (pictures, charts, diagrams).</li>
+            <li class="focus-group" data-detail="Visual learners are often fast talkers who can easily create mental images. They remember faces rather than names, and they are good at spelling because they can visualize words. They tend to doodle during lectures and prefer reading over being read to." style="margin-bottom: 1.5rem;">Fast talkers, easily visualize ideas.</li>
         </ul>
     </div></div>`, 'presenter-3', stickyColors[3]);
 
     addSlide('Aural Learning Style', `<div class="title-slide"><h2>Aural Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Aural Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns by hearing (lectures, discussions).</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Natural listeners, slow speakers.</li>
+            <li class="focus-group" data-detail="Aural or auditory learners learn best through listening. They prefer lectures, discussions, and talking things through. They remember information by hearing it spoken aloud and may repeat facts to themselves. They often enjoy music and can detect changes in tone of voice." style="margin-bottom: 1.5rem;">Learns by hearing (lectures, discussions).</li>
+            <li class="focus-group" data-detail="Aural learners are natural listeners who tend to speak more slowly and deliberately. They process information through sound and can often remember details from conversations. They may hum or talk to themselves when bored and prefer verbal instructions over written ones." style="margin-bottom: 1.5rem;">Natural listeners, slow speakers.</li>
         </ul>
-    </div></div>`, 'presenter-3', stickyColors[0]);
+    </div></div>`, 'presenter-3', stickyColors[1]);
 
     addSlide('Read/Write Learning Style', `<div class="title-slide"><h2>Read/Write Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Read/Write Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Prefers written text.</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Enjoys reading and writing extensively.</li>
+            <li class="focus-group" data-detail="Read/Write learners prefer information displayed as words. They perform best when they can read textbooks, handouts, or notes. They learn through writing essays, reports, and lists. They are drawn to dictionaries, encyclopedias, and any text-based resource." style="margin-bottom: 1.5rem;">Prefers written text.</li>
+            <li class="focus-group" data-detail="Read/Write learners enjoy reading and writing extensively. They take detailed notes during lectures, rewrite their notes to study, and benefit from making lists and organizing information in written form. They tend to be strong essayists and note-takers." style="margin-bottom: 1.5rem;">Enjoys reading and writing extensively.</li>
         </ul>
-    </div></div>`, 'presenter-3', stickyColors[1]);
+    </div></div>`, 'presenter-3', stickyColors[2]);
 
     addSlide('Kinesthetic Learning Style', `<div class="title-slide"><h2>Kinesthetic Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Kinesthetic Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns through hands-on approaches (trial and error).</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Uses all senses to engage in learning.</li>
+            <li class="focus-group" data-detail="Kinesthetic learners learn best through hands-on approaches and physical activity. They prefer trial and error, experiments, and real-world applications. They struggle to sit still for long periods and learn best when they can move around, touch things, and actively participate." style="margin-bottom: 1.5rem;">Learns through hands-on approaches (trial and error).</li>
+            <li class="focus-group" data-detail="Kinesthetic learners use all their senses to engage in the learning process. They benefit from field trips, lab experiments, role-playing, and building models. They often express themselves through body movement and may fidget during passive activities like lectures." style="margin-bottom: 1.5rem;">Uses all senses to engage in learning.</li>
         </ul>
-    </div></div>`, 'presenter-3', stickyColors[2]);
+    </div></div>`, 'presenter-3', stickyColors[3]);
 
     addSlide('Multiple Intelligences Part 1', `<div class="title-slide"><h2>Multiple Intelligences Part 1</h2></div>`, 'presenter-4', '#fdfdfd');
     addSlide('Multiple Intelligences Part 1', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
+            <li class="focus-group" data-detail="Spatial Intelligence (Picture Smart): People with this intelligence think in three-dimensional images. They are good at puzzles, reading maps, and daydreaming. They often enjoy drawing, painting, and visual arts. Architects, pilots, and sculptors typically have high spatial intelligence." style="margin-bottom: 1rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
+            <li class="focus-group" data-detail="Musical Intelligence (Music Smart): This intelligence involves sensitivity to rhythm, pitch, meter, tone, melody, and timbre. People with high musical intelligence may enjoy singing, playing instruments, and composing music. They learn well through songs and rhythmic patterns." style="margin-bottom: 1rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
+            <li class="focus-group" data-detail="Linguistic Intelligence (Word Smart): People with this intelligence have a strong ability to use words effectively, both in writing and speaking. They enjoy reading, writing stories, and playing word games. Poets, journalists, and writers typically have high linguistic intelligence." style="margin-bottom: 1rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
+            <li class="focus-group" data-detail="Bodily-Kinesthetic Intelligence (Body Smart): This intelligence involves good body control and fine motor skills. People with this intelligence learn best through physical activity and movement. Athletes, dancers, surgeons, and craftspeople typically have high bodily-kinesthetic intelligence." style="margin-bottom: 1rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
         </ul>
     </div></div>`, 'presenter-4', stickyColors[3]);
 
     addSlide('Multiple Intelligences Part 2', `<div class="title-slide"><h2>Multiple Intelligences Part 2</h2></div>`, 'presenter-4', '#fdfdfd');
     addSlide('Multiple Intelligences Part 2', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
+            <li class="focus-group" data-detail="Logical-Mathematical Intelligence (Number Smart): This intelligence involves the ability to reason, calculate, and think logically. People with this intelligence excel at science and mathematics, and enjoy strategy games, puzzles, and experiments. Scientists, mathematicians, and programmers typically have high logical-mathematical intelligence." style="margin-bottom: 1rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
+            <li class="focus-group" data-detail="Interpersonal Intelligence (People Smart): This intelligence involves the ability to understand and interact effectively with others. People with this intelligence thrive in group settings and are good at communicating, empathizing, and resolving conflicts. Teachers, social workers, and politicians typically have high interpersonal intelligence." style="margin-bottom: 1rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
+            <li class="focus-group" data-detail="Intrapersonal Intelligence (Self-Smart): This intelligence involves the capacity to understand oneself deeply — your own feelings, motivations, and inner state. People with this intelligence are introspective and independent learners. They prefer working alone and are skilled at self-reflection. Philosophers, psychologists, and spiritual leaders often have high intrapersonal intelligence." style="margin-bottom: 1rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
+            <li class="focus-group" data-detail="Naturalist Intelligence (Nature Smart): This intelligence involves the ability to understand and relate to the natural world — recognizing patterns in nature, classifying plants and animals, and being sensitive to environmental changes. Farmers, botanists, and ecologists typically have high naturalist intelligence." style="margin-bottom: 1rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
         </ul>
     </div></div>`, 'presenter-4', stickyColors[0]);
 
     addSlide("Thorndike's Laws of Learning", `<div class="title-slide"><h2>Thorndike's Laws of Learning</h2></div>`, 'presenter-5', '#fdfdfd');
     addSlide("Thorndike's Laws of Learning", `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; gap:10px;">
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" data-detail="The Law of Readiness (The 'Get Ready' Rule): Learning starts with your mindset. When you are mentally prepared and genuinely motivated to learn, the entire process feels natural and rewarding. However, if you are forced to learn something when you are tired, distracted, or unwilling, the experience becomes frustrating and ineffective. Simply put, you have to be 'in the zone' to make learning stick." style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_2.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Readiness:</strong> Learning starts with a prepared mindset; forced learning fails.</p>
         </div>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" data-detail="The Law of Exercise (The 'Practice Makes Improvement' Rule): This law is all about the power of repetition. The more you practice something, the stronger the connections in your brain become, making the skill easier and more automatic. On the other hand, if you stop practicing, those connections weaken — like a skill that rusts from lack of use." style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_3.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Exercise:</strong> Repetition strengthens brain connections; lack of use causes rust.</p>
         </div>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" data-detail="The Law of Effect (The 'Repeat What Wins' Rule): This law tells us that actions followed by satisfying outcomes tend to be repeated, while those followed by discomfort are avoided. Think about it: when you study hard and get a great grade, you feel motivated to study again. But when a method leads to failure, you naturally look for a different approach." style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_4.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Effect:</strong> We repeat actions that lead to rewards and avoid those that lead to failure.</p>
         </div>
         <ul style="font-size: 1.3rem; margin-top: 0.5rem; margin-left: 1.5rem;">
-            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Belongingness:</strong> Learning is faster and stronger when the learner perceives a natural connection between stimuli involved.</li>
-            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Intensity:</strong> An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one.</li>
-            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Forgetting:</strong> Skills and knowledge that are not used or reviewed over time gradually fade from memory.</li>
+            <li class="focus-group" data-detail="Law of Belongingness (Natural Association of Stimuli): Learning is faster and stronger when the learner perceives a natural connection or relationship between the stimuli involved. When content feels relevant and connected to what the learner already knows or cares about, it is absorbed more easily and retained longer. This is why contextualized and meaningful learning experiences outperform rote memorization." style="margin-bottom: 0.5rem;"><strong>Law of Belongingness:</strong> Learning is faster and stronger when the learner perceives a natural connection between stimuli involved.</li>
+            <li class="focus-group" data-detail="Law of Intensity (Strength of Experience): An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one. A dramatic demonstration, a real-world field trip, or an emotionally engaging story will leave a lasting impression compared to a monotone lecture. The more intense and multi-sensory the experience, the deeper the learning." style="margin-bottom: 0.5rem;"><strong>Law of Intensity:</strong> An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one.</li>
+            <li class="focus-group" data-detail="Law of Forgetting (Memory Linked to Usage): Skills and knowledge that are not used or reviewed over time gradually fade from memory. This aligns with Ebbinghaus's forgetting curve — without periodic review and reinforcement, learned material decays. Regular practice, spaced repetition, and active recall are essential strategies to combat forgetting." style="margin-bottom: 0.5rem;"><strong>Law of Forgetting:</strong> Skills and knowledge that are not used or reviewed over time gradually fade from memory.</li>
         </ul>
     </div></div>`, 'presenter-5', stickyColors[1]);
 
     addSlide('Other Learning Theories Part 1', `<div class="title-slide"><h2>Other Learning Theories Part 1</h2></div>`, 'presenter-6', '#fdfdfd');
     addSlide('Other Learning Theories Part 1', `<div class="content-slide"><div class="doc-content">
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" data-detail="Operant Conditioning was developed by B.F. Skinner. It is a method of learning that uses rewards and punishments to modify behavior. Through operant conditioning, an individual makes an association between a particular behavior and a consequence. There are two types of reinforcers: Primary (food, water — biological needs) and Secondary (money, praise — learned values). The theory also includes Escape Learning (learning to stop an unpleasant stimulus) and Avoidance Learning (learning to prevent an unpleasant stimulus from occurring)." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_5.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Operant Conditioning:</strong> Learning through rewards and consequences.</p>
         </div>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" data-detail="The Cognitive Perspective is a theory of learning that focuses on the mental processes involved in acquiring knowledge. Unlike behaviorism, which emphasizes observable behavior, the cognitive perspective explains that learning occurs through internal mental activities such as thinking, remembering, reasoning, problem-solving, decision-making, understanding, and perception. Cognitive psychologists believe that the human mind functions much like a computer — receiving, processing, storing, and retrieving information." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_6.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Cognitive Perspective:</strong> Learning is an internal mental activity. Mind works like a computer.</p>
         </div>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" data-detail="Gestalt Theory proposes that people naturally perceive objects as organized, complete wholes rather than isolated parts. The famous phrase associated with this theory is 'The whole is greater than the sum of its parts.' Gestalt psychologists identified key principles of perception including proximity, similarity, continuity, and closure. In education, this means learners understand concepts better when they see the big picture first before breaking it down into details." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_7.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Gestalt Theory:</strong> People perceive objects as complete wholes.</p>
         </div>
@@ -181,9 +190,9 @@ async function buildHtml() {
     addSlide('Other Learning Theories Part 2', `<div class="title-slide"><h2>Other Learning Theories Part 2</h2></div>`, 'presenter-6', '#fdfdfd');
     addSlide('Other Learning Theories Part 2', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.4rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
+            <li class="focus-group" data-detail="Field Theory was developed by Kurt Lewin. This theory explains that learning and behavior are influenced by both the individual and the environment. Lewin believed that behavior cannot be explained by personal characteristics alone because the environment also plays a significant role. His formula B = f(P, E) means Behavior is a function of the Person and the Environment. A positive and supportive environment can significantly improve a student's performance, motivation, and attitude toward learning." style="margin-bottom: 1rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
         </ul>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-top: 1.5rem;">
+        <div class="focus-group" data-detail="Intelligence Theories explore how intelligence is defined and measured. Alfred Binet believed intelligence is the ability to reason, judge, and comprehend — and importantly, that it can be improved through education and training. Charles Spearman introduced the Theory of General Intelligence (g-factor Theory). He believed every person possesses one general mental ability called the g-factor, which influences performance across many different intellectual tasks. He also proposed the s-factor for specific, unique talents in individual areas." style="display:flex; align-items:center; gap: 15px; margin-top: 1.5rem;">
             <img src="images/img_8.png" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Intelligence Theories:</strong><br><em>Alfred Binet:</em> Intelligence is reasoning, can improve.<br><em>Charles Spearman:</em> Proposed "g-factor" and "s-factor".</p>
         </div>
@@ -416,6 +425,20 @@ async function buildHtml() {
         .focus-content p, .focus-content li { margin-bottom: 1.5rem; }
         .focus-content img { max-width: 50%; height: auto; object-fit: contain; float: right; margin: 0 0 1rem 1.5rem; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
         .focus-image-frame img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+        /* Flip Card in Focus Modal */
+        .flip-scene { perspective: 1200px; width: 100%; height: 100%; }
+        .flip-card { position: relative; width: 100%; height: 100%; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
+        .flip-card.flipped { transform: rotateY(180deg); }
+        .flip-face { position: absolute; top: 0; left: 0; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; }
+        .flip-back { transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; }
+        .flip-back .focus-content { color: #78350f; }
+        .flip-btn { position: absolute; bottom: 12px; right: 15px; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border: none; padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; cursor: pointer; z-index: 50; box-shadow: 0 4px 12px rgba(30,58,138,0.4); transition: all 0.25s ease; font-family: 'Inter', sans-serif; }
+        .flip-btn:hover { transform: scale(1.05); box-shadow: 0 6px 18px rgba(30,58,138,0.5); }
+        .flip-btn.on-back { background: linear-gradient(135deg, #92400e, #d97706); box-shadow: 0 4px 12px rgba(146,64,14,0.4); }
+        .flip-label { position: absolute; top: 12px; right: 15px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 10px; z-index: 50; pointer-events: none; font-family: 'Inter', sans-serif; }
+        .flip-label.front-label { background: rgba(30,58,138,0.1); color: #1e3a8a; }
+        .flip-label.back-label { background: rgba(146,64,14,0.15); color: #92400e; }
         .controls { position: fixed; bottom: calc(30px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 200; opacity: 0; visibility: hidden; transition: opacity 0.5s; }
         .controls.visible { opacity: 1; visibility: visible; }
         .nav-btn { background: #ffffff; color: #374151; border: 1px solid #d1d5db; padding: 12px 25px; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s; }
@@ -692,7 +715,7 @@ async function buildHtml() {
                 
                 if (imgInBlock) {
                     imgHtml = imgInBlock.outerHTML;
-                    imgInBlock.remove(); // Remove it from the text content!
+                    imgInBlock.remove();
                 } else {
                     const imgInCard = card.querySelector('img');
                     if (imgInCard) {
@@ -700,15 +723,37 @@ async function buildHtml() {
                     }
                 }
                 
-                // If it's the title slide h2, just show it directly
                 const contentHtml = tempBlock.classList.contains('focus-group') ? tempBlock.innerHTML : tempBlock.outerHTML;
+                const detailText = targetBlock.getAttribute('data-detail');
+
+                let boardInner = '';
+                if (detailText) {
+                    boardInner = \`
+                        <div class="flip-scene" style="flex: 1; min-height: 0;">
+                            <div class="flip-card" id="activeFlipCard">
+                                <div class="flip-face">
+                                    <span class="flip-label front-label">Summary</span>
+                                    <div class="tape"></div>\${headingHtml}<div class="focus-content">\${contentHtml}</div>
+                                    <button class="flip-btn" onclick="event.stopPropagation(); document.getElementById('activeFlipCard').classList.add('flipped');">Flip for Details ↻</button>
+                                </div>
+                                <div class="flip-face flip-back">
+                                    <span class="flip-label back-label">Detailed</span>
+                                    <div class="tape"></div>\${headingHtml}<div class="focus-content" style="font-size: 1.5rem; line-height: 1.9;">\${detailText}</div>
+                                    <button class="flip-btn on-back" onclick="event.stopPropagation(); document.getElementById('activeFlipCard').classList.remove('flipped');">Back to Summary ↻</button>
+                                </div>
+                            </div>
+                        </div>
+                    \`;
+                } else {
+                    boardInner = \`<div class="tape"></div>\${headingHtml}<div class="focus-content">\${contentHtml}</div>\`;
+                }
 
                 let focusLayout = '';
                 if (imgHtml) {
                     focusLayout = \`
                         <div class="focus-layout" style="display: flex; gap: 40px; align-items: stretch; justify-content: center; max-width: 95vw; max-height: 90vh;" onclick="event.stopPropagation()">
                             <div class="focus-board" style="flex: 1; min-width: 600px; max-width: 800px; max-height: 90vh; overflow-y: auto; transform: scale(1) translateY(0); margin: 0;">
-                                <div class="tape"></div>\${headingHtml}<div class="focus-content">\${contentHtml}</div>
+                                \${boardInner}
                             </div>
                             <div class="focus-image-frame" style="flex: 1; max-width: 900px; display: flex; align-items: center; justify-content: center; background: #fff; padding: 20px; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.05) 31px, rgba(0,0,0,0.05) 32px); background-position: 0 30px;">
                                 \${imgHtml}
@@ -718,7 +763,7 @@ async function buildHtml() {
                 } else {
                     focusLayout = \`
                         <div class="focus-board" onclick="event.stopPropagation()">
-                            <div class="tape"></div>\${headingHtml}<div class="focus-content">\${contentHtml}</div>
+                            \${boardInner}
                         </div>
                     \`;
                 }

@@ -136,6 +136,20 @@
         .focus-content p, .focus-content li { margin-bottom: 1.5rem; }
         .focus-content img { max-width: 50%; height: auto; object-fit: contain; float: right; margin: 0 0 1rem 1.5rem; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
         .focus-image-frame img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+        /* Flip Card in Focus Modal */
+        .flip-scene { perspective: 1200px; width: 100%; height: 100%; }
+        .flip-card { position: relative; width: 100%; height: 100%; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
+        .flip-card.flipped { transform: rotateY(180deg); }
+        .flip-face { position: absolute; top: 0; left: 0; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; }
+        .flip-back { transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; }
+        .flip-back .focus-content { color: #78350f; }
+        .flip-btn { position: absolute; bottom: 12px; right: 15px; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border: none; padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; cursor: pointer; z-index: 50; box-shadow: 0 4px 12px rgba(30,58,138,0.4); transition: all 0.25s ease; font-family: 'Inter', sans-serif; }
+        .flip-btn:hover { transform: scale(1.05); box-shadow: 0 6px 18px rgba(30,58,138,0.5); }
+        .flip-btn.on-back { background: linear-gradient(135deg, #92400e, #d97706); box-shadow: 0 4px 12px rgba(146,64,14,0.4); }
+        .flip-label { position: absolute; top: 12px; right: 15px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 10px; z-index: 50; pointer-events: none; font-family: 'Inter', sans-serif; }
+        .flip-label.front-label { background: rgba(30,58,138,0.1); color: #1e3a8a; }
+        .flip-label.back-label { background: rgba(146,64,14,0.15); color: #92400e; }
         .controls { position: fixed; bottom: calc(30px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 200; opacity: 0; visibility: hidden; transition: opacity 0.5s; }
         .controls.visible { opacity: 1; visibility: visible; }
         .nav-btn { background: #ffffff; color: #374151; border: 1px solid #d1d5db; padding: 12px 25px; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s; }
@@ -236,171 +250,172 @@
 <path d="M 50500 5500 L 54000 4500" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="12" stroke-dasharray="25, 15" filter="url(#chalk)"/>
 <path d="M 54000 4500 L 57500 5500" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="12" stroke-dasharray="25, 15" filter="url(#chalk)"/>
 <path d="M 57500 5500 L 61000 4500" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="12" stroke-dasharray="25, 15" filter="url(#chalk)"/>
+<path d="M 61000 4500 L 64500 5500" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="12" stroke-dasharray="25, 15" filter="url(#chalk)"/>
 
             </svg>
-            <div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(4908.095478452908px, -3413.030004191362px) rotate(332.2366289019084deg); font-size: 8.282488896593382rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(9600.248880556308px, -1584.2888438389314px) rotate(349.8329182755332deg); font-size: 8.520644714946183rem;">★</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(6619.57392077117px, -3811.9552119654886px) rotate(300.5636498449099deg); font-size: 7.37371075389037rem;">A+</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(2641.504134753507px, -1926.865954772392px) rotate(26.32092965093232deg); font-size: 4.575467500433786rem;">☼</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(1260.7785765904791px, -3470.043592517308px) rotate(205.73459387515157deg); font-size: 8.606368166265744rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4543.09094267657px, -2484.4873625918895px) rotate(342.353119669222deg); font-size: 4.1814304160916755rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(17060.16534297022px, 961.132090516051px) rotate(303.1479384928861deg); font-size: 8.157032733489155rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(4539.338286513277px, -220.92032133812063px) rotate(58.15436880237216deg); font-size: 7.051705842935744rem;">📖</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(4780.371364954533px, 3836.4442570466363px) rotate(68.14190646545342deg); font-size: 7.194458749607053rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(305.16823713881877px, 4791.602046985132px) rotate(59.981188318489785deg); font-size: 6.181042879003271rem;">♡</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(17738.433017014966px, -4843.176604565735px) rotate(336.44540525327835deg); font-size: 4.24241322457712rem;">♡</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-1230.014933271931px, -3207.524750184183px) rotate(265.096694150348deg); font-size: 5.777973646314951rem;">✏️</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(1259.1613587325292px, 3080.552304031299px) rotate(63.1453302858701deg); font-size: 7.058557805221845rem;">✿</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(368.17183278658104px, -506.5561154890165px) rotate(52.03298736337716deg); font-size: 4.126801916542424rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(4808.900855208436px, -4946.782491504657px) rotate(312.1358109992281deg); font-size: 7.925477909708501rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(12126.13678568253px, 1221.6712410829896px) rotate(287.50447171878375deg); font-size: 7.555939135008041rem;">A+</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-4234.393751871299px, -722.6267456201094px) rotate(122.71244583000447deg); font-size: 4.754138893385797rem;">✨</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(15349.570882860146px, -2805.3334938049134px) rotate(91.00631474042632deg); font-size: 7.5366432684034175rem;">♫</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-1641.445829068573px, 481.09796321039266px) rotate(344.2312885397477deg); font-size: 5.344852587817112rem;">♪</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(10261.754444728174px, -3518.168962656835px) rotate(156.01178111832155deg); font-size: 4.842470242673857rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(6698.11174782208px, -2895.040043797865px) rotate(338.3485072112573deg); font-size: 7.70847432094436rem;">A+</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(11196.84738200751px, -2786.036826969794px) rotate(206.3491684453798deg); font-size: 7.507881820069177rem;">★</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(21912.700409398494px, -1130.6738673123841px) rotate(0.3757893732529016deg); font-size: 5.999112379422479rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(3961.19361668527px, 1423.2801737648097px) rotate(54.00865200794905deg); font-size: 4.96695405323928rem;">✿</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(1860.6042453775472px, 4494.967149057229px) rotate(358.19576234834386deg); font-size: 4.796823588694824rem;">📖</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(2901.8006492835875px, -3103.9878164391075px) rotate(132.886598603156deg); font-size: 4.236239663633718rem;">♫</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(8231.372334015237px, 662.6340401905136px) rotate(300.23009241437444deg); font-size: 8.643739257697444rem;">✓</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(22864.552804733674px, -1259.6819028908458px) rotate(244.18445163881245deg); font-size: 6.548166178346907rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4325.247238394986px, -2742.8427635659027px) rotate(237.9362242425885deg); font-size: 6.196463869324935rem;">✨</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(21307.722664577203px, -4715.78799458189px) rotate(4.261574861092345deg); font-size: 4.528451277203362rem;">★</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(11735.574143885486px, -1703.0217697495818px) rotate(308.81946106973646deg); font-size: 8.064213856872701rem;">✨</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(16158.99451853106px, -888.2411691049856px) rotate(129.18765408225633deg); font-size: 7.9049160234724365rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(20564.028821089552px, -2705.158946641939px) rotate(190.26944470705064deg); font-size: 8.41849552044242rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-473.10977547879975px, 2784.1661099292032px) rotate(55.1402425284291deg); font-size: 4.902998927704734rem;">♡</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(9845.758356095404px, -2261.8732499609882px) rotate(153.55888369824015deg); font-size: 7.93765323491218rem;">✨</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(3131.5442248428053px, 3784.741241251553px) rotate(27.61429502149872deg); font-size: 4.303414456504678rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(20614.23294749892px, 4267.602191296566px) rotate(64.52361069118614deg); font-size: 6.052249111451351rem;">A+</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-4025.2502936089363px, 199.40033762780786px) rotate(125.33803209203484deg); font-size: 5.4647564822135735rem;">♪</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(64.2549306378578px, -3962.3698443045464px) rotate(266.0646435847051deg); font-size: 5.945343474453264rem;">✿</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(17404.93659365909px, 1909.1587215156287px) rotate(256.00250499375335deg); font-size: 5.78400121050147rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(14111.2234421266px, 862.3132643779009px) rotate(114.88877077307015deg); font-size: 7.824514160963394rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(21995.171989673017px, 1261.154948965328px) rotate(36.92017195658763deg); font-size: 5.520932893831198rem;">♫</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(7593.296694957302px, -3907.5994996626073px) rotate(135.16256610898898deg); font-size: 6.387843135906641rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(11390.176471519691px, 2865.4905088746336px) rotate(149.2438670593075deg); font-size: 8.061556711182579rem;">♫</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-2708.6992859748016px, 2527.3545311595144px) rotate(251.74232665524727deg); font-size: 5.8269700888527085rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-1715.1308879444682px, 17.526754156402603px) rotate(325.59920958974624deg); font-size: 7.581504115464524rem;">✓</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(20076.017233927203px, 376.6631303975264px) rotate(73.26625187841849deg); font-size: 6.691726806629891rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(11716.05767114025px, -1206.4727192698301px) rotate(292.50589008445746deg); font-size: 4.0440184477792025rem;">📖</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(24183.20764385862px, -954.7387909876916px) rotate(345.0753059106896deg); font-size: 8.504124197266655rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-3306.1942101279064px, 3705.3942953901023px) rotate(292.6360417611847deg); font-size: 6.36315635554276rem;">📖</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(10014.104645185818px, 4288.218851827387px) rotate(66.61651296041255deg); font-size: 4.70207946331967rem;">📖</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(117.35337651969894px, -4333.183242938901px) rotate(96.88466048218888deg); font-size: 8.360095000851022rem;">♫</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(6388.784940906515px, 2056.2367096668795px) rotate(282.29954255397115deg); font-size: 4.060050783358402rem;">✓</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(7747.868030668851px, 374.98871933475857px) rotate(271.34784852685874deg); font-size: 4.518716172974464rem;">✨</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(7171.7684873347625px, 520.521249270194px) rotate(137.59129476051882deg); font-size: 6.779765359213833rem;">A+</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(18256.405034010782px, -160.41373192567698px) rotate(241.07145694832838deg); font-size: 8.018443890890142rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(8321.27231306316px, -34.081896089998736px) rotate(136.33266870796965deg); font-size: 6.981169539134221rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(13552.628028861145px, 21.802400073115678px) rotate(197.22572881618783deg); font-size: 4.592429085847184rem;">♪</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(13839.142278707102px, 2053.402335838585px) rotate(301.0198442131813deg); font-size: 4.455485856635015rem;">✓</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(3008.8680163038116px, -3916.6926126108337px) rotate(184.37817462675665deg); font-size: 4.853605091274638rem;">❀</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-4914.026788272533px, 302.3192844471987px) rotate(116.25572925618582deg); font-size: 5.623058035176245rem;">✨</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(16991.9442302334px, 1029.3990536543452px) rotate(242.96065313541226deg); font-size: 7.355138668189435rem;">♪</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(14738.808619563544px, -2859.4479059239443px) rotate(249.39403383140697deg); font-size: 7.408920860653863rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(13387.57520722449px, 4094.9445535605137px) rotate(178.2070845120596deg); font-size: 7.099827787040388rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(3078.210663914959px, 3370.1848421707273px) rotate(41.04112646988417deg); font-size: 4.623648065445468rem;">♡</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(10310.306221796769px, -4716.612664122068px) rotate(75.95409548179974deg); font-size: 4.331213552775599rem;">♪</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(23135.584608882647px, -3162.163965946351px) rotate(187.83386794515758deg); font-size: 6.298850936761287rem;">★</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(21246.978384747585px, 3426.3593825921253px) rotate(80.49859398977574deg); font-size: 7.3269609624402285rem;">♪</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-2447.7055007735094px, -3909.784088363155px) rotate(238.45540474518003deg); font-size: 5.851447179676501rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(15265.5250982475px, 3009.5607215903583px) rotate(246.73249369715435deg); font-size: 6.1934551424151625rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(13883.408836607698px, 2758.477104482722px) rotate(247.42300053664997deg); font-size: 5.156984163252773rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(23017.924195673608px, 3869.30249428115px) rotate(68.81536551943985deg); font-size: 7.3687296500317085rem;">✨</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(22332.435432865015px, 1210.0771537353949px) rotate(146.02920324737008deg); font-size: 4.395929174050447rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-4390.967158932622px, -1482.1548255728203px) rotate(80.45603078530478deg); font-size: 5.428296067977962rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-3659.362474089272px, 4779.5654846168945px) rotate(338.94783499745176deg); font-size: 5.911809096916279rem;">📖</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(2655.834386296955px, 4341.581267919395px) rotate(69.04699613719343deg); font-size: 5.886868920761272rem;">❀</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(7052.651844621005px, -1375.3110242334042px) rotate(253.42719076743035deg); font-size: 6.250869636801998rem;">✨</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(1929.6914426277272px, 179.133236205731px) rotate(36.36734891301779deg); font-size: 8.79285085614814rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(7152.450405019181px, -3183.1280643031578px) rotate(222.6679304731647deg); font-size: 4.543993513693834rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(13298.590728280677px, -4876.77900989303px) rotate(271.3134831067125deg); font-size: 7.118074155480007rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(23847.96921088776px, -4052.0074817001127px) rotate(166.89861474165224deg); font-size: 6.010818738765174rem;">✿</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-4910.592183382691px, 2215.3913975401865px) rotate(58.170743480725854deg); font-size: 7.502445897833354rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(319.3328835575294px, 1405.5627746036544px) rotate(85.02421040466339deg); font-size: 4.451369007507222rem;">♪</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(21861.69954603137px, 1377.6553605546605px) rotate(45.55695609367535deg); font-size: 5.555718192247117rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(7129.995868410995px, 2277.3242111574855px) rotate(340.93297805062946deg); font-size: 8.29289077401092rem;">★</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(16.468412389586774px, -2949.453967157234px) rotate(94.05757544374326deg); font-size: 5.5109576185981695rem;">✨</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(14551.345445397117px, 4926.882658397504px) rotate(186.72864791374388deg); font-size: 5.881749096068705rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(8042.489997115697px, 4011.05802836964px) rotate(117.76270235349067deg); font-size: 5.567911443620542rem;">✏️</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(5107.685373450775px, 368.6400810199011px) rotate(350.49507302526996deg); font-size: 5.934315011267566rem;">☼</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(13189.515482921506px, 952.3519309358217px) rotate(130.8004918880573deg); font-size: 6.005779528558954rem;">✿</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-1775.3108064007884px, 574.0368266342475px) rotate(286.65357272940236deg); font-size: 7.472067091211108rem;">✿</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(5935.56277692016px, 1572.6262442147636px) rotate(29.224013997348965deg); font-size: 4.934267983245207rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-1239.5057007232713px, -409.50330446144835px) rotate(98.13151633725055deg); font-size: 7.773639168300793rem;">✨</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(4871.351809778571px, -4713.706623863971px) rotate(48.31720342524596deg); font-size: 4.411673300225765rem;">♡</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-4736.70877293277px, -605.6274015773788px) rotate(166.27730444758353deg); font-size: 6.2155836019664585rem;">♡</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(2339.8242314098516px, 3382.338330366614px) rotate(52.318473849661885deg); font-size: 7.189964482897343rem;">♡</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(16549.87935883556px, 2736.1243581532353px) rotate(320.7628692250004deg); font-size: 7.849740566303667rem;">📖</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(9774.557619212563px, -1033.097045869894px) rotate(43.28561872490223deg); font-size: 7.822523786186526rem;">📖</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(19185.15128497529px, 1051.7653834451403px) rotate(133.87725073258582deg); font-size: 7.445198213992224rem;">★</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(9462.78223027526px, 4807.124107761867px) rotate(191.63430826983554deg); font-size: 7.872824732714941rem;">✿</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(18444.610029155603px, -2311.9916858052493px) rotate(203.054685640656deg); font-size: 6.020150841801351rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(18483.466771872845px, 3894.4637269326995px) rotate(264.6868054454105deg); font-size: 5.778332005550039rem;">✏️</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(13228.684565931842px, -3618.6873089862825px) rotate(103.66128199963669deg); font-size: 7.456936390326286rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(4497.172438591409px, 2611.219333329822px) rotate(73.03945364803629deg); font-size: 7.322131250162119rem;">✨</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(10450.68081068661px, -3276.4091865664413px) rotate(102.09753100339525deg); font-size: 6.118952295207137rem;">✨</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(19441.651170219164px, -1295.7214495046742px) rotate(216.53100411858267deg); font-size: 4.13607606722787rem;">♡</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(17965.849502091998px, 3064.178797359419px) rotate(261.2999741570731deg); font-size: 7.2583319056989435rem;">♡</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(24714.10686087785px, 3863.6522392976785px) rotate(235.85881471361907deg); font-size: 7.502144790540484rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(16090.58950183861px, -4217.67292621448px) rotate(180.96830550101566deg); font-size: 5.265681880709359rem;">♫</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(9665.92239347512px, -2891.495461980338px) rotate(262.86729581193333deg); font-size: 6.849720192464883rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(10087.30380173419px, -675.3516717899656px) rotate(189.81128067778786deg); font-size: 6.2967181304913rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(21505.737575861185px, 2345.185821233702px) rotate(173.76359141332435deg); font-size: 4.856283857272141rem;">✨</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(2556.7087335153064px, -1196.5154578310876px) rotate(34.290700023990155deg); font-size: 4.00692276610075rem;">✨</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9703.24871690633px, -1464.0932612418824px) rotate(240.56773640064753deg); font-size: 4.641814361542475rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(16574.759963363478px, -4156.240636632352px) rotate(196.70888113750195deg); font-size: 6.464547083576884rem;">☼</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-3885.162037518812px, 1077.4002859784769px) rotate(184.17843366812124deg); font-size: 4.578999753154685rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(24956.46189061448px, -725.9210264954709px) rotate(98.65876428711756deg); font-size: 4.754821332878372rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(17281.219129689187px, -1371.2654232404475px) rotate(38.341640339565394deg); font-size: 4.988507543753083rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(23788.45982376643px, 4804.552752841324px) rotate(125.10141887953156deg); font-size: 5.588098973214176rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(9797.494834989806px, 4551.2300505401545px) rotate(307.0927755142302deg); font-size: 6.432882381710105rem;">✓</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(10494.441703681892px, 4431.438530023988px) rotate(54.97014949716861deg); font-size: 7.265956904079038rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(3761.3084112828074px, -3215.966794388637px) rotate(283.6294276574461deg); font-size: 6.771895178459713rem;">❀</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(5035.731382862114px, 3368.661373654302px) rotate(8.59841200699773deg); font-size: 7.051107702981513rem;">❀</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(5317.021278411776px, -1092.4371943853516px) rotate(32.286036062646474deg); font-size: 5.324532146511138rem;">★</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(13550.027877929671px, -3421.709450587481px) rotate(217.86807810531536deg); font-size: 6.494864941602106rem;">☼</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(24600.037263905742px, -4324.078717691068px) rotate(210.87143051295388deg); font-size: 5.386031364754128rem;">✨</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(23685.632943231725px, 855.3323532650202px) rotate(151.72505559571917deg); font-size: 5.383944584185099rem;">♪</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(13187.39525500673px, -1179.5357145937392px) rotate(121.66816264949274deg); font-size: 4.118294472980053rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(24079.79454184273px, -4633.729498172329px) rotate(147.90260962568573deg); font-size: 6.801697215172014rem;">★</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(7825.313672422879px, -2903.423335560418px) rotate(329.1770281101001deg); font-size: 5.188743047875914rem;">A+</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(17954.910284442176px, -2497.204862302228px) rotate(207.90815147614316deg); font-size: 8.383308411691791rem;">♫</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(22598.650241401338px, 675.8165644378896px) rotate(142.94303467045867deg); font-size: 6.1168241476077805rem;">♪</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-1885.7255791085659px, 359.14938883359537px) rotate(227.64998801561018deg); font-size: 7.220119802399763rem;">♫</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-4463.270685006092px, 264.3704752359745px) rotate(165.24647575610945deg); font-size: 8.087965567697086rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(2473.49556429904px, -3962.044645656203px) rotate(188.05519417625618deg); font-size: 6.0103722665786385rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-3851.507377091564px, -3477.1507044223035px) rotate(6.866848662695495deg); font-size: 8.609421375487198rem;">♪</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-473.3470522565585px, -4485.933677733687px) rotate(346.59688855437605deg); font-size: 8.906523228621609rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(13665.057310472559px, 3354.8156594000466px) rotate(21.308209628136833deg); font-size: 6.491687325149956rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(12976.05093840804px, 4323.652544252005px) rotate(131.65797466428367deg); font-size: 7.030020091861544rem;">♪</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(950.743943079281px, 2386.1619349632974px) rotate(241.45186080419202deg); font-size: 5.187282303425905rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(3705.8283734569595px, -1804.2254167894303px) rotate(104.16722711743671deg); font-size: 8.89187948793296rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(11695.887774283947px, 4743.86144678241px) rotate(316.1747042599156deg); font-size: 5.802269979109411rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(24245.63104871766px, -2895.9809254661004px) rotate(130.5819753802607deg); font-size: 8.461644025075293rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(20164.939778803957px, 2886.9689005064447px) rotate(295.1991094036732deg); font-size: 4.334651491439419rem;">♫</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(5962.376840321031px, -3915.281160000479px) rotate(241.3617723688587deg); font-size: 5.898813735153636rem;">📖</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(17322.989808537943px, -3276.0723706626995px) rotate(165.7921416595824deg); font-size: 8.970886500724877rem;">✏️</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(17176.306648861544px, -4266.935534685512px) rotate(94.66609630685907deg); font-size: 6.263342222353419rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-3992.089775331693px, 1604.6827819101272px) rotate(297.1976385967968deg); font-size: 4.9754269388687rem;">✓</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(23495.30620225754px, 1698.150374570815px) rotate(135.39212690327153deg); font-size: 4.041937104200185rem;">A+</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(24796.799127698727px, -1521.435933112245px) rotate(56.484813886001646deg); font-size: 7.560187684920994rem;">📖</div>
+            <div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(7499.84675880053px, -1265.390916181144px) rotate(143.9603945404272deg); font-size: 5.49859515366575rem;">✿</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(22423.256613417758px, 1202.8191925156007px) rotate(302.8133571241622deg); font-size: 8.40733531541132rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-1819.7182247442825px, -1236.0267523190114px) rotate(43.74289765045192deg); font-size: 7.541487329807245rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(23888.98085076887px, -4557.116120356804px) rotate(143.1838099679082deg); font-size: 4.341831145414606rem;">♪</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(18030.230759476217px, -4830.564712808192px) rotate(192.45979563219115deg); font-size: 7.216397855793915rem;">♫</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9474.821176338786px, 3275.1954376792182px) rotate(70.74369629211147deg); font-size: 5.931093044780881rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(1871.4756700847965px, 4834.282630358033px) rotate(342.8193654123769deg); font-size: 6.4771985198872954rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(15284.023607420484px, 1892.86324233501px) rotate(98.82371046172858deg); font-size: 4.402530363491563rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(16216.267327527683px, 4433.595509427898px) rotate(299.891162516581deg); font-size: 7.389231882235982rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(5265.713172366184px, -2591.001307823936px) rotate(255.67463813266deg); font-size: 7.8796140599252755rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(16312.283455628545px, 2113.5724621482386px) rotate(64.86582095000738deg); font-size: 5.05272631595608rem;">❀</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(8029.487986107975px, -3196.8856528437627px) rotate(244.10127314111645deg); font-size: 4.579892764918702rem;">✏️</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-4313.743514595937px, 2123.5773240606522px) rotate(185.79795815760582deg); font-size: 4.3287500948366295rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(1670.8914375937966px, -4443.851417219919px) rotate(183.01212960085408deg); font-size: 4.460163717140249rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(5896.5648483485165px, 257.01851654626444px) rotate(182.53038988895506deg); font-size: 4.353635599057561rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(97.72017520177906px, 192.5228625506188px) rotate(274.18791223933414deg); font-size: 4.179426854522217rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(4895.637017759598px, -2210.3702922376524px) rotate(340.6283517592036deg); font-size: 4.022088709399605rem;">✓</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-2164.279439341259px, 3781.0199465491132px) rotate(269.0563035962702deg); font-size: 6.881769417042368rem;">A+</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-2095.4962485628325px, 4866.93126265052px) rotate(130.53353065578287deg); font-size: 5.239831222336953rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-3654.8120514330085px, -1698.947678202012px) rotate(340.5239730472012deg); font-size: 8.739715652645355rem;">♫</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-4513.914032887422px, 3267.6500399114393px) rotate(283.9570621014554deg); font-size: 4.4778420977271525rem;">★</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-2715.7750785898684px, 2652.6085993773168px) rotate(350.55403934417586deg); font-size: 6.919491938901361rem;">✿</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(14697.740555956134px, -3459.029448092865px) rotate(37.204967691826354deg); font-size: 5.538051040202179rem;">✨</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(2351.7570789155116px, 3778.2245134616496px) rotate(298.4930007992293deg); font-size: 6.839476255717626rem;">♫</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(19684.450501664436px, -2118.139123298235px) rotate(330.07021428108607deg); font-size: 4.962616545662288rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4337.601238528381px, -4861.817748487581px) rotate(83.48963356130429deg); font-size: 8.564369808406441rem;">★</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(7230.235602940473px, 855.6117397853768px) rotate(344.07806548927135deg); font-size: 6.191304009131546rem;">✿</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(3435.4051857622762px, -2659.440390448783px) rotate(287.92546850013935deg); font-size: 7.9750344977235095rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(6130.065223677393px, 2003.5411571620516px) rotate(133.33148148846774deg); font-size: 7.877379398616429rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(20751.952544062256px, -2602.7774635514857px) rotate(227.5921539266981deg); font-size: 8.775420741654456rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(16877.919085408696px, -4543.962923263195px) rotate(64.50762515601481deg); font-size: 4.165390479416597rem;">✏️</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-2788.2591568829375px, 3746.035457879192px) rotate(127.26672331862576deg); font-size: 8.100994664758975rem;">✿</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(3853.0719148584467px, -3610.885017434858px) rotate(273.9372110564937deg); font-size: 8.79651038731084rem;">A+</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(22196.56114831441px, 1483.568891459844px) rotate(287.86924146660044deg); font-size: 6.214608248734045rem;">❀</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(6403.66370962936px, 2351.843892365827px) rotate(213.39312853203444deg); font-size: 6.457635603774924rem;">♪</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-2127.8768560424055px, 4795.048398352772px) rotate(157.4277543126946deg); font-size: 8.371340449163743rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(22666.88782386313px, 2705.35702431129px) rotate(287.8599886051514deg); font-size: 8.650609437221048rem;">📖</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-4237.945581906442px, -4002.4895329425835px) rotate(216.58217753034285deg); font-size: 8.443125354504891rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-3403.7029568769503px, 3867.9585506529547px) rotate(275.66079854059194deg); font-size: 5.808275272114433rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(10729.47288062132px, 45.33683031457531px) rotate(254.4533888049242deg); font-size: 7.933219902043304rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-1714.003796006085px, -544.3136259309204px) rotate(275.3220897242379deg); font-size: 7.058548079000424rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(18775.807976505897px, -4360.033275271994px) rotate(267.3817946333741deg); font-size: 7.810957924869203rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(24444.726923498965px, 1271.3588426558772px) rotate(236.33964811723254deg); font-size: 7.57124313307682rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(10078.369837364622px, -4251.2028782602965px) rotate(192.53557664773308deg); font-size: 5.205132991190099rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(3072.118655256041px, -2254.4347609888073px) rotate(56.24781757703034deg); font-size: 4.5819442786499165rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-3028.623702101886px, 62.26248536852927px) rotate(231.31744799865606deg); font-size: 7.7642388915693346rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(10316.086788693281px, 1964.7862678170304px) rotate(165.11830065788513deg); font-size: 7.924545682467597rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(17665.668828307258px, -4325.956088208798px) rotate(308.73423294638724deg); font-size: 5.35124776488078rem;">♡</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(5210.062417285371px, -1042.3499077152032px) rotate(283.26418794814174deg); font-size: 5.6171926235527385rem;">☼</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(7926.647887942503px, 4542.118589236838px) rotate(113.03767736371044deg); font-size: 8.729595384572225rem;">A+</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(18178.747859949395px, -2209.8245660628268px) rotate(320.5822297252062deg); font-size: 8.108167567203786rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(5257.647978559609px, -3316.209152201356px) rotate(44.382893965253174deg); font-size: 4.76021675596191rem;">♡</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(23695.32170486481px, -4599.496593774414px) rotate(31.15052786852968deg); font-size: 5.922439630249932rem;">✿</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(16991.59365113111px, -4087.990308326357px) rotate(145.44279650819166deg); font-size: 5.970660734951931rem;">A+</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(1282.2008610908442px, 1894.7526583124882px) rotate(181.1560545128431deg); font-size: 4.064358830209665rem;">✨</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(9590.038999732269px, 207.50607181454052px) rotate(44.186878721524124deg); font-size: 8.812525166807099rem;">✨</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(7809.027583251367px, 215.52610965094664px) rotate(299.3474965694794deg); font-size: 8.135074324275477rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(11241.215527110719px, 3451.1479208692854px) rotate(36.10632252832482deg); font-size: 8.903537172306239rem;">♪</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(3422.118967768065px, -3037.3488968916827px) rotate(276.64375417193deg); font-size: 6.114561560489214rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(24509.608059103502px, 4612.611379896236px) rotate(51.24770863648045deg); font-size: 5.262697323131119rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(12993.528437192173px, -972.06012001003px) rotate(162.57373313351127deg); font-size: 6.918442790202817rem;">☼</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(23414.23586740783px, 3007.567773333426px) rotate(162.09226239149586deg); font-size: 8.0157639851992rem;">♡</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(21146.07170951675px, -2356.8152635411443px) rotate(1.537468632090051deg); font-size: 5.12321107473252rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(19613.40190732423px, -1607.99916831283px) rotate(2.5744279725521935deg); font-size: 7.405598982613412rem;">♫</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(5454.324440076833px, 1369.3682330030806px) rotate(231.2371602835849deg); font-size: 6.049508354524836rem;">✿</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(17495.347749609795px, 2473.9607455205078px) rotate(249.63545430958732deg); font-size: 5.126048694047524rem;">✏️</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(9056.78306080328px, 1643.3747645352096px) rotate(127.61000041574195deg); font-size: 5.898137669809658rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(8396.468511879533px, -3907.240012898621px) rotate(261.07025296469106deg); font-size: 5.138065811495984rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(16977.710702520355px, -590.9488146601652px) rotate(110.57355265346756deg); font-size: 6.705861155302257rem;">★</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(10147.962457960397px, 2818.447751744945px) rotate(247.38755753274728deg); font-size: 7.730818537968442rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(13230.200022379333px, 3059.8429997780595px) rotate(61.38973447458936deg); font-size: 4.367453077664141rem;">✓</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-1730.7334516067194px, 3684.0502718509324px) rotate(198.1763342671551deg); font-size: 4.469399268436339rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(24311.706348643427px, -3944.157574380115px) rotate(221.2572020288097deg); font-size: 7.275736649291405rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(7815.498003907976px, 2121.2419883226376px) rotate(1.431392033822867deg); font-size: 8.946097904944047rem;">☼</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(13662.480095802002px, -325.8352710659392px) rotate(152.5400813129669deg); font-size: 4.534099937731719rem;">♡</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(24049.25056185652px, -2552.492074746182px) rotate(191.68229716562843deg); font-size: 8.646963689062726rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(22395.480914814285px, 4436.529749957832px) rotate(162.63282201332993deg); font-size: 5.921726391459865rem;">📖</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(12105.844832909079px, -3847.872928257391px) rotate(178.34406623533613deg); font-size: 8.30085465217442rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(14562.638067212582px, 1682.372108692005px) rotate(75.8958815082777deg); font-size: 4.033178104453249rem;">📖</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(5363.281607183193px, 1508.4808246378143px) rotate(225.10176818710892deg); font-size: 5.080594774947962rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(5861.039123642215px, 1518.713043805028px) rotate(126.07427960562629deg); font-size: 7.402792405099646rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-2490.0277520832014px, -2812.213866670692px) rotate(195.28072307705662deg); font-size: 7.865263739669049rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(17472.151569831938px, 1800.2215180025123px) rotate(112.26685669486723deg); font-size: 5.34075203304354rem;">✓</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(21247.123299688694px, -4342.512666754767px) rotate(108.7592200617712deg); font-size: 4.662454060304171rem;">❀</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(14917.11453591509px, -2431.7710070936773px) rotate(186.41354476912278deg); font-size: 8.490122275493796rem;">✿</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(12147.185884106108px, 4290.084588584234px) rotate(239.75265752293575deg); font-size: 8.194568734219036rem;">✨</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(24495.55849902763px, -1074.522675768288px) rotate(107.20857358483514deg); font-size: 4.87008238958303rem;">☼</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(1771.5409424566888px, 3621.351112808101px) rotate(48.61432089210622deg); font-size: 7.1449206898145405rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(9343.54499868691px, -432.81298479000543px) rotate(313.4238401784697deg); font-size: 8.640557932602587rem;">📖</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(2290.358634934376px, 1159.9837954205614px) rotate(105.52728259982786deg); font-size: 5.743346191894885rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(13919.779617156248px, 1613.020755720413px) rotate(325.96100538090013deg); font-size: 7.087986597334149rem;">✨</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(6991.518703521857px, -2389.8316623903515px) rotate(62.574607448834094deg); font-size: 6.858546965190935rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(2299.4804622829643px, 3165.2094127448436px) rotate(249.61827437017587deg); font-size: 6.343371565194758rem;">♪</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(22677.689698835737px, -2997.2871473486107px) rotate(236.09996411887766deg); font-size: 7.215371477487376rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-4981.28452681636px, -4572.079271538194px) rotate(293.4744724233465deg); font-size: 5.0956173445184rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(13248.082624092844px, -534.4783245520175px) rotate(169.24046098689732deg); font-size: 7.813866845570697rem;">♫</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(2338.57399240595px, -2549.515142159193px) rotate(138.33835822241986deg); font-size: 8.551012939554179rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(411.14272627262744px, 115.44498120429489px) rotate(77.65654315996895deg); font-size: 5.879402897225582rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(23358.318332211275px, 1676.358682875738px) rotate(359.1660536916252deg); font-size: 8.386507694334794rem;">📖</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(16260.130633518023px, 3579.532087975982px) rotate(326.38074274766655deg); font-size: 8.7967200124057rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(22862.410408542823px, -3475.109558903253px) rotate(319.8669503567853deg); font-size: 5.43765542165301rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(10433.462826607822px, 3003.761328238441px) rotate(254.28032323174747deg); font-size: 5.126366410431814rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-4623.186001122545px, -2755.6335060416172px) rotate(200.8304946345629deg); font-size: 5.6383092949878435rem;">✓</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(15262.395350118164px, 2206.185627179406px) rotate(191.38379336712532deg); font-size: 7.969168652207372rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(20498.315156670295px, 4790.201911860358px) rotate(214.91312315935275deg); font-size: 5.92965746099579rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(22370.44196733133px, 1337.5728212043423px) rotate(333.1644195713559deg); font-size: 5.672292415245415rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(2404.2328880716614px, -3121.4843385012728px) rotate(39.39474428169596deg); font-size: 8.285749177167286rem;">☼</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(19635.565229880616px, -4445.122784336554px) rotate(12.366821672301835deg); font-size: 7.539745630142576rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4671.556620820107px, -1177.6627687838813px) rotate(318.3367888833295deg); font-size: 7.888659636980429rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(13158.933500108837px, -4527.76752627004px) rotate(210.56190546904097deg); font-size: 4.742405503259714rem;">☼</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(2632.2594133845723px, 2013.253845329782px) rotate(219.79503106546304deg); font-size: 6.476151774181005rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(11054.385625964012px, -812.9155950411459px) rotate(268.80812771932324deg); font-size: 7.2109167809649914rem;">✿</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(7534.431465519281px, -2117.607922772272px) rotate(305.3400983488997deg); font-size: 8.624229958658368rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(13270.97062756497px, -932.8210350359145px) rotate(83.63667512350969deg); font-size: 5.309132614114931rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-2795.5133722975256px, -1130.669497985266px) rotate(140.25584530834973deg); font-size: 4.884076463853609rem;">✓</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(1088.5675638782777px, -3631.2844480828508px) rotate(287.4892413823696deg); font-size: 6.943746731306313rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(23294.19680528891px, -1765.0922985091788px) rotate(279.07202043353385deg); font-size: 5.26923968171182rem;">❀</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-1327.6714752671505px, -130.61043379355124px) rotate(40.511505467952425deg); font-size: 6.688789315985896rem;">✿</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(18052.96804417283px, 2730.593265704064px) rotate(253.89214226443053deg); font-size: 6.626587727787541rem;">A+</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(1325.5919580128202px, 1186.9332452828785px) rotate(125.63668506800249deg); font-size: 8.175894304607432rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-4715.859433526421px, 1347.778620086242px) rotate(88.05913720328952deg); font-size: 5.513196121449518rem;">A+</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-1708.9538871221766px, 433.566715428562px) rotate(62.04926765900294deg); font-size: 5.578845362680396rem;">✨</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(11522.267362848524px, 4697.427888330125px) rotate(329.4473485425251deg); font-size: 8.353381872385414rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(20626.104157756683px, 1742.4359951778479px) rotate(15.790378552729969deg); font-size: 6.203344012216846rem;">✓</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(10751.9183363843px, -833.197140084395px) rotate(284.96570277122925deg); font-size: 5.077096218159728rem;">♪</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(19143.88141582341px, 2210.4700857172193px) rotate(156.6744075420992deg); font-size: 8.378376777948697rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(28.684922471674327px, 2601.4771554162144px) rotate(54.71242076442022deg); font-size: 5.91803486615295rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(13707.670938297353px, -156.23099142137926px) rotate(33.683650918543144deg); font-size: 7.288262942007039rem;">♪</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(961.018700928119px, 2463.6028701261366px) rotate(81.11878557830042deg); font-size: 8.022141870382578rem;">❀</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-4430.533702336757px, -1138.4046307700723px) rotate(331.3558768264636deg); font-size: 8.708533567407564rem;">❀</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(23690.35001204446px, -2852.717609955685px) rotate(21.309906047450056deg); font-size: 5.946263523943649rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(19081.55868226206px, 1830.9873896396948px) rotate(236.95285876896855deg); font-size: 7.043634066034242rem;">✓</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(16566.44539897572px, -2872.009143733351px) rotate(13.031739013574054deg); font-size: 5.105148810121813rem;">★</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-3902.69380854548px, 424.5654506382516px) rotate(333.96787120015904deg); font-size: 7.3443253035522265rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(7255.5402256141715px, 4670.063560947729px) rotate(324.7313322413424deg); font-size: 4.821564932032876rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(9688.54467795539px, -4180.384559599197px) rotate(170.95271859536572deg); font-size: 4.799638791019125rem;">☼</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(20440.08640500634px, -2658.8505617098135px) rotate(154.24811380986318deg); font-size: 7.232634635315506rem;">📖</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(5301.377332825607px, -3390.0240515565993px) rotate(105.23079313600157deg); font-size: 5.461370087215695rem;">A+</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(2426.394560817853px, 3685.272767665152px) rotate(126.323363776679deg); font-size: 8.119890531180904rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4465.227964519312px, 2009.1593808595144px) rotate(109.87253714207219deg); font-size: 7.012131693453426rem;">★</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(592.4843822359153px, -3968.143986680666px) rotate(152.24945139688265deg); font-size: 6.882192669778455rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(12571.86484235015px, -1528.1906636206231px) rotate(272.95768512970045deg); font-size: 6.702924051784484rem;">✿</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(1399.755347831784px, 2212.699280669911px) rotate(306.565604024057deg); font-size: 7.326157799247982rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(15757.699153160378px, 4692.155859470275px) rotate(106.82899521780605deg); font-size: 7.160849256060806rem;">✏️</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(7400.766009987647px, 530.3684272057244px) rotate(229.46543937345322deg); font-size: 7.649283993079573rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4585.541064315004px, -4281.536817638238px) rotate(346.24394600021986deg); font-size: 4.487089149277214rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-694.1558934497834px, 2072.9929086242773px) rotate(323.5348949895079deg); font-size: 7.834249133508596rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(17295.713623395655px, 2971.6607780147833px) rotate(146.939267733778deg); font-size: 8.516567744592162rem;">✿</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-1052.0053869620847px, -2006.038395061959px) rotate(75.37618214142198deg); font-size: 6.940162382343415rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(14590.421525526523px, 3377.35607958322px) rotate(237.37828087401076deg); font-size: 7.648428182242485rem;">📖</div>
 
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-6euaz5vqh" 
-                 style="--cx: 0px; --cy: -500px; --rot: 0.5101057611775821deg; z-index: 100; background-color: #fbcfe8;"
+                 id="slide-bycoi8090" 
+                 style="--cx: 0px; --cy: -500px; --rot: 1.391950569686243deg; z-index: 100; background-color: #fbcfe8;"
                  onclick="zoomToSlide(0)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Ice Breaker / Motivation</h2></div>
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-p08b5519o" 
-                 style="--cx: 120px; --cy: -420px; --rot: -1.294061103712835deg; z-index: 99; background-color: #fef08a;"
+                 id="slide-dneqokhlp" 
+                 style="--cx: 120px; --cy: -420px; --rot: 1.4683258926907135deg; z-index: 99; background-color: #fef08a;"
                  onclick="zoomToSlide(1)">
                 <div class="tape"></div>
                 <div class="content-slide">
@@ -416,8 +431,8 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-38nctfn3l" 
-                 style="--cx: 240px; --cy: -340px; --rot: 0.4561252905616042deg; z-index: 98; background-color: #bbf7d0;"
+                 id="slide-gmgb0zg27" 
+                 style="--cx: 240px; --cy: -340px; --rot: -1.5055636851438825deg; z-index: 98; background-color: #bbf7d0;"
                  onclick="zoomToSlide(2)">
                 <div class="tape"></div>
                 <div class="content-slide">
@@ -433,8 +448,8 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-7aayj8e9u" 
-                 style="--cx: 360px; --cy: -260px; --rot: -0.431435189237392deg; z-index: 97; background-color: #bfdbfe;"
+                 id="slide-f1eb2ob4f" 
+                 style="--cx: 360px; --cy: -260px; --rot: 0.25784364876172283deg; z-index: 97; background-color: #bfdbfe;"
                  onclick="zoomToSlide(3)">
                 <div class="tape"></div>
                 <div class="content-slide">
@@ -450,8 +465,8 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-rw4eqbrio" 
-                 style="--cx: 3500px; --cy: 500px; --rot: -0.0737922152842363deg; z-index: 10; background-color: #bbf7d0;"
+                 id="slide-1blq0065a" 
+                 style="--cx: 3500px; --cy: 500px; --rot: 0.41244939948634984deg; z-index: 10; background-color: #bbf7d0;"
                  onclick="zoomToSlide(4)">
                 <div class="tape"></div>
                 <div class="content-slide" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
@@ -464,266 +479,288 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-6cadv4yir" 
-                 style="--cx: 7000px; --cy: -500px; --rot: 0.5087574714185723deg; z-index: 10; background-color: #fbcfe8;"
+                 id="slide-ka5ohdmap" 
+                 style="--cx: 7000px; --cy: -500px; --rot: -0.2603052152390699deg; z-index: 10; background-color: #fbcfe8;"
                  onclick="zoomToSlide(5)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Recap of Previous Lesson</h2></div>
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-wvfogofsi" 
-                 style="--cx: 10050px; --cy: 500px; --rot: -0.19164816949424646deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-6rumkqg6o" 
+                 style="--cx: 10050px; --cy: 500px; --rot: -1.2874260681560425deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(6)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Objectives of the Lesson</h2></div>
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-v75qkn9oa" 
-                 style="--cx: 10950px; --cy: 500px; --rot: 0.32258762342363356deg; z-index: 11; background-color: #fef08a;"
+                 id="slide-y562z4s96" 
+                 style="--cx: 10950px; --cy: 500px; --rot: -1.420064732778461deg; z-index: 11; background-color: #fef08a;"
                  onclick="zoomToSlide(7)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content focus-group"><h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2rem; margin-bottom:1rem;">Objectives</h2><ul><li><strong>Understand</strong> the core elements of the teaching-learning process.</li><li><strong>Identify</strong> the various roles of a teacher in a classroom.</li><li><strong>Explore</strong> different learning styles and multiple intelligences.</li><li><strong>Apply</strong> Thorndike's Laws of Learning and other learning theories.</li></ul></div></div>
             </div>
             
             <div class="card presenter-1  unrevealed" 
-                 id="slide-qeitpvhn0" 
-                 style="--cx: 13550px; --cy: -500px; --rot: 0.4302804406073206deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-h50k1zh6j" 
+                 style="--cx: 13550px; --cy: -500px; --rot: -1.5672621369114648deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(8)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>The Teaching-Learning Process</h2></div>
             </div>
             
             <div class="card presenter-1  unrevealed" 
-                 id="slide-yy87wtwi5" 
-                 style="--cx: 14450px; --cy: -500px; --rot: 0.06447770269417141deg; z-index: 11; background-color: #bbf7d0;"
+                 id="slide-ybx62wgk6" 
+                 style="--cx: 14450px; --cy: -500px; --rot: 0.08774839936742174deg; z-index: 11; background-color: #bbf7d0;"
                  onclick="zoomToSlide(9)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Teacher:</strong> The prime mover. Directs the flow, facilitates, and controls the process.</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Learner:</strong> The key participant and primary subject. Their acquired knowledge determines if objectives are met.</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.
+            <li class="focus-group" data-detail="Teaching and learning involves the process of transferring knowledge from the one who is giving to the one who is receiving. Teaching process cannot be performed if there is one element that is missing among the three of the teaching and learning elements. These elements are necessary to be able to make teaching and learning possible. Without one of these elements, there could be no teaching-learning process." style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
+            <li class="focus-group" data-detail="The teacher is the prime mover or facilitator of the educational process. The teacher serves as the person who directs the flow of the teaching and learning, by providing materials for the learners to work on, implementing effective teaching strategies, and controlling the overall process." style="margin-bottom: 1.5rem;"><strong>The Teacher:</strong> The prime mover. Directs the flow, facilitates, and controls the process.</li>
+            <li class="focus-group" data-detail="The learner is the key participant in the teaching and learning process. They are the primary subject of the educational process. The acquired knowledge of the learner is what determines whether or not the objectives of the lesson have been met." style="margin-bottom: 1.5rem;"><strong>The Learner:</strong> The key participant and primary subject. Their acquired knowledge determines if objectives are met.</li>
+            <li class="focus-group" data-detail="The favorable environment participates in the teaching-learning process by providing a place where there is a smooth flow of communication, avoiding some common barriers between the teacher and the learner. The presence of a good environment is so much important in the teaching and learning process. The good environment provides a smooth flow of communication between the learners and the teachers, thus it facilitates a well executed teaching and learning process." style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.
             <br><img src="images/img_1.png" style="max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 10px;"></li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-2  unrevealed" 
-                 id="slide-wmsa5g2qw" 
-                 style="--cx: 17050px; --cy: 500px; --rot: -1.6300167888107344deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-39lufho1t" 
+                 style="--cx: 17050px; --cy: 500px; --rot: -1.6146056530536894deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(10)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Roles of the Teacher</h2></div>
             </div>
             
             <div class="card presenter-2  unrevealed" 
-                 id="slide-ook8dvp9y" 
-                 style="--cx: 17950px; --cy: 500px; --rot: 1.4438115654813926deg; z-index: 11; background-color: #bfdbfe;"
+                 id="slide-v3nja0nmf" 
+                 style="--cx: 17950px; --cy: 500px; --rot: -1.0296828091521313deg; z-index: 11; background-color: #bfdbfe;"
                  onclick="zoomToSlide(11)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security and emotional well-being.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages external stakeholders.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction.</li>
+            <li class="focus-group" data-detail="As a manager, the teacher is responsible for maintaining a systematic order within the classroom. This involves organizing resources, managing time, setting rules, and ensuring that the classroom environment is conducive to learning." style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order.</li>
+            <li class="focus-group" data-detail="As a leader, the teacher acts as a director, coach, and supporter. They guide students through the learning process, motivate them to achieve their goals, and provide direction when students face challenges." style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
+            <li class="focus-group" data-detail="As a surrogate parent, the teacher provides a sense of security and emotional well-being to the students, especially younger learners. They create a safe space where students feel comfortable to learn and express themselves." style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security and emotional well-being.</li>
+            <li class="focus-group" data-detail="As a counselor, the teacher offers guidance for personal challenges that students may face. They help students navigate academic difficulties, social issues, and emotional problems, serving as a trusted advisor." style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges.</li>
+            <li class="focus-group" data-detail="As a model, the teacher serves as an exemplar for behavior and judgment. Students look up to their teachers and often emulate their actions, values, and attitudes. Teachers must therefore demonstrate integrity and professionalism." style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
+            <li class="focus-group" data-detail="As a public relations specialist, the teacher manages relationships with external stakeholders including parents, administrators, and the community. They communicate student progress and advocate for educational resources." style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages external stakeholders.</li>
+            <li class="focus-group" data-detail="As a facilitator and instructor, the teacher guides core instruction by designing lessons, presenting content, and facilitating discussions. They create opportunities for active learning and ensure all students can access the curriculum." style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction.</li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-tg1r0rc6a" 
-                 style="--cx: 20550px; --cy: -500px; --rot: -0.24550593735051063deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-qr9dwzqmi" 
+                 style="--cx: 20550px; --cy: -500px; --rot: 0.9528406155924403deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(12)">
+                <div class="tape"></div>
+                <div class="title-slide"><h2>What is the Learning Environment?</h2></div>
+            </div>
+            
+            <div class="card presenter-3  unrevealed" 
+                 id="slide-8am5rj78w" 
+                 style="--cx: 21450px; --cy: -500px; --rot: -1.1481029011210846deg; z-index: 11; background-color: #fef08a;"
+                 onclick="zoomToSlide(13)">
+                <div class="tape"></div>
+                <div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 1.5rem;">
+            <li class="focus-group" data-detail="The learning environment refers to the entire setting in which students learn. This includes not just the physical classroom space, but also the psychological atmosphere, the arrangement of furniture, the availability of learning materials, and the overall climate that affects how students feel and behave." style="margin-bottom: 1.2rem;">Refers to the classroom or surroundings where students learn.</li>
+            <li class="focus-group" data-detail="The learning environment is composed of multiple elements: teachers who guide instruction, classmates who contribute to collaborative learning, facilities such as libraries and laboratories, and the overall learning atmosphere including classroom culture and norms. All of these work together to shape the student experience." style="margin-bottom: 1.2rem;">Includes teachers, classmates, facilities, and learning atmosphere.</li>
+            <li class="focus-group" data-detail="Research shows that a positive learning environment significantly improves student outcomes. When students feel safe, respected, and engaged, their focus sharpens, their motivation increases, and their participation in classroom activities rises. Positive environments also reduce anxiety and promote risk-taking in learning." style="margin-bottom: 1.2rem;">A positive environment improves focus, motivation, and participation.</li>
+        </ul>
+    </div></div>
+            </div>
+            
+            <div class="card presenter-3  unrevealed" 
+                 id="slide-v3jcxhgnc" 
+                 style="--cx: 24050px; --cy: 500px; --rot: -0.4357314437906812deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(14)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Visual Learning Style</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-86j5dnqwd" 
-                 style="--cx: 21450px; --cy: -500px; --rot: -1.946397454938769deg; z-index: 11; background-color: #fbcfe8;"
-                 onclick="zoomToSlide(13)">
+                 id="slide-4piur3ogx" 
+                 style="--cx: 24950px; --cy: 500px; --rot: -0.007576858432238431deg; z-index: 11; background-color: #fbcfe8;"
+                 onclick="zoomToSlide(15)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns by seeing (pictures, charts, diagrams).</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Fast talkers, easily visualize ideas.</li>
+            <li class="focus-group" data-detail="Visual learners learn best by seeing information presented in pictures, charts, diagrams, maps, and other visual formats. They tend to think in images and can easily visualize concepts. They prefer to see the teacher's body language and facial expression to fully understand the content of a lesson. They may prefer to sit at the front of the classroom." style="margin-bottom: 1.5rem;">Learns by seeing (pictures, charts, diagrams).</li>
+            <li class="focus-group" data-detail="Visual learners are often fast talkers who can easily create mental images. They remember faces rather than names, and they are good at spelling because they can visualize words. They tend to doodle during lectures and prefer reading over being read to." style="margin-bottom: 1.5rem;">Fast talkers, easily visualize ideas.</li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-cxh954he4" 
-                 style="--cx: 24050px; --cy: 500px; --rot: -1.4723633175932176deg; z-index: 10; background-color: #fdfdfd;"
-                 onclick="zoomToSlide(14)">
+                 id="slide-29k9t2swr" 
+                 style="--cx: 27550px; --cy: -500px; --rot: 0.5184253355458033deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(16)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Aural Learning Style</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-dgpmkdauf" 
-                 style="--cx: 24950px; --cy: 500px; --rot: 0.537635566219127deg; z-index: 11; background-color: #fef08a;"
-                 onclick="zoomToSlide(15)">
+                 id="slide-oqzupuhie" 
+                 style="--cx: 28450px; --cy: -500px; --rot: 0.6798107422389057deg; z-index: 11; background-color: #bbf7d0;"
+                 onclick="zoomToSlide(17)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns by hearing (lectures, discussions).</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Natural listeners, slow speakers.</li>
+            <li class="focus-group" data-detail="Aural or auditory learners learn best through listening. They prefer lectures, discussions, and talking things through. They remember information by hearing it spoken aloud and may repeat facts to themselves. They often enjoy music and can detect changes in tone of voice." style="margin-bottom: 1.5rem;">Learns by hearing (lectures, discussions).</li>
+            <li class="focus-group" data-detail="Aural learners are natural listeners who tend to speak more slowly and deliberately. They process information through sound and can often remember details from conversations. They may hum or talk to themselves when bored and prefer verbal instructions over written ones." style="margin-bottom: 1.5rem;">Natural listeners, slow speakers.</li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-u8dromolh" 
-                 style="--cx: 27550px; --cy: -500px; --rot: -0.6134639474252048deg; z-index: 10; background-color: #fdfdfd;"
-                 onclick="zoomToSlide(16)">
+                 id="slide-x1rhrzx87" 
+                 style="--cx: 31050px; --cy: 500px; --rot: 0.9434069223873265deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(18)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Read/Write Learning Style</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-4cdgw7wlv" 
-                 style="--cx: 28450px; --cy: -500px; --rot: -0.7716766814029761deg; z-index: 11; background-color: #bbf7d0;"
-                 onclick="zoomToSlide(17)">
+                 id="slide-5m3zwpuvz" 
+                 style="--cx: 31950px; --cy: 500px; --rot: 1.5052318418711281deg; z-index: 11; background-color: #bfdbfe;"
+                 onclick="zoomToSlide(19)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Prefers written text.</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Enjoys reading and writing extensively.</li>
+            <li class="focus-group" data-detail="Read/Write learners prefer information displayed as words. They perform best when they can read textbooks, handouts, or notes. They learn through writing essays, reports, and lists. They are drawn to dictionaries, encyclopedias, and any text-based resource." style="margin-bottom: 1.5rem;">Prefers written text.</li>
+            <li class="focus-group" data-detail="Read/Write learners enjoy reading and writing extensively. They take detailed notes during lectures, rewrite their notes to study, and benefit from making lists and organizing information in written form. They tend to be strong essayists and note-takers." style="margin-bottom: 1.5rem;">Enjoys reading and writing extensively.</li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-k9id0ijuq" 
-                 style="--cx: 31050px; --cy: 500px; --rot: -0.15561896530911357deg; z-index: 10; background-color: #fdfdfd;"
-                 onclick="zoomToSlide(18)">
+                 id="slide-yjtermine" 
+                 style="--cx: 34550px; --cy: -500px; --rot: -0.3903445094927398deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(20)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Kinesthetic Learning Style</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-nhlxomdja" 
-                 style="--cx: 31950px; --cy: 500px; --rot: 0.8354246874881395deg; z-index: 11; background-color: #bfdbfe;"
-                 onclick="zoomToSlide(19)">
+                 id="slide-763d1d6ju" 
+                 style="--cx: 35450px; --cy: -500px; --rot: 0.6755858295191626deg; z-index: 11; background-color: #fbcfe8;"
+                 onclick="zoomToSlide(21)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Learns through hands-on approaches (trial and error).</li>
-            <li class="focus-group" style="margin-bottom: 1.5rem;">Uses all senses to engage in learning.</li>
+            <li class="focus-group" data-detail="Kinesthetic learners learn best through hands-on approaches and physical activity. They prefer trial and error, experiments, and real-world applications. They struggle to sit still for long periods and learn best when they can move around, touch things, and actively participate." style="margin-bottom: 1.5rem;">Learns through hands-on approaches (trial and error).</li>
+            <li class="focus-group" data-detail="Kinesthetic learners use all their senses to engage in the learning process. They benefit from field trips, lab experiments, role-playing, and building models. They often express themselves through body movement and may fidget during passive activities like lectures." style="margin-bottom: 1.5rem;">Uses all senses to engage in learning.</li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-4  unrevealed" 
-                 id="slide-ksxz2x5lx" 
-                 style="--cx: 34550px; --cy: -500px; --rot: 0.14105238482212767deg; z-index: 10; background-color: #fdfdfd;"
-                 onclick="zoomToSlide(20)">
+                 id="slide-cw8zj29nc" 
+                 style="--cx: 38050px; --cy: 500px; --rot: -0.576626972988572deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(22)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Multiple Intelligences Part 1</h2></div>
             </div>
             
             <div class="card presenter-4  unrevealed" 
-                 id="slide-pu5qjjm70" 
-                 style="--cx: 35450px; --cy: -500px; --rot: -0.9122068994992847deg; z-index: 11; background-color: #fbcfe8;"
-                 onclick="zoomToSlide(21)">
+                 id="slide-rtgksqc2g" 
+                 style="--cx: 38950px; --cy: 500px; --rot: -1.7370806318389018deg; z-index: 11; background-color: #fbcfe8;"
+                 onclick="zoomToSlide(23)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
+            <li class="focus-group" data-detail="Spatial Intelligence (Picture Smart): People with this intelligence think in three-dimensional images. They are good at puzzles, reading maps, and daydreaming. They often enjoy drawing, painting, and visual arts. Architects, pilots, and sculptors typically have high spatial intelligence." style="margin-bottom: 1rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
+            <li class="focus-group" data-detail="Musical Intelligence (Music Smart): This intelligence involves sensitivity to rhythm, pitch, meter, tone, melody, and timbre. People with high musical intelligence may enjoy singing, playing instruments, and composing music. They learn well through songs and rhythmic patterns." style="margin-bottom: 1rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
+            <li class="focus-group" data-detail="Linguistic Intelligence (Word Smart): People with this intelligence have a strong ability to use words effectively, both in writing and speaking. They enjoy reading, writing stories, and playing word games. Poets, journalists, and writers typically have high linguistic intelligence." style="margin-bottom: 1rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
+            <li class="focus-group" data-detail="Bodily-Kinesthetic Intelligence (Body Smart): This intelligence involves good body control and fine motor skills. People with this intelligence learn best through physical activity and movement. Athletes, dancers, surgeons, and craftspeople typically have high bodily-kinesthetic intelligence." style="margin-bottom: 1rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-4  unrevealed" 
-                 id="slide-xm5ma0p36" 
-                 style="--cx: 38050px; --cy: 500px; --rot: -1.0917325192709249deg; z-index: 10; background-color: #fdfdfd;"
-                 onclick="zoomToSlide(22)">
+                 id="slide-b7eaf55qw" 
+                 style="--cx: 41550px; --cy: -500px; --rot: -0.23250616558938564deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(24)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Multiple Intelligences Part 2</h2></div>
             </div>
             
             <div class="card presenter-4  unrevealed" 
-                 id="slide-8ba3jlx0h" 
-                 style="--cx: 38950px; --cy: 500px; --rot: -0.2502493555312264deg; z-index: 11; background-color: #fef08a;"
-                 onclick="zoomToSlide(23)">
+                 id="slide-oewyketqg" 
+                 style="--cx: 42450px; --cy: -500px; --rot: 1.4361866568368353deg; z-index: 11; background-color: #fef08a;"
+                 onclick="zoomToSlide(25)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
+            <li class="focus-group" data-detail="Logical-Mathematical Intelligence (Number Smart): This intelligence involves the ability to reason, calculate, and think logically. People with this intelligence excel at science and mathematics, and enjoy strategy games, puzzles, and experiments. Scientists, mathematicians, and programmers typically have high logical-mathematical intelligence." style="margin-bottom: 1rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
+            <li class="focus-group" data-detail="Interpersonal Intelligence (People Smart): This intelligence involves the ability to understand and interact effectively with others. People with this intelligence thrive in group settings and are good at communicating, empathizing, and resolving conflicts. Teachers, social workers, and politicians typically have high interpersonal intelligence." style="margin-bottom: 1rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
+            <li class="focus-group" data-detail="Intrapersonal Intelligence (Self-Smart): This intelligence involves the capacity to understand oneself deeply — your own feelings, motivations, and inner state. People with this intelligence are introspective and independent learners. They prefer working alone and are skilled at self-reflection. Philosophers, psychologists, and spiritual leaders often have high intrapersonal intelligence." style="margin-bottom: 1rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
+            <li class="focus-group" data-detail="Naturalist Intelligence (Nature Smart): This intelligence involves the ability to understand and relate to the natural world — recognizing patterns in nature, classifying plants and animals, and being sensitive to environmental changes. Farmers, botanists, and ecologists typically have high naturalist intelligence." style="margin-bottom: 1rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-5  unrevealed" 
-                 id="slide-sje0zlfxs" 
-                 style="--cx: 41550px; --cy: -500px; --rot: 0.408084302709558deg; z-index: 10; background-color: #fdfdfd;"
-                 onclick="zoomToSlide(24)">
+                 id="slide-9nrg9irr8" 
+                 style="--cx: 45050px; --cy: 500px; --rot: 1.3318205804985812deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(26)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Thorndike's Laws of Learning</h2></div>
             </div>
             
             <div class="card presenter-5  unrevealed" 
-                 id="slide-kiddknqkm" 
-                 style="--cx: 42450px; --cy: -500px; --rot: 1.3354321132802953deg; z-index: 11; background-color: #bbf7d0;"
-                 onclick="zoomToSlide(25)">
+                 id="slide-guqxfas2r" 
+                 style="--cx: 45950px; --cy: 500px; --rot: -1.8598570708497206deg; z-index: 11; background-color: #bbf7d0;"
+                 onclick="zoomToSlide(27)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; gap:10px;">
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" data-detail="The Law of Readiness (The 'Get Ready' Rule): Learning starts with your mindset. When you are mentally prepared and genuinely motivated to learn, the entire process feels natural and rewarding. However, if you are forced to learn something when you are tired, distracted, or unwilling, the experience becomes frustrating and ineffective. Simply put, you have to be 'in the zone' to make learning stick." style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_2.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Readiness:</strong> Learning starts with a prepared mindset; forced learning fails.</p>
         </div>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" data-detail="The Law of Exercise (The 'Practice Makes Improvement' Rule): This law is all about the power of repetition. The more you practice something, the stronger the connections in your brain become, making the skill easier and more automatic. On the other hand, if you stop practicing, those connections weaken — like a skill that rusts from lack of use." style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_3.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Exercise:</strong> Repetition strengthens brain connections; lack of use causes rust.</p>
         </div>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px;">
+        <div class="focus-group" data-detail="The Law of Effect (The 'Repeat What Wins' Rule): This law tells us that actions followed by satisfying outcomes tend to be repeated, while those followed by discomfort are avoided. Think about it: when you study hard and get a great grade, you feel motivated to study again. But when a method leads to failure, you naturally look for a different approach." style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_4.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Effect:</strong> We repeat actions that lead to rewards and avoid those that lead to failure.</p>
         </div>
         <ul style="font-size: 1.3rem; margin-top: 0.5rem; margin-left: 1.5rem;">
-            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Belongingness:</strong> Learning is faster and stronger when the learner perceives a natural connection between stimuli involved.</li>
-            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Intensity:</strong> An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one.</li>
-            <li class="focus-group" style="margin-bottom: 0.5rem;"><strong>Law of Forgetting:</strong> Skills and knowledge that are not used or reviewed over time gradually fade from memory.</li>
+            <li class="focus-group" data-detail="Law of Belongingness (Natural Association of Stimuli): Learning is faster and stronger when the learner perceives a natural connection or relationship between the stimuli involved. When content feels relevant and connected to what the learner already knows or cares about, it is absorbed more easily and retained longer. This is why contextualized and meaningful learning experiences outperform rote memorization." style="margin-bottom: 0.5rem;"><strong>Law of Belongingness:</strong> Learning is faster and stronger when the learner perceives a natural connection between stimuli involved.</li>
+            <li class="focus-group" data-detail="Law of Intensity (Strength of Experience): An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one. A dramatic demonstration, a real-world field trip, or an emotionally engaging story will leave a lasting impression compared to a monotone lecture. The more intense and multi-sensory the experience, the deeper the learning." style="margin-bottom: 0.5rem;"><strong>Law of Intensity:</strong> An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one.</li>
+            <li class="focus-group" data-detail="Law of Forgetting (Memory Linked to Usage): Skills and knowledge that are not used or reviewed over time gradually fade from memory. This aligns with Ebbinghaus's forgetting curve — without periodic review and reinforcement, learned material decays. Regular practice, spaced repetition, and active recall are essential strategies to combat forgetting." style="margin-bottom: 0.5rem;"><strong>Law of Forgetting:</strong> Skills and knowledge that are not used or reviewed over time gradually fade from memory.</li>
         </ul>
     </div></div>
             </div>
             
             <div class="card presenter-6  unrevealed" 
-                 id="slide-yb3lwv846" 
-                 style="--cx: 45050px; --cy: 500px; --rot: 1.070592664044093deg; z-index: 10; background-color: #fdfdfd;"
-                 onclick="zoomToSlide(26)">
+                 id="slide-zl84kcpvp" 
+                 style="--cx: 48550px; --cy: -500px; --rot: 1.4221496707794046deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(28)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Other Learning Theories Part 1</h2></div>
             </div>
             
             <div class="card presenter-6  unrevealed" 
-                 id="slide-5bn8l8jnq" 
-                 style="--cx: 45950px; --cy: 500px; --rot: 0.1494160560307587deg; z-index: 11; background-color: #bfdbfe;"
-                 onclick="zoomToSlide(27)">
+                 id="slide-b3p3lobg6" 
+                 style="--cx: 49450px; --cy: -500px; --rot: -0.08479229839438762deg; z-index: 11; background-color: #bfdbfe;"
+                 onclick="zoomToSlide(29)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" data-detail="Operant Conditioning was developed by B.F. Skinner. It is a method of learning that uses rewards and punishments to modify behavior. Through operant conditioning, an individual makes an association between a particular behavior and a consequence. There are two types of reinforcers: Primary (food, water — biological needs) and Secondary (money, praise — learned values). The theory also includes Escape Learning (learning to stop an unpleasant stimulus) and Avoidance Learning (learning to prevent an unpleasant stimulus from occurring)." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_5.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Operant Conditioning:</strong> Learning through rewards and consequences.</p>
         </div>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" data-detail="The Cognitive Perspective is a theory of learning that focuses on the mental processes involved in acquiring knowledge. Unlike behaviorism, which emphasizes observable behavior, the cognitive perspective explains that learning occurs through internal mental activities such as thinking, remembering, reasoning, problem-solving, decision-making, understanding, and perception. Cognitive psychologists believe that the human mind functions much like a computer — receiving, processing, storing, and retrieving information." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_6.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Cognitive Perspective:</strong> Learning is an internal mental activity. Mind works like a computer.</p>
         </div>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+        <div class="focus-group" data-detail="Gestalt Theory proposes that people naturally perceive objects as organized, complete wholes rather than isolated parts. The famous phrase associated with this theory is 'The whole is greater than the sum of its parts.' Gestalt psychologists identified key principles of perception including proximity, similarity, continuity, and closure. In education, this means learners understand concepts better when they see the big picture first before breaking it down into details." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
             <img src="images/img_7.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Gestalt Theory:</strong> People perceive objects as complete wholes.</p>
         </div>
@@ -731,23 +768,23 @@
             </div>
             
             <div class="card presenter-6  unrevealed" 
-                 id="slide-qxcxtlyzp" 
-                 style="--cx: 48550px; --cy: -500px; --rot: -0.15612418486119806deg; z-index: 10; background-color: #fdfdfd;"
-                 onclick="zoomToSlide(28)">
+                 id="slide-crqk6zda6" 
+                 style="--cx: 52050px; --cy: 500px; --rot: -1.9491650409258114deg; z-index: 10; background-color: #fdfdfd;"
+                 onclick="zoomToSlide(30)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Other Learning Theories Part 2</h2></div>
             </div>
             
             <div class="card presenter-6  unrevealed" 
-                 id="slide-tugwfzdgi" 
-                 style="--cx: 49450px; --cy: -500px; --rot: -0.02121281398253716deg; z-index: 11; background-color: #fbcfe8;"
-                 onclick="zoomToSlide(29)">
+                 id="slide-uojbw6nl0" 
+                 style="--cx: 52950px; --cy: 500px; --rot: 1.7102811721206828deg; z-index: 11; background-color: #fbcfe8;"
+                 onclick="zoomToSlide(31)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.4rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li class="focus-group" style="margin-bottom: 1rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
+            <li class="focus-group" data-detail="Field Theory was developed by Kurt Lewin. This theory explains that learning and behavior are influenced by both the individual and the environment. Lewin believed that behavior cannot be explained by personal characteristics alone because the environment also plays a significant role. His formula B = f(P, E) means Behavior is a function of the Person and the Environment. A positive and supportive environment can significantly improve a student's performance, motivation, and attitude toward learning." style="margin-bottom: 1rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
         </ul>
-        <div class="focus-group" style="display:flex; align-items:center; gap: 15px; margin-top: 1.5rem;">
+        <div class="focus-group" data-detail="Intelligence Theories explore how intelligence is defined and measured. Alfred Binet believed intelligence is the ability to reason, judge, and comprehend — and importantly, that it can be improved through education and training. Charles Spearman introduced the Theory of General Intelligence (g-factor Theory). He believed every person possesses one general mental ability called the g-factor, which influences performance across many different intellectual tasks. He also proposed the s-factor for specific, unique talents in individual areas." style="display:flex; align-items:center; gap: 15px; margin-top: 1.5rem;">
             <img src="images/img_8.png" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Intelligence Theories:</strong><br><em>Alfred Binet:</em> Intelligence is reasoning, can improve.<br><em>Charles Spearman:</em> Proposed "g-factor" and "s-factor".</p>
         </div>
@@ -755,17 +792,17 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-tzxtiyjxt" 
-                 style="--cx: 51600px; --cy: 500px; --rot: 0.38058498686569475deg; z-index: 10; background-color: transparent;"
-                 onclick="zoomToSlide(30)">
+                 id="slide-o9pnd54ao" 
+                 style="--cx: 55100px; --cy: -500px; --rot: 0.42210743802137474deg; z-index: 10; background-color: transparent;"
+                 onclick="zoomToSlide(32)">
                 
                 <div class="title-slide chalk-board-quiz"><h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Assessment</h2><p style="color: rgba(255,255,255,0.8); font-size: 1.5rem; font-family: 'Kalam', cursive;">Let's review what we've learned!</p></div>
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-3zx7sqwjd" 
-                 style="--cx: 52500px; --cy: 500px; --rot: -0.19762488147818225deg; z-index: 11; background-color: transparent;"
-                 onclick="zoomToSlide(31)">
+                 id="slide-9y3yp3m1o" 
+                 style="--cx: 56000px; --cy: -500px; --rot: -1.5154717388484173deg; z-index: 11; background-color: transparent;"
+                 onclick="zoomToSlide(33)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
             <h2 style="color: white; font-family: 'Kalam', cursive; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Question 1</h2>
@@ -778,9 +815,9 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-vx1uu2thy" 
-                 style="--cx: 53400px; --cy: 500px; --rot: 1.5911813058483952deg; z-index: 12; background-color: transparent;"
-                 onclick="zoomToSlide(32)">
+                 id="slide-k54l0nk4k" 
+                 style="--cx: 56900px; --cy: -500px; --rot: 0.42230182705634434deg; z-index: 12; background-color: transparent;"
+                 onclick="zoomToSlide(34)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
             <h2 style="color: white; font-family: 'Kalam', cursive; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Question 2</h2>
@@ -793,9 +830,9 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-y56h4xabr" 
-                 style="--cx: 51600px; --cy: 1250px; --rot: 1.86554259418837deg; z-index: 13; background-color: transparent;"
-                 onclick="zoomToSlide(33)">
+                 id="slide-w4yplozbv" 
+                 style="--cx: 55100px; --cy: 250px; --rot: -1.9670002346932232deg; z-index: 13; background-color: transparent;"
+                 onclick="zoomToSlide(35)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
             <h2 style="color: white; font-family: 'Kalam', cursive; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Question 3</h2>
@@ -808,9 +845,9 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-ki35s9y3f" 
-                 style="--cx: 52500px; --cy: 1250px; --rot: 1.8950547798921327deg; z-index: 14; background-color: transparent;"
-                 onclick="zoomToSlide(34)">
+                 id="slide-bq6352ni0" 
+                 style="--cx: 56000px; --cy: 250px; --rot: 1.5355241212246051deg; z-index: 14; background-color: transparent;"
+                 onclick="zoomToSlide(36)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
             <h2 style="color: white; font-family: 'Kalam', cursive; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Question 4</h2>
@@ -823,9 +860,9 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-c8kl1buh7" 
-                 style="--cx: 53400px; --cy: 1250px; --rot: 1.1506370446409644deg; z-index: 15; background-color: transparent;"
-                 onclick="zoomToSlide(35)">
+                 id="slide-mxzb6bxz6" 
+                 style="--cx: 56900px; --cy: 250px; --rot: 1.2620192479676446deg; z-index: 15; background-color: transparent;"
+                 onclick="zoomToSlide(37)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
             <h2 style="color: white; font-family: 'Kalam', cursive; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Question 5</h2>
@@ -838,9 +875,9 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-nfg4ytyhp" 
-                 style="--cx: 56000px; --cy: -500px; --rot: 1.2621712091780597deg; z-index: 10; background-color: #fef08a;"
-                 onclick="zoomToSlide(36)">
+                 id="slide-kivv4iyff" 
+                 style="--cx: 59500px; --cy: 500px; --rot: -1.0035266629071211deg; z-index: 10; background-color: #fef08a;"
+                 onclick="zoomToSlide(38)">
                 <div class="tape"></div>
                 <div class="content-slide" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
         <div class="focus-group" style="text-align: center;">
@@ -870,7 +907,7 @@
         const topBar = document.getElementById('topBar');
         const focusModal = document.getElementById('focusModal');
         
-        const slidesData = [{"id":"slide-6euaz5vqh","x":0,"y":-500,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":0},{"id":"slide-p08b5519o","x":120,"y":-420,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":1},{"id":"slide-38nctfn3l","x":240,"y":-340,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":2},{"id":"slide-7aayj8e9u","x":360,"y":-260,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":3},{"id":"slide-rw4eqbrio","x":3500,"y":500,"title":"Motivation","clusterTitle":"Motivation","indexInCluster":0},{"id":"slide-6cadv4yir","x":7000,"y":-500,"title":"Recap","clusterTitle":"Recap","indexInCluster":0},{"id":"slide-wvfogofsi","x":10050,"y":500,"title":"Objectives","clusterTitle":"Objectives","indexInCluster":0},{"id":"slide-v75qkn9oa","x":10950,"y":500,"title":"Objectives","clusterTitle":"Objectives","indexInCluster":1},{"id":"slide-qeitpvhn0","x":13550,"y":-500,"title":"The Teaching-Learning Process","clusterTitle":"The Teaching-Learning Process","indexInCluster":0},{"id":"slide-yy87wtwi5","x":14450,"y":-500,"title":"The Teaching-Learning Process","clusterTitle":"The Teaching-Learning Process","indexInCluster":1},{"id":"slide-wmsa5g2qw","x":17050,"y":500,"title":"Roles of the Teacher","clusterTitle":"Roles of the Teacher","indexInCluster":0},{"id":"slide-ook8dvp9y","x":17950,"y":500,"title":"Roles of the Teacher","clusterTitle":"Roles of the Teacher","indexInCluster":1},{"id":"slide-tg1r0rc6a","x":20550,"y":-500,"title":"Visual Learning Style","clusterTitle":"Visual Learning Style","indexInCluster":0},{"id":"slide-86j5dnqwd","x":21450,"y":-500,"title":"Visual Learning Style","clusterTitle":"Visual Learning Style","indexInCluster":1},{"id":"slide-cxh954he4","x":24050,"y":500,"title":"Aural Learning Style","clusterTitle":"Aural Learning Style","indexInCluster":0},{"id":"slide-dgpmkdauf","x":24950,"y":500,"title":"Aural Learning Style","clusterTitle":"Aural Learning Style","indexInCluster":1},{"id":"slide-u8dromolh","x":27550,"y":-500,"title":"Read/Write Learning Style","clusterTitle":"Read/Write Learning Style","indexInCluster":0},{"id":"slide-4cdgw7wlv","x":28450,"y":-500,"title":"Read/Write Learning Style","clusterTitle":"Read/Write Learning Style","indexInCluster":1},{"id":"slide-k9id0ijuq","x":31050,"y":500,"title":"Kinesthetic Learning Style","clusterTitle":"Kinesthetic Learning Style","indexInCluster":0},{"id":"slide-nhlxomdja","x":31950,"y":500,"title":"Kinesthetic Learning Style","clusterTitle":"Kinesthetic Learning Style","indexInCluster":1},{"id":"slide-ksxz2x5lx","x":34550,"y":-500,"title":"Multiple Intelligences Part 1","clusterTitle":"Multiple Intelligences Part 1","indexInCluster":0},{"id":"slide-pu5qjjm70","x":35450,"y":-500,"title":"Multiple Intelligences Part 1","clusterTitle":"Multiple Intelligences Part 1","indexInCluster":1},{"id":"slide-xm5ma0p36","x":38050,"y":500,"title":"Multiple Intelligences Part 2","clusterTitle":"Multiple Intelligences Part 2","indexInCluster":0},{"id":"slide-8ba3jlx0h","x":38950,"y":500,"title":"Multiple Intelligences Part 2","clusterTitle":"Multiple Intelligences Part 2","indexInCluster":1},{"id":"slide-sje0zlfxs","x":41550,"y":-500,"title":"Thorndike's Laws of Learning","clusterTitle":"Thorndike's Laws of Learning","indexInCluster":0},{"id":"slide-kiddknqkm","x":42450,"y":-500,"title":"Thorndike's Laws of Learning","clusterTitle":"Thorndike's Laws of Learning","indexInCluster":1},{"id":"slide-yb3lwv846","x":45050,"y":500,"title":"Other Learning Theories Part 1","clusterTitle":"Other Learning Theories Part 1","indexInCluster":0},{"id":"slide-5bn8l8jnq","x":45950,"y":500,"title":"Other Learning Theories Part 1","clusterTitle":"Other Learning Theories Part 1","indexInCluster":1},{"id":"slide-qxcxtlyzp","x":48550,"y":-500,"title":"Other Learning Theories Part 2","clusterTitle":"Other Learning Theories Part 2","indexInCluster":0},{"id":"slide-tugwfzdgi","x":49450,"y":-500,"title":"Other Learning Theories Part 2","clusterTitle":"Other Learning Theories Part 2","indexInCluster":1},{"id":"slide-tzxtiyjxt","x":51600,"y":500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":0},{"id":"slide-3zx7sqwjd","x":52500,"y":500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":1},{"id":"slide-vx1uu2thy","x":53400,"y":500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":2},{"id":"slide-y56h4xabr","x":51600,"y":1250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":3},{"id":"slide-ki35s9y3f","x":52500,"y":1250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":4},{"id":"slide-c8kl1buh7","x":53400,"y":1250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":5},{"id":"slide-nfg4ytyhp","x":56000,"y":-500,"title":"Bible Verse","clusterTitle":"Bible Verse","indexInCluster":0}];
+        const slidesData = [{"id":"slide-bycoi8090","x":0,"y":-500,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":0},{"id":"slide-dneqokhlp","x":120,"y":-420,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":1},{"id":"slide-gmgb0zg27","x":240,"y":-340,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":2},{"id":"slide-f1eb2ob4f","x":360,"y":-260,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":3},{"id":"slide-1blq0065a","x":3500,"y":500,"title":"Motivation","clusterTitle":"Motivation","indexInCluster":0},{"id":"slide-ka5ohdmap","x":7000,"y":-500,"title":"Recap","clusterTitle":"Recap","indexInCluster":0},{"id":"slide-6rumkqg6o","x":10050,"y":500,"title":"Objectives","clusterTitle":"Objectives","indexInCluster":0},{"id":"slide-y562z4s96","x":10950,"y":500,"title":"Objectives","clusterTitle":"Objectives","indexInCluster":1},{"id":"slide-h50k1zh6j","x":13550,"y":-500,"title":"The Teaching-Learning Process","clusterTitle":"The Teaching-Learning Process","indexInCluster":0},{"id":"slide-ybx62wgk6","x":14450,"y":-500,"title":"The Teaching-Learning Process","clusterTitle":"The Teaching-Learning Process","indexInCluster":1},{"id":"slide-39lufho1t","x":17050,"y":500,"title":"Roles of the Teacher","clusterTitle":"Roles of the Teacher","indexInCluster":0},{"id":"slide-v3nja0nmf","x":17950,"y":500,"title":"Roles of the Teacher","clusterTitle":"Roles of the Teacher","indexInCluster":1},{"id":"slide-qr9dwzqmi","x":20550,"y":-500,"title":"The Learning Environment","clusterTitle":"The Learning Environment","indexInCluster":0},{"id":"slide-8am5rj78w","x":21450,"y":-500,"title":"The Learning Environment","clusterTitle":"The Learning Environment","indexInCluster":1},{"id":"slide-v3jcxhgnc","x":24050,"y":500,"title":"Visual Learning Style","clusterTitle":"Visual Learning Style","indexInCluster":0},{"id":"slide-4piur3ogx","x":24950,"y":500,"title":"Visual Learning Style","clusterTitle":"Visual Learning Style","indexInCluster":1},{"id":"slide-29k9t2swr","x":27550,"y":-500,"title":"Aural Learning Style","clusterTitle":"Aural Learning Style","indexInCluster":0},{"id":"slide-oqzupuhie","x":28450,"y":-500,"title":"Aural Learning Style","clusterTitle":"Aural Learning Style","indexInCluster":1},{"id":"slide-x1rhrzx87","x":31050,"y":500,"title":"Read/Write Learning Style","clusterTitle":"Read/Write Learning Style","indexInCluster":0},{"id":"slide-5m3zwpuvz","x":31950,"y":500,"title":"Read/Write Learning Style","clusterTitle":"Read/Write Learning Style","indexInCluster":1},{"id":"slide-yjtermine","x":34550,"y":-500,"title":"Kinesthetic Learning Style","clusterTitle":"Kinesthetic Learning Style","indexInCluster":0},{"id":"slide-763d1d6ju","x":35450,"y":-500,"title":"Kinesthetic Learning Style","clusterTitle":"Kinesthetic Learning Style","indexInCluster":1},{"id":"slide-cw8zj29nc","x":38050,"y":500,"title":"Multiple Intelligences Part 1","clusterTitle":"Multiple Intelligences Part 1","indexInCluster":0},{"id":"slide-rtgksqc2g","x":38950,"y":500,"title":"Multiple Intelligences Part 1","clusterTitle":"Multiple Intelligences Part 1","indexInCluster":1},{"id":"slide-b7eaf55qw","x":41550,"y":-500,"title":"Multiple Intelligences Part 2","clusterTitle":"Multiple Intelligences Part 2","indexInCluster":0},{"id":"slide-oewyketqg","x":42450,"y":-500,"title":"Multiple Intelligences Part 2","clusterTitle":"Multiple Intelligences Part 2","indexInCluster":1},{"id":"slide-9nrg9irr8","x":45050,"y":500,"title":"Thorndike's Laws of Learning","clusterTitle":"Thorndike's Laws of Learning","indexInCluster":0},{"id":"slide-guqxfas2r","x":45950,"y":500,"title":"Thorndike's Laws of Learning","clusterTitle":"Thorndike's Laws of Learning","indexInCluster":1},{"id":"slide-zl84kcpvp","x":48550,"y":-500,"title":"Other Learning Theories Part 1","clusterTitle":"Other Learning Theories Part 1","indexInCluster":0},{"id":"slide-b3p3lobg6","x":49450,"y":-500,"title":"Other Learning Theories Part 1","clusterTitle":"Other Learning Theories Part 1","indexInCluster":1},{"id":"slide-crqk6zda6","x":52050,"y":500,"title":"Other Learning Theories Part 2","clusterTitle":"Other Learning Theories Part 2","indexInCluster":0},{"id":"slide-uojbw6nl0","x":52950,"y":500,"title":"Other Learning Theories Part 2","clusterTitle":"Other Learning Theories Part 2","indexInCluster":1},{"id":"slide-o9pnd54ao","x":55100,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":0},{"id":"slide-9y3yp3m1o","x":56000,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":1},{"id":"slide-k54l0nk4k","x":56900,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":2},{"id":"slide-w4yplozbv","x":55100,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":3},{"id":"slide-bq6352ni0","x":56000,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":4},{"id":"slide-mxzb6bxz6","x":56900,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":5},{"id":"slide-kivv4iyff","x":59500,"y":500,"title":"Bible Verse","clusterTitle":"Bible Verse","indexInCluster":0}];
         
         let state = 'TITLE'; // TITLE, OVERVIEW, SLIDE
         let currentIndex = -1;
@@ -1030,7 +1067,7 @@
                 
                 if (imgInBlock) {
                     imgHtml = imgInBlock.outerHTML;
-                    imgInBlock.remove(); // Remove it from the text content!
+                    imgInBlock.remove();
                 } else {
                     const imgInCard = card.querySelector('img');
                     if (imgInCard) {
@@ -1038,15 +1075,37 @@
                     }
                 }
                 
-                // If it's the title slide h2, just show it directly
                 const contentHtml = tempBlock.classList.contains('focus-group') ? tempBlock.innerHTML : tempBlock.outerHTML;
+                const detailText = targetBlock.getAttribute('data-detail');
+
+                let boardInner = '';
+                if (detailText) {
+                    boardInner = `
+                        <div class="flip-scene" style="flex: 1; min-height: 0;">
+                            <div class="flip-card" id="activeFlipCard">
+                                <div class="flip-face">
+                                    <span class="flip-label front-label">Summary</span>
+                                    <div class="tape"></div>${headingHtml}<div class="focus-content">${contentHtml}</div>
+                                    <button class="flip-btn" onclick="event.stopPropagation(); document.getElementById('activeFlipCard').classList.add('flipped');">Flip for Details ↻</button>
+                                </div>
+                                <div class="flip-face flip-back">
+                                    <span class="flip-label back-label">Detailed</span>
+                                    <div class="tape"></div>${headingHtml}<div class="focus-content" style="font-size: 1.5rem; line-height: 1.9;">${detailText}</div>
+                                    <button class="flip-btn on-back" onclick="event.stopPropagation(); document.getElementById('activeFlipCard').classList.remove('flipped');">Back to Summary ↻</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    boardInner = `<div class="tape"></div>${headingHtml}<div class="focus-content">${contentHtml}</div>`;
+                }
 
                 let focusLayout = '';
                 if (imgHtml) {
                     focusLayout = `
                         <div class="focus-layout" style="display: flex; gap: 40px; align-items: stretch; justify-content: center; max-width: 95vw; max-height: 90vh;" onclick="event.stopPropagation()">
                             <div class="focus-board" style="flex: 1; min-width: 600px; max-width: 800px; max-height: 90vh; overflow-y: auto; transform: scale(1) translateY(0); margin: 0;">
-                                <div class="tape"></div>${headingHtml}<div class="focus-content">${contentHtml}</div>
+                                ${boardInner}
                             </div>
                             <div class="focus-image-frame" style="flex: 1; max-width: 900px; display: flex; align-items: center; justify-content: center; background: #fff; padding: 20px; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.05) 31px, rgba(0,0,0,0.05) 32px); background-position: 0 30px;">
                                 ${imgHtml}
@@ -1056,7 +1115,7 @@
                 } else {
                     focusLayout = `
                         <div class="focus-board" onclick="event.stopPropagation()">
-                            <div class="tape"></div>${headingHtml}<div class="focus-content">${contentHtml}</div>
+                            ${boardInner}
                         </div>
                     `;
                 }
