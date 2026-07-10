@@ -676,6 +676,9 @@ async function buildHtml() {
             if (state !== 'SLIDE') return;
             
             if (e.target.tagName === 'IMG') {
+                const card = e.target.closest('.card');
+                if (card && card.id !== slidesData[currentIndex].id) return;
+                
                 e.stopPropagation();
                 focusModal.innerHTML = \`<img src="\${e.target.src}" style="max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 12px; box-shadow: 0 30px 60px rgba(0,0,0,0.6); transform: scale(0.8) translateY(50px); transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);" class="lightbox-img" onclick="event.stopPropagation()">\`;
                 focusModal.classList.add('visible');
@@ -685,8 +688,10 @@ async function buildHtml() {
 
             const targetBlock = e.target.closest('.focus-group, .title-slide h2');
             if (targetBlock) {
-                e.stopPropagation();
                 const card = targetBlock.closest('.card');
+                if (card && card.id !== slidesData[currentIndex].id) return;
+
+                e.stopPropagation();
                 
                 let headingHtml = '';
                 const mainHeading = card.querySelector('h2');
