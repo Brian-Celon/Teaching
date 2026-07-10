@@ -449,8 +449,11 @@ async function buildHtml() {
             #titleOverlay h2 { font-size: 1.5rem; }
 
             .top-bar { top: 10px; left: 10px; padding: 6px 14px; font-size: 0.8rem; border-radius: 14px; }
-            .controls { bottom: 15px; gap: 8px; }
-            .nav-btn { padding: 8px 16px; font-size: 0.8rem; }
+            .controls {
+                bottom: 15px; gap: 10px;
+                flex-direction: column; align-items: center;
+            }
+            .nav-btn { padding: 10px 30px; font-size: 0.9rem; width: 160px; text-align: center; }
 
             .focus-board {
                 width: 95vw !important; max-width: 95vw !important; min-width: unset !important;
