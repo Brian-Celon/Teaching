@@ -608,9 +608,9 @@ async function buildHtml() {
         });
         window.addEventListener('pointerup', () => { isPanning = false; viewport.style.cursor = 'default'; });
 
-        function zoomToSlide(index) {
+        function zoomToSlide(index, force = false) {
             // Prevent clicking directly on Ice Breaker stack cards to bypass the Next button
-            if (state === 'SLIDE' && slidesData[index].clusterTitle === 'Ice Breaker' && index !== currentIndex) {
+            if (!force && state === 'SLIDE' && slidesData[index].clusterTitle === 'Ice Breaker' && index !== currentIndex) {
                 return;
             }
             state = 'SLIDE';
@@ -656,14 +656,14 @@ async function buildHtml() {
                     controlsBox.classList.remove('visible');
                     topBar.classList.remove('visible');
                 } else {
-                    zoomToSlide(0); 
+                    zoomToSlide(0, true); 
                 }
                 return;
             }
             
             let newIndex = currentIndex + direction;
             if (newIndex >= 0 && newIndex < cards.length) {
-                zoomToSlide(newIndex);
+                zoomToSlide(newIndex, true);
             } else if (newIndex < 0) {
                 showOverview();
             }
