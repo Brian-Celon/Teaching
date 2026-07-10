@@ -442,6 +442,63 @@ async function buildHtml() {
         .top-bar { position: fixed; top: 30px; left: 40px; background: rgba(255,255,255,0.95); padding: 10px 20px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-weight: 600; color: #162b20; z-index: 200; display: flex; align-items: center; gap: 10px; opacity: 0; transition: opacity 0.5s; }
         .top-bar.visible { opacity: 1; }
         .topic-dot { width: 10px; height: 10px; background: #eab308; border-radius: 50%; }
+
+        /* ====== MOBILE RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            #titleOverlay h1 { font-size: 2.5rem; }
+            #titleOverlay h2 { font-size: 1.5rem; }
+
+            .card {
+                width: 85vw; max-height: none;
+                padding: 25px 20px;
+            }
+            .card .doc-content { font-size: 1.1rem; line-height: 1.6; }
+            .title-slide h2 { font-size: 2rem; }
+            .title-slide { min-height: 200px; }
+
+            .top-bar { top: 10px; left: 10px; padding: 6px 14px; font-size: 0.8rem; border-radius: 14px; }
+            .controls { bottom: 15px; gap: 8px; }
+            .nav-btn { padding: 8px 16px; font-size: 0.8rem; }
+
+            .focus-board {
+                width: 95vw !important; max-width: 95vw !important; min-width: unset !important;
+                padding: 25px 20px 20px !important;
+                max-height: 85vh !important;
+            }
+            .focus-board h1, .focus-board h2, .focus-board h3, .focus-board h4 {
+                font-size: 1.6rem !important; margin-bottom: 0.8rem;
+            }
+            .focus-content {
+                font-size: 1.1rem !important; line-height: 1.6 !important;
+                padding-right: 5px !important;
+            }
+            .focus-content p, .focus-content li { margin-bottom: 0.8rem !important; }
+            .focus-content img {
+                max-width: 100% !important; float: none !important;
+                margin: 1rem 0 !important;
+            }
+
+            /* Split layout stacks vertically on mobile */
+            .focus-layout {
+                flex-direction: column !important;
+                gap: 15px !important;
+                max-height: 90vh !important;
+                overflow-y: auto !important;
+            }
+            .focus-layout .focus-board {
+                min-width: unset !important; max-width: 95vw !important;
+            }
+            .focus-image-frame {
+                max-width: 95vw !important;
+                max-height: 40vh !important;
+            }
+            .focus-image-frame img {
+                max-height: 35vh !important;
+            }
+
+            .tape { width: 80px; height: 22px; top: -6px; }
+            .focus-board .tape { width: 100px; height: 28px; top: -10px; }
+        }
     </style>
 </head>
 <body class="overview-state">
@@ -561,7 +618,8 @@ async function buildHtml() {
             
             visitedClusters.add(slide.clusterTitle);
             
-            canvas.style.transform = \`scale(1) translate(\${-slide.x}px, \${-slide.y}px)\`;
+            const mobileScale = window.innerWidth < 768 ? (window.innerWidth / 800) * 1.05 : 1;
+            canvas.style.transform = \`scale(\${mobileScale}) translate(\${-slide.x}px, \${-slide.y}px)\`;
             currentTopicLabel.textContent = slide.title;
             
             cards.forEach((c, i) => {
