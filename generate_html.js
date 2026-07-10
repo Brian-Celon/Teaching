@@ -308,7 +308,7 @@ async function buildHtml() {
             font-family: 'Inter', sans-serif;
             color: var(--text-main);
             overflow: hidden;
-            width: 100vw; height: 100vh;
+            width: 100vw; height: 100dvh;
         }
 
         body::before {
@@ -329,7 +329,7 @@ async function buildHtml() {
         }
 
         #titleOverlay {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100dvh;
             background: rgba(22, 43, 32, 0.95);
             backdrop-filter: blur(10px);
             display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -341,7 +341,7 @@ async function buildHtml() {
         #titleOverlay h1 { font-size: 5.5rem; font-weight: 800; color: #f8fafc; margin-bottom: 1rem; font-family: 'Kalam', cursive; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         #titleOverlay h2 { font-size: 3rem; color: #cbd5e1; font-family: 'Kalam', cursive; }
 
-        #viewport { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; perspective: 2000px; z-index: 10; }
+        #viewport { position: absolute; top: 0; left: 0; width: 100vw; height: 100dvh; perspective: 2000px; z-index: 10; }
         #canvas { position: absolute; top: 50%; left: 50%; transition: transform 1.2s cubic-bezier(0.65, 0, 0.15, 1); transform-style: preserve-3d; }
         
         .doodle { position: absolute; font-family: 'Kalam', cursive; pointer-events: none; z-index: -10; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
@@ -423,7 +423,7 @@ async function buildHtml() {
             filter: blur(0px); opacity: 1; user-select: auto;
         }
 
-        #focusModal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.4s ease; cursor: pointer; }
+        #focusModal { position: fixed; top: 0; left: 0; width: 100vw; height: 100dvh; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.4s ease; cursor: pointer; }
         #focusModal.visible { opacity: 1; visibility: visible; }
         .focus-board { width: 800px; max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; background: #fff; padding: 50px 60px 40px; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); position: relative; transform: scale(0.8) translateY(50px); transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.05) 31px, rgba(0,0,0,0.05) 32px); background-position: 0 30px; cursor: default; }
         #focusModal.visible .focus-board { transform: scale(1) translateY(0); }
@@ -433,7 +433,7 @@ async function buildHtml() {
         .focus-content p, .focus-content li { margin-bottom: 1.5rem; }
         .focus-content img { max-width: 50%; height: auto; object-fit: contain; float: right; margin: 0 0 1rem 1.5rem; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
         .focus-image-frame img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .controls { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 200; opacity: 0; visibility: hidden; transition: opacity 0.5s; }
+        .controls { position: fixed; bottom: calc(30px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 200; opacity: 0; visibility: hidden; transition: opacity 0.5s; }
         .controls.visible { opacity: 1; visibility: visible; }
         .nav-btn { background: #ffffff; color: #374151; border: 1px solid #d1d5db; padding: 12px 25px; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s; }
         .nav-btn:hover:not(:disabled) { background: #f3f4f6; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
@@ -450,7 +450,7 @@ async function buildHtml() {
 
             .top-bar { top: 10px; left: 10px; padding: 6px 14px; font-size: 0.8rem; border-radius: 14px; }
             .controls {
-                bottom: 15px; gap: 10px;
+                bottom: calc(15px + env(safe-area-inset-bottom)); gap: 10px;
                 flex-direction: column; align-items: center;
             }
             .nav-btn { padding: 10px 30px; font-size: 0.9rem; width: 160px; text-align: center; }
