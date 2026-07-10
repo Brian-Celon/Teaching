@@ -612,6 +612,10 @@ async function buildHtml() {
         }
 
         function zoomToSlide(index) {
+            // Prevent clicking directly on Ice Breaker stack cards to bypass the Next button
+            if (state === 'SLIDE' && slidesData[index].clusterTitle === 'Ice Breaker' && index !== currentIndex) {
+                return;
+            }
             state = 'SLIDE';
             document.body.classList.remove('overview-state');
             
