@@ -1,105 +1,8 @@
-const mammoth = require('mammoth');
 const fs = require('fs');
 const path = require('path');
-const cheerio = require('cheerio');
 
 async function buildHtml() {
-    const dir = 'Teaching';
-    const files = fs.readdirSync(dir).filter(f => f.endsWith('.docx'));
-    
-    const presenterDocs = {};
-    for (const file of files) {
-        try {
-            const result = await mammoth.convertToHtml({path: path.join(dir, file)});
-            const match = file.match(/Presenter\s*(\d)/i) || file.match(/Presentor\s*(\d)/i);
-            if (match) {
-                presenterDocs[match[1]] = result.value;
-            }
-        } catch(e) { console.error(e); }
-    }
-
     const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8']; 
-
-    function chunkHtml(html, title, presenterNum) {
-        if (!html) return [];
-        const $ = cheerio.load(html, { xmlMode: true });
-        const elements = $.root().children();
-        const slides = [];
-        
-        slides.push({
-            topicTitle: title,
-            content: `<div class="title-slide"><h2>${title}</h2></div>`,
-            presenterClass: `presenter-${presenterNum}`,
-            bgColor: '#fdfdfd' 
-        });
-
-        const rootChildren = $.root().children().toArray();
-        let currentGroup = null;
-        
-        rootChildren.forEach(el => {
-            const $el = $(el);
-            if ($el.text().trim().toUpperCase() === 'ICE BREAKER') {
-                $el.remove();
-                return;
-            }
-
-            const isP = $el.is('p');
-            const text = $el.text().trim();
-            const isBullet = text.startsWith('•') || text.startsWith('') || text.startsWith('-');
-            const isExplicitHeader = $el.is('h1, h2, h3, h4, h5, h6');
-            const isBoldP = isP && !isBullet && text.length > 0;
-
-            if (isBoldP) {
-                $el.css('font-weight', 'bold');
-            }
-
-            if (isExplicitHeader || isBoldP) {
-                currentGroup = $('<div class="focus-group"></div>');
-                $el.before(currentGroup);
-                currentGroup.append($el);
-            } else {
-                if (!currentGroup) {
-                    currentGroup = $('<div class="focus-group"></div>');
-                    $el.before(currentGroup);
-                }
-                currentGroup.append($el);
-            }
-        });
-
-        const groups = $.root().children('.focus-group');
-        let currentChunk = [];
-        let currentLength = 0;
-        const MAX_LENGTH = 700; 
-
-        groups.each((i, el) => {
-            const elHtml = $.html(el);
-            const textLen = $(el).text().trim().length;
-
-            if (currentLength > MAX_LENGTH && currentChunk.length > 0) {
-                slides.push({
-                    topicTitle: title,
-                    content: `<div class="content-slide"><div class="doc-content">${currentChunk.join('')}</div></div>`,
-                    presenterClass: `presenter-${presenterNum}`,
-                    bgColor: stickyColors[slides.length % stickyColors.length]
-                });
-                currentChunk = [];
-                currentLength = 0;
-            }
-
-            currentChunk.push(elHtml);
-            currentLength += textLen;
-        });
-
-        if (currentChunk.length > 0) {
-            slides.push({
-                topicTitle: title,
-                content: `<div class="content-slide"><div class="doc-content">${currentChunk.join('')}</div></div>`,
-                presenterClass: `presenter-${presenterNum}`,
-                bgColor: stickyColors[slides.length % stickyColors.length]
-            });
-        }
-        return slides;
-    }
 
     let allSlides = [];
     function addSlide(title, htmlContent, presenterClass, bgColor, isChalk = false) {
@@ -110,15 +13,6 @@ async function buildHtml() {
             presenterClass: presenterClass,
             bgColor: bgColor,
             isChalk: isChalk
-        });
-    }
-
-    function addChunkedSlides(rawHtml, title, presenterNum) {
-        const chunks = chunkHtml(rawHtml, title, presenterNum);
-        chunks.forEach(chunk => {
-            allSlides.push({ 
-                id: 'slide-' + Math.random().toString(36).substr(2, 9), title: chunk.topicTitle, content: chunk.content, presenterClass: chunk.presenterClass, bgColor: chunk.bgColor
-            });
         });
     }
 
@@ -170,33 +64,86 @@ async function buildHtml() {
     addSlide('Objectives', `<div class="title-slide"><h2>Objectives of the Lesson</h2></div>`, 'presenter-0', '#fdfdfd');
     addSlide('Objectives', `<div class="content-slide"><div class="doc-content focus-group"><h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2rem; margin-bottom:1rem;">Objectives</h2><ul><li><strong>Understand</strong> the core elements of the teaching-learning process.</li><li><strong>Identify</strong> the various roles of a teacher in a classroom.</li><li><strong>Explore</strong> different learning styles and multiple intelligences.</li><li><strong>Apply</strong> Thorndike's Laws of Learning and other learning theories.</li></ul></div></div>`, 'presenter-0', stickyColors[0]);
 
-    addChunkedSlides(presenterDocs['1'], 'The Teaching-Learning Process', '1');
+    addSlide('The Teaching-Learning Process', `<div class="title-slide"><h2>The Teaching-Learning Process</h2></div>`, 'presenter-1', '#fdfdfd');
+    addSlide('The Teaching-Learning Process', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 2rem;">
+            <li style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
+            <li style="margin-bottom: 1.5rem;"><strong>The Teacher:</strong> The prime mover. Directs the flow, facilitates, and controls the process.</li>
+            <li style="margin-bottom: 1.5rem;"><strong>The Learner:</strong> The key participant and primary subject. Their acquired knowledge determines if objectives are met.</li>
+            <li style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.</li>
+        </ul>
+    </div></div>`, 'presenter-1', stickyColors[1]);
 
     addSlide('Roles of the Teacher', `<div class="title-slide"><h2>Roles of the Teacher</h2></div>`, 'presenter-2', '#fdfdfd');
-    addSlide('Roles of the Teacher', `<div class="content-slide"><div class="doc-content"><ul>
-            <li><strong>Teacher as Manager:</strong> Systematic classroom order.</li>
-            <li><strong>Teacher as Leader:</strong> Director, coach, and supporter.</li>
-            <li><strong>Teacher as Surrogate Parent:</strong> Providing security and emotional well-being.</li>
-            <li><strong>Teacher as Counselor:</strong> Guidance figure for personal challenges.</li>
-            <li><strong>Teacher as Model:</strong> Exemplar for behavior and judgment.</li>
-            <li><strong>Teacher as Public Relations Specialist:</strong> External stakeholder management.</li>
-            <li><strong>Teacher as Facilitator & Instructor:</strong> Guiding core instruction.</li>
-        </ul></div></div>`, 'presenter-2', stickyColors[3]);
+    addSlide('Roles of the Teacher', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1.5rem;">
+            <li style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order.</li>
+            <li style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
+            <li style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security and emotional well-being.</li>
+            <li style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges.</li>
+            <li style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
+            <li style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages external stakeholders.</li>
+            <li style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction.</li>
+        </ul>
+    </div></div>`, 'presenter-2', stickyColors[2]);
 
-    addChunkedSlides(presenterDocs['2'], 'Roles of a Teacher in the Classroom', '2');
+    addSlide('Learning Styles', `<div class="title-slide"><h2>Learning Styles</h2></div>`, 'presenter-3', '#fdfdfd');
+    addSlide('Learning Styles', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 2rem;">
+            <li style="margin-bottom: 1.5rem;"><strong>Visual:</strong> Learns by seeing (pictures, charts, diagrams). Fast talkers, easily visualize ideas.</li>
+            <li style="margin-bottom: 1.5rem;"><strong>Aural:</strong> Learns by hearing (lectures, discussions). Natural listeners, slow speakers.</li>
+            <li style="margin-bottom: 1.5rem;"><strong>Read/Write:</strong> Prefers written text. Enjoys reading/writing.</li>
+            <li style="margin-bottom: 1.5rem;"><strong>Kinesthetic:</strong> Learns through hands-on approaches (trial and error). Uses all senses.</li>
+        </ul>
+    </div></div>`, 'presenter-3', stickyColors[3]);
 
-    addChunkedSlides(presenterDocs['3'], 'Visual Learning Style', '3');
-    addChunkedSlides(presenterDocs['4'], 'Aural Learning Style', '3');
-    addChunkedSlides(presenterDocs['5'], 'Read/Write Learning Style', '3');
-    addChunkedSlides(presenterDocs['6'], 'Kinesthetic Learning Style', '3');
+    addSlide('Multiple Intelligences', `<div class="title-slide"><h2>Multiple Intelligences</h2></div>`, 'presenter-4', '#fdfdfd');
+    addSlide('Multiple Intelligences', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.3rem; line-height: 1.6; margin-top: 1rem;">
+            <li style="margin-bottom: 0.8rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Musical (Music Smart):</strong> Affinity for rhythm and sound.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Interpersonal (People Smart):</strong> Thrives around others.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
+        </ul>
+    </div></div>`, 'presenter-4', stickyColors[0]);
 
-    addChunkedSlides(presenterDocs['7'], 'Multiple Intelligences Part 1', '4');
-    addChunkedSlides(presenterDocs['8'], 'Multiple Intelligences Part 2', '4');
+    addSlide('Thorndike\'s Laws of Learning', `<div class="title-slide"><h2>Thorndike\'s Laws of Learning</h2></div>`, 'presenter-5', '#fdfdfd');
+    addSlide('Thorndike\'s Laws of Learning', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.4rem; line-height: 1.7; margin-top: 1rem;">
+            <li style="margin-bottom: 1rem;"><strong>Law of Readiness ("Get Ready"):</strong> Learning starts with a prepared mindset; forced learning fails.</li>
+            <li style="margin-bottom: 1rem;"><strong>Law of Exercise ("Practice"):</strong> Repetition strengthens brain connections; lack of use causes rust.</li>
+            <li style="margin-bottom: 1rem;"><strong>Law of Effect ("Repeat Winners"):</strong> We repeat actions that lead to rewards/success and avoid those that lead to failure.</li>
+            <li style="margin-bottom: 1rem;"><strong>Secondary Laws:</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li><em>Belongingness:</em> Natural association of stimuli speeds learning.</li>
+                    <li><em>Intensity:</em> Vivid experiences are remembered more deeply.</li>
+                    <li><em>Forgetting:</em> Unused skills fade over time.</li>
+                </ul>
+            </li>
+        </ul>
+    </div></div>`, 'presenter-5', stickyColors[1]);
 
-    addChunkedSlides(presenterDocs['9'], 'Thorndike’s Laws of Learning', '5');
-
-    addChunkedSlides(presenterDocs['10'], 'Other Learning Theories Part 1', '6');
-    addChunkedSlides(presenterDocs['11'], 'Other Learning Theories Part 2', '6');
+    addSlide('Other Learning Theories', `<div class="title-slide"><h2>Other Learning Theories</h2></div>`, 'presenter-6', '#fdfdfd');
+    addSlide('Other Learning Theories', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.2rem; line-height: 1.5; margin-top: 1rem;">
+            <li style="margin-bottom: 0.8rem;"><strong>Operant Conditioning (B.F. Skinner):</strong> Learning through rewards and consequences.
+                <ul style="margin-top: 0.3rem;"><li>Primary (food/water) & Secondary (money/praise) rewards. Escape/Avoidance.</li></ul>
+            </li>
+            <li style="margin-bottom: 0.8rem;"><strong>Cognitive Perspective:</strong> Learning is an internal mental activity, not just behavior. Mind works like a computer.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Gestalt Theory:</strong> People perceive objects as complete wholes. "The whole is greater than the sum of its parts."</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Intelligence Theories:</strong>
+                <ul style="margin-top: 0.3rem;">
+                    <li><em>Alfred Binet:</em> Intelligence is reasoning/problem-solving and can improve through education.</li>
+                    <li><em>Charles Spearman:</em> Proposed a general "g-factor" (overall mental ability) and "s-factor" (specific unique talents).</li>
+                </ul>
+            </li>
+        </ul>
+    </div></div>`, 'presenter-6', stickyColors[2]);
 
     // --- ASSESSMENT SLIDES (CHALK DUST MECHANIC) ---
     const assessmentQuestions = [
