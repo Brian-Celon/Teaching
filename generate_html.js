@@ -179,10 +179,40 @@ async function buildHtml() {
     addSlide('Operant Conditioning', `<div class="title-slide"><h2>Operant Conditioning</h2></div>`, 'presenter-6', '#fdfdfd');
     addSlide('Operant Conditioning', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li class="focus-group" data-detail="Operant Conditioning was developed by B.F. Skinner. It is a method of learning that uses rewards and punishments to modify behavior. Through operant conditioning, an individual makes an association between a particular behavior and a consequence." style="margin-bottom: 1.5rem;"><strong>Operant Conditioning:</strong> Learning through rewards and consequences (B.F. Skinner).</li>
-            <li class="focus-group" data-detail="There are two types of reinforcers in operant conditioning: Primary and Secondary. Primary reinforcers satisfy biological needs, such as food and water. Secondary reinforcers are learned values, such as money, praise, and good grades." style="margin-bottom: 1.5rem;"><strong>Types of Reinforcers:</strong> Primary (biological needs like food) and Secondary (learned values like praise).</li>
-            <li class="focus-group" data-detail="The theory also includes two specific types of learning related to negative outcomes. Escape Learning occurs when a learner performs a behavior to stop an ongoing unpleasant stimulus. Avoidance Learning occurs when a learner performs a behavior to prevent an unpleasant stimulus from occurring in the first place." style="margin-bottom: 1.5rem;"><strong>Escape and Avoidance:</strong> Learning to stop or prevent unpleasant outcomes.</li>
+            <li class="focus-group" data-detail="It is a type of learning where a person must actively do something to its environment to produce a result or gain a reward." style="margin-bottom: 1.5rem;"><strong>Operant Conditioning:</strong> Learning by actively doing something to the environment to gain a reward.</li>
+            <li class="focus-group" data-detail="This theory completely denies the existence of inborn tendencies or instincts. Instead, it assumes that learning is a process of building reflexes and habits solely through interaction with our surroundings." style="margin-bottom: 1.5rem;"><strong>Behaviorism:</strong> Learning builds reflexes and habits through interaction with surroundings, denying inborn instincts.</li>
+            <li class="focus-group" data-detail="This is B.F. Skinner’s specific learning process theory that highlights how environmental conditions directly bring about behavioral changes." style="margin-bottom: 1.5rem;"><strong>Skinner's Operant Conditioning (The Experiment):</strong> Highlights how environmental conditions directly bring about behavioral changes.</li>
         </ul>
+    </div></div>`, 'presenter-6', stickyColors[3]);
+
+    addSlide('Types of Operant Conditioning', `<div class="title-slide"><h2>Types of Operant Conditioning</h2></div>`, 'presenter-6', '#fdfdfd');
+
+    addSlide('Primary Reward Conditioning', `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; justify-content:center; height:100%;">
+        <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2.5rem; margin-bottom:1rem; text-align:center;">Primary Reward Conditioning</h2>
+        <div class="focus-group" data-detail="Learning that is instrumental in getting a reward that is biologically significant, like food or water." style="text-align:center; padding: 2rem;">
+            <p style="font-size: 1.8rem; line-height: 1.6;">Learning that is instrumental in getting a reward that is biologically significant, like food or water.</p>
+        </div>
+    </div></div>`, 'presenter-6', stickyColors[0]);
+
+    addSlide('Secondary Reward Conditioning', `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; justify-content:center; height:100%;">
+        <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2.5rem; margin-bottom:1rem; text-align:center;">Secondary Reward Conditioning</h2>
+        <div class="focus-group" data-detail="Learning where the behavior gets a reward that has no immediate biological utility but is associated with value, like money, praise, or a good report card." style="text-align:center; padding: 2rem;">
+            <p style="font-size: 1.8rem; line-height: 1.6;">Learning where the behavior gets a reward that has no immediate biological utility but is associated with value, like money, praise, or a good report card.</p>
+        </div>
+    </div></div>`, 'presenter-6', stickyColors[1]);
+
+    addSlide('Escape Conditioning', `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; justify-content:center; height:100%;">
+        <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2.5rem; margin-bottom:1rem; text-align:center;">Escape Conditioning</h2>
+        <div class="focus-group" data-detail="Learning a response that allows an organism to get out of an unpleasant or uncomfortable place or situation that is already happening." style="text-align:center; padding: 2rem;">
+            <p style="font-size: 1.8rem; line-height: 1.6;">Learning a response that allows an organism to get out of an unpleasant or uncomfortable place or situation that is already happening.</p>
+        </div>
+    </div></div>`, 'presenter-6', stickyColors[2]);
+
+    addSlide('Avoidance Conditioning', `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; justify-content:center; height:100%;">
+        <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2.5rem; margin-bottom:1rem; text-align:center;">Avoidance Conditioning</h2>
+        <div class="focus-group" data-detail="Learning a behavior in response to a warning cue or signal to completely avoid or prevent a painful or unpleasant experience before it even happens." style="text-align:center; padding: 2rem;">
+            <p style="font-size: 1.8rem; line-height: 1.6;">Learning a behavior in response to a warning cue or signal to completely avoid or prevent a painful or unpleasant experience before it even happens.</p>
+        </div>
     </div></div>`, 'presenter-6', stickyColors[3]);
 
     // PRESENTER 8 (presenter-7) - Silverio
