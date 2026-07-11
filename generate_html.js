@@ -469,8 +469,8 @@ async function buildHtml() {
         .focus-board h1, .focus-board h2, .focus-board h3, .focus-board h4 { font-size: 2.8rem; color: #1e3a8a; margin-bottom: 1.5rem; font-family: 'Kalam', cursive; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; flex-shrink: 0; }
         .focus-content { font-size: 1.8rem; line-height: 1.8; color: #111827; overflow-y: auto; flex: 1; padding-right: 15px; }
         .focus-content p, .focus-content li { margin-bottom: 1.5rem; }
-        .focus-content img { max-width: 50%; height: auto; object-fit: contain; float: right; margin: 0 0 1rem 1.5rem; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .focus-image-frame img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .focus-content img { max-width: 80% !important; width: auto !important; height: auto !important; max-height: 60vh; object-fit: contain; display: block; margin: 1rem auto !important; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .focus-image-frame img { max-width: 100% !important; width: auto !important; height: auto !important; max-height: 80vh; object-fit: contain; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
 
         /* Flip Card in Focus Modal */
         .flip-scene { perspective: 1200px; width: 100%; }
