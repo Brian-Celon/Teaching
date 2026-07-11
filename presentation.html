@@ -142,8 +142,10 @@
         .flip-card { position: relative; width: 100%; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
         .flip-card.flipped { transform: rotateY(180deg); }
         .flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; width: 100%; }
-        .flip-face.flip-front { position: relative; }
-        .flip-back { position: absolute; top: 0; left: 0; height: 100%; transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; overflow-y: auto; }
+        .flip-face.flip-front { position: relative; z-index: 2; pointer-events: auto; }
+        .flip-card.flipped .flip-face.flip-front { position: absolute; top: 0; left: 0; z-index: 0; pointer-events: none; }
+        .flip-back { position: absolute; top: 0; left: 0; height: 100%; transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; overflow-y: hidden; z-index: 1; pointer-events: none; }
+        .flip-card.flipped .flip-back { position: relative; height: auto; z-index: 2; pointer-events: auto; }
         .flip-back .focus-content { color: #78350f; }
         .flip-btn { display: block; margin: 15px auto 0; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border: none; padding: 10px 22px; border-radius: 20px; font-size: 0.9rem; font-weight: 700; cursor: pointer; z-index: 50; box-shadow: 0 4px 12px rgba(30,58,138,0.4); transition: all 0.25s ease; font-family: 'Inter', sans-serif; flex-shrink: 0; }
         .flip-btn:hover { box-shadow: 0 6px 18px rgba(30,58,138,0.5); }
@@ -251,169 +253,169 @@
 <path d="M 61000 4500 L 64500 5500" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="12" stroke-dasharray="25, 15" filter="url(#chalk)"/>
 
             </svg>
-            <div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(15049.126604358145px, 1542.2370527713729px) rotate(149.25851152688912deg); font-size: 4.125644680139399rem;">📖</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(10098.953300904632px, 4896.978036147782px) rotate(320.43031962783164deg); font-size: 8.123422982218658rem;">♡</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(18674.321774814387px, 3032.585126860411px) rotate(245.98000980321248deg); font-size: 8.31356355449332rem;">✏️</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(10398.011985456826px, -1808.8833347543878px) rotate(119.17421686974404deg); font-size: 6.53333063034524rem;">❀</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(4925.485919505229px, 4583.137940666806px) rotate(96.06565034817572deg); font-size: 7.2778972918497455rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4601.887165089833px, -1000.6931398523698px) rotate(10.796349965639891deg); font-size: 5.209332561470253rem;">✨</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(1650.3560726997493px, -3190.820542010665px) rotate(42.26569324595355deg); font-size: 4.03090154797573rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(8692.597442620166px, -1370.9513952683906px) rotate(128.24625989564083deg); font-size: 6.8914419279263015rem;">A+</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-3882.827944176065px, -446.1100521771832px) rotate(206.50447096530016deg); font-size: 7.292279427080365rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-0.011684216412504611px, -2868.894623555842px) rotate(239.62961391341807deg); font-size: 8.031772209601884rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(834.9029825375901px, -2104.4211455626005px) rotate(113.76648194031212deg); font-size: 5.678915208204492rem;">✓</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(20415.87264733709px, 2653.9507605770996px) rotate(162.33670553976873deg); font-size: 4.60103993460172rem;">✨</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-1491.087638724241px, -4009.316536415689px) rotate(93.53464826271883deg); font-size: 5.693179638669178rem;">✨</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(17232.636506764225px, 3695.2283908554728px) rotate(109.80625434005239deg); font-size: 7.2667411672905935rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(11487.757740904126px, 3602.2945183416923px) rotate(203.29392315356614deg); font-size: 6.036074485153098rem;">♡</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(1157.7673757961484px, 3099.508524881344px) rotate(248.64422148296222deg); font-size: 5.575255503846167rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(5610.370096168648px, 3755.75865148953px) rotate(82.14685691395641deg); font-size: 7.921336574804265rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(6696.344892918758px, -2834.724715722622px) rotate(72.31838059022348deg); font-size: 4.586587847319247rem;">✨</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-2082.698784539774px, 1052.958384854168px) rotate(271.2206094199557deg); font-size: 7.622485332471732rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(22893.38271106587px, -2909.5566487051037px) rotate(99.30415879661182deg); font-size: 7.528306353183796rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(2756.520223926518px, -3061.9305399040923px) rotate(297.2129042560664deg); font-size: 7.672107082746632rem;">✿</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(18277.35768956519px, -1636.2300368467786px) rotate(338.7755889267606deg); font-size: 5.333042314989674rem;">♪</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(11439.393083786905px, 82.31681647492951px) rotate(270.11697889254077deg); font-size: 8.539119998018652rem;">✨</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(5454.444862358798px, 1290.723759745356px) rotate(2.067102257498541deg); font-size: 7.99994756268719rem;">✨</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(5837.605965281295px, 1004.8933532791134px) rotate(164.71100911423932deg); font-size: 4.668545846453124rem;">A+</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(22571.07508982825px, 1429.0342338726705px) rotate(131.51407549197495deg); font-size: 7.956181527157243rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(17771.473619503533px, -3329.315230740837px) rotate(108.4673587110186deg); font-size: 4.7074780852066365rem;">♪</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(15928.454545776345px, -4225.089401385196px) rotate(30.994608134494932deg); font-size: 7.58514112030416rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(6856.190217794781px, 3078.2516946195974px) rotate(5.131501751530805deg); font-size: 6.574854676484368rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(3192.56279945568px, 2455.1869501877163px) rotate(73.62953074411628deg); font-size: 5.767396419564042rem;">✏️</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(3939.899792079943px, -2551.170882196152px) rotate(279.44767159925334deg); font-size: 4.021275265770809rem;">♫</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(656.4269093916309px, -1425.9873058516746px) rotate(284.79363291936215deg); font-size: 6.342970906886351rem;">♫</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9472.979807708729px, 2808.4719767076394px) rotate(3.254216608904188deg); font-size: 6.343486962573595rem;">📖</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(338.149167763313px, 4538.7700437689655px) rotate(353.28980547771766deg); font-size: 8.608870085670443rem;">✿</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(4332.400760898561px, 4610.546194122424px) rotate(10.21684508991051deg); font-size: 6.954573272746255rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-2463.118264883879px, 1823.3375856993953px) rotate(293.5283984490452deg); font-size: 7.094105647154882rem;">♡</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(18307.066919918947px, 2843.393345642169px) rotate(21.14293117412778deg); font-size: 8.88362803538912rem;">📖</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(19950.90683298836px, 3100.545053788901px) rotate(29.99143373407557deg); font-size: 6.261325516262401rem;">♡</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(20909.372067120516px, 2942.1288065620965px) rotate(181.5897384774303deg); font-size: 6.536760446538177rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(15006.981572517372px, 2396.829192039864px) rotate(245.8948255151073deg); font-size: 5.401136713656333rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(7359.0039443605365px, 4963.878965428103px) rotate(28.776991715127245deg); font-size: 5.7410914279875245rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(3408.1774354854315px, 607.0182021768242px) rotate(196.64756005604406deg); font-size: 4.4860890581037305rem;">✨</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(12350.767091464884px, 2664.7603759465364px) rotate(281.9421641991779deg); font-size: 5.346363594410027rem;">♫</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(21195.78845396919px, -1893.304827652481px) rotate(177.58691013940674deg); font-size: 6.597613160613001rem;">♫</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(18014.692575462668px, 3937.9792587696174px) rotate(288.3014600520705deg); font-size: 4.353659530730598rem;">✓</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(24684.797682617376px, -4976.3922582801415px) rotate(189.9288717227782deg); font-size: 6.3564642649142735rem;">☼</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(17272.45371885739px, -873.9822623950568px) rotate(60.058993808398185deg); font-size: 4.485668992121257rem;">☼</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-3948.1339141627714px, -1307.7359033244707px) rotate(165.5850422732578deg); font-size: 8.322440602020771rem;">❀</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(12775.960875268447px, -3927.2261612753546px) rotate(2.1633861918978026deg); font-size: 8.561645359365027rem;">★</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(20980.38466268796px, -2092.1997589645025px) rotate(34.842176571087194deg); font-size: 5.629626159207298rem;">✓</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(20716.24746556987px, -2101.081568645905px) rotate(33.041490167391665deg); font-size: 5.410708477369609rem;">📖</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(4447.907496759504px, -4522.706410437445px) rotate(234.90250037425432deg); font-size: 8.688821051206887rem;">☼</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-4865.050325164358px, 120.17704724740724px) rotate(246.70354172899528deg); font-size: 5.023712810333629rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(11812.459553299639px, -4128.617411499539px) rotate(199.9964085045694deg); font-size: 4.686097581256608rem;">❀</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(13892.448974549552px, -2255.118357534438px) rotate(81.77522554987681deg); font-size: 6.656662437141056rem;">♡</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-2756.4220313471033px, 4011.9228602471812px) rotate(304.82495114015774deg); font-size: 4.593537762949577rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(2723.6833397169266px, -1153.6429554599272px) rotate(199.172587993806deg); font-size: 8.555149690532218rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(6697.159161241154px, -3197.3533664620923px) rotate(220.37341764720196deg); font-size: 6.542467826832876rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-1377.6100937734368px, -3474.952963334751px) rotate(337.1515203869986deg); font-size: 8.386637304732517rem;">📖</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(5713.320404680593px, -1813.9580652429909px) rotate(155.1146103890658deg); font-size: 4.127276315705844rem;">A+</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(4148.276690420287px, 1387.4183043451867px) rotate(331.1723910032514deg); font-size: 8.129874472198432rem;">♫</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9940.715060038878px, 4238.5342119445795px) rotate(64.82041011044167deg); font-size: 5.169249337854228rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(2586.764682376227px, 369.31652205947285px) rotate(3.8385970715517237deg); font-size: 7.261549578047479rem;">☼</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(5820.233995217886px, -4013.2949763031334px) rotate(336.5496682458581deg); font-size: 4.088033644871211rem;">☼</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9837.915344282312px, -931.140521959981px) rotate(325.3400635974482deg); font-size: 4.536364065533524rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(15205.313384427365px, 3764.991250077501px) rotate(250.82799883529552deg); font-size: 5.96196568733404rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-3121.853741951165px, 2704.2305061192455px) rotate(298.9530089310025deg); font-size: 8.920164892149076rem;">✓</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(20462.57824169734px, 1709.220123796289px) rotate(242.0632211076317deg); font-size: 6.201381007528022rem;">☼</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(2068.6994948695747px, 1057.782364066582px) rotate(289.37213299078064deg); font-size: 7.455310999957179rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-2149.097547318234px, -4750.746549911546px) rotate(182.88277861107002deg); font-size: 7.21025975092697rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-4146.672122620304px, 4459.53354730968px) rotate(237.53739017832982deg); font-size: 5.946295037395922rem;">♫</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(23840.15111672252px, 4032.2571378930425px) rotate(200.1816540081985deg); font-size: 4.0571712375435rem;">✏️</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(20801.101794062597px, 378.333065237327px) rotate(198.20386717368157deg); font-size: 8.878436319051833rem;">♡</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-3138.904302073469px, -4745.515778326973px) rotate(87.72987334111234deg); font-size: 4.9080696632660175rem;">❀</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-1487.250158733069px, -3143.6483027377963px) rotate(219.64745582528687deg); font-size: 4.123473829357174rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(617.1984852332471px, 3499.3447451778175px) rotate(6.822507524938604deg); font-size: 5.716337526856864rem;">A+</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(23277.59761558598px, 1272.4087313193568px) rotate(70.45439485419823deg); font-size: 8.926601310059652rem;">✿</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(23949.568503699862px, -4497.984244667374px) rotate(37.065419811893825deg); font-size: 5.586474943285149rem;">♡</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(21934.66981049702px, 4387.763387127443px) rotate(214.6442506902645deg); font-size: 6.933736440648282rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(8194.912672163962px, 4168.222152614009px) rotate(3.38909317591928deg); font-size: 6.885474849900973rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(23681.59414975382px, -4329.023172861352px) rotate(326.46178952117185deg); font-size: 7.365657528283718rem;">✏️</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-4093.322288990189px, 1218.9949144768243px) rotate(298.6581072992898deg); font-size: 7.276653244596188rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(7734.044369256606px, 3734.6905524020585px) rotate(319.03748931982653deg); font-size: 7.973987079692834rem;">📖</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(7770.04544403637px, 117.92840494456959px) rotate(176.99715202997896deg); font-size: 5.109692915424986rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(20193.29948329053px, 2169.9851909776125px) rotate(232.28486968425594deg); font-size: 8.246048805715446rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-223.9766004353569px, -2181.4971052105225px) rotate(182.82416809385836deg); font-size: 8.39987669556322rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(10966.373568473315px, -4324.285292585923px) rotate(7.530724955244965deg); font-size: 7.9635669416200034rem;">★</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(23430.616700454648px, -1700.4620232894154px) rotate(333.43468509075996deg); font-size: 5.284507495949035rem;">♫</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(16445.90437581373px, 2554.1179294897483px) rotate(323.02566622484323deg); font-size: 4.2447445139144815rem;">★</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(7403.353018437758px, -1857.2120003072514px) rotate(254.50372204488923deg); font-size: 5.267408515361177rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(9991.065939691707px, 2593.6766591404594px) rotate(13.300611318599902deg); font-size: 4.112574582047179rem;">📖</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-2172.9184859464344px, 4833.953471995619px) rotate(40.25274740976891deg); font-size: 7.822454299277993rem;">✨</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(2785.5922989777628px, -1414.6469034788843px) rotate(214.9022557805802deg); font-size: 6.468178712949349rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(16616.577394244727px, 726.325761660315px) rotate(36.14214532458081deg); font-size: 5.342343231805713rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(1063.7398964722788px, -1465.824432226741px) rotate(258.885003940189deg); font-size: 7.353884392067549rem;">☼</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(22971.995797825548px, -2483.48096633596px) rotate(56.767967839305086deg); font-size: 4.85815922300916rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(11338.477032082537px, -212.5121423825085px) rotate(208.95100863702712deg); font-size: 5.052220975459676rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-1572.7659604112919px, -3069.832080457162px) rotate(253.9799421876784deg); font-size: 4.685733349368105rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-1013.2468432470855px, 1906.9547711849718px) rotate(102.65465579059983deg); font-size: 6.289283604120399rem;">❀</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(23088.122959963886px, 3528.4210488715453px) rotate(23.985907072486057deg); font-size: 6.461002891340156rem;">📖</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(4023.453342185843px, -3205.0933668850876px) rotate(67.34744920977165deg); font-size: 4.673592762139225rem;">☼</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(7615.162125529534px, -4733.690117731307px) rotate(111.35408023556847deg); font-size: 8.006314587037155rem;">✿</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(22165.092435127364px, -3617.790361048863px) rotate(344.46645593521deg); font-size: 6.029595785975147rem;">✏️</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(24253.440595762666px, -887.2465056562969px) rotate(156.7281245527025deg); font-size: 6.862590897517611rem;">★</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(5853.063447318753px, 438.1415222842352px) rotate(222.83536241964725deg); font-size: 6.517472257965148rem;">📖</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(11603.030907821914px, 3355.6964739538817px) rotate(326.21183747978216deg); font-size: 8.904742708909058rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(602.2660811107171px, -1541.1597085539574px) rotate(186.54338633578877deg); font-size: 7.407027391622682rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4128.9591833729155px, -4173.65249384392px) rotate(219.22444277117685deg); font-size: 5.881815154575223rem;">☼</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(19894.953727630967px, 2447.814823746099px) rotate(266.047661745242deg); font-size: 5.740155430753177rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9347.007758763524px, -623.298017667662px) rotate(244.07564117864865deg); font-size: 6.274756827213392rem;">✓</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(17351.145663511652px, -4533.82276238227px) rotate(199.62450976791007deg); font-size: 7.068707052204934rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-3218.2462695021977px, -2275.6986878639786px) rotate(223.69086031527135deg); font-size: 5.633853635385267rem;">✨</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(8664.568919518122px, -3381.9935396235023px) rotate(212.37751548552126deg); font-size: 8.623580171824466rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(10003.604049132346px, 92.63418669076782px) rotate(75.67418075745896deg); font-size: 6.256468394849886rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(1195.9238773630432px, 4659.4737785987345px) rotate(177.21894581165446deg); font-size: 5.895043794748753rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(3348.880927576276px, -125.18866475229697px) rotate(148.80652374185055deg); font-size: 6.020224003258823rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(21274.484490152026px, -1455.4984155026982px) rotate(75.65183657009624deg); font-size: 8.888283957709566rem;">♪</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(7651.26311049556px, -1034.080269598242px) rotate(338.0038687487056deg); font-size: 7.7649156645010855rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(17945.639228601904px, -3601.8774125179143px) rotate(138.604095416521deg); font-size: 7.268491565270396rem;">♫</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(13444.315077979769px, -1651.8313551221854px) rotate(120.48579948894688deg); font-size: 5.299644267582831rem;">A+</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(6714.04655266631px, 289.8142508037763px) rotate(121.50199552497367deg); font-size: 7.7218561384624325rem;">☼</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-3244.692498608717px, -2501.683737320545px) rotate(15.561886040050915deg); font-size: 7.840081059540125rem;">★</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(13762.68247793621px, 4200.48409415035px) rotate(310.7117525188802deg); font-size: 7.463431313074754rem;">♫</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(12897.125721606015px, 1959.269924741162px) rotate(202.8000953764176deg); font-size: 7.916052530099099rem;">★</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-3380.3661835153653px, -4016.8749457186095px) rotate(88.90652436419381deg); font-size: 5.3640394149603345rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(3735.0488517361537px, -903.6660908489703px) rotate(15.269238620287279deg); font-size: 4.288371449958255rem;">★</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(20221.156793134338px, 1022.753451134442px) rotate(285.67206248314477deg); font-size: 4.502382090083367rem;">❀</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(3530.447151049393px, -1977.947573009813px) rotate(320.709666877721deg); font-size: 7.896652718106963rem;">✓</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(16606.408590741376px, -4072.0484478697226px) rotate(54.39015781169856deg); font-size: 8.676987449876588rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(14499.687526231373px, -3153.695390019782px) rotate(352.22363021814965deg); font-size: 4.302390964359309rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(22404.050406257014px, -993.5051371567415px) rotate(247.17101642823562deg); font-size: 5.341375443090667rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(13138.37812380906px, 4379.480497940829px) rotate(36.67006475981014deg); font-size: 8.61035551039824rem;">♡</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-3226.253100005123px, -1048.969753651521px) rotate(107.71546057560737deg); font-size: 6.987204010838026rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(9842.495266118027px, 564.4367477955193px) rotate(64.54836261949328deg); font-size: 6.252970824045462rem;">★</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(21894.152058210384px, 1565.4478626229438px) rotate(323.7064362737845deg); font-size: 7.466571567974206rem;">☼</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9314.72859328944px, 532.4998805086943px) rotate(289.62081935495706deg); font-size: 6.355076802834921rem;">✓</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(12379.86571272005px, -4632.579929629099px) rotate(165.35968390728524deg); font-size: 8.920218305445168rem;">A+</div>
-<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-1712.78465931742px, 1386.5613853231598px) rotate(64.19622975392355deg); font-size: 6.490905489111496rem;">♪</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(12924.890327675224px, 1454.0723154983916px) rotate(326.4991165126416deg); font-size: 8.755369272147792rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(12468.104745540215px, -569.2830027063592px) rotate(231.8200315272438deg); font-size: 7.990349234032275rem;">✨</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(2894.909254166266px, -1190.0924967880424px) rotate(194.16028944829958deg); font-size: 7.936511357510458rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9104.694186890047px, -2332.6223344229134px) rotate(38.70552726402813deg); font-size: 4.204538306480163rem;">☼</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(11952.750526593587px, -1647.5512329927856px) rotate(324.948426292513deg); font-size: 7.318293753875658rem;">✿</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(20958.820611444477px, 4064.050659143528px) rotate(10.003746882782924deg); font-size: 5.457122949775112rem;">A+</div>
-<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-3107.360505634876px, 1936.7816190808862px) rotate(224.2916498559281deg); font-size: 6.534308245324729rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(20269.503901965792px, -3129.0123051707706px) rotate(258.051008246833deg); font-size: 6.3231136393290495rem;">A+</div>
-<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(480.2153233003992px, 4767.125692932956px) rotate(0.23246519057434245deg); font-size: 4.130830995196155rem;">♪</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(6938.0953540677165px, -4201.773794975431px) rotate(133.788507639865deg); font-size: 6.389408464317911rem;">❀</div>
-<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-708.4970641879463px, -3867.4586333352636px) rotate(320.8384978485124deg); font-size: 6.230981315673969rem;">✨</div>
-<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4571.205788776271px, -238.16126007513958px) rotate(191.27058331919744deg); font-size: 8.907844091475802rem;">📖</div>
+            <div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-2142.3566353130864px, -2603.837400371943px) rotate(275.2559666861085deg); font-size: 7.684567963478493rem;">★</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-748.6724988837459px, 4101.54158672184px) rotate(46.85067827203734deg); font-size: 8.660325141635994rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(5089.4338843087935px, 571.1412818786303px) rotate(34.34217826092494deg); font-size: 5.815757029725783rem;">📖</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(4325.144916758083px, -192.06924984077978px) rotate(30.640359740702717deg); font-size: 7.644260066308425rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(11368.0301681134px, 2948.6676931884567px) rotate(335.08174962009554deg); font-size: 8.177018368852409rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(2676.743277816616px, -4052.631429338327px) rotate(15.26096783334156deg); font-size: 8.439141717323263rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(14050.09065683328px, -2504.3121138346846px) rotate(21.577387523732373deg); font-size: 7.753868901486466rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(22480.98300210218px, -977.2974912191689px) rotate(51.32815332720554deg); font-size: 5.375098238029244rem;">♫</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(23548.716852099355px, 3799.927322357893px) rotate(328.20715356081683deg); font-size: 4.220177777578811rem;">♡</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(7300.666907373679px, -1732.6286512487354px) rotate(61.49644658340166deg); font-size: 7.613040300287723rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(14854.98459165118px, -2560.7482046638506px) rotate(263.6369493526136deg); font-size: 4.924128690610174rem;">✨</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9395.653065926717px, -593.1166916440388px) rotate(207.78728201895154deg); font-size: 7.6294676986852705rem;">☼</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(11065.012713806284px, 1751.1883418507614px) rotate(278.2531303353301deg); font-size: 5.730980988746665rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(10749.387855403269px, -4447.839879571019px) rotate(111.85896408180882deg); font-size: 8.005430072376962rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(8083.7127957595px, 4363.147652860589px) rotate(105.03731310105012deg); font-size: 8.383793038870909rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-2620.9295964319103px, -3699.1841598078545px) rotate(266.1104764436261deg); font-size: 4.890457448274471rem;">✿</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(2556.690846231475px, -3873.8162779200993px) rotate(92.5237275756732deg); font-size: 7.32684097646391rem;">☼</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(5291.442168298987px, -3959.695756510527px) rotate(309.6844439867504deg); font-size: 7.690342592122003rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(10709.991754974379px, 4694.740103117178px) rotate(161.90200069989314deg); font-size: 6.097713873748028rem;">✨</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-2992.821992894249px, 3666.245874306731px) rotate(136.22509027445787deg); font-size: 5.6628753583781rem;">☼</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(13250.50348252962px, 4328.420409223112px) rotate(11.321904239698664deg); font-size: 7.246398719392525rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-1168.031476481407px, -158.44974743000694px) rotate(197.33723431439796deg); font-size: 7.58502820170904rem;">❀</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(23098.54117010493px, -1504.265158760234px) rotate(22.242624848308562deg); font-size: 6.599784628758298rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(9376.530390465816px, -4325.190541914243px) rotate(62.4423528468192deg); font-size: 5.317267712006773rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(8204.133867012839px, 4786.456270457118px) rotate(94.59982910042895deg); font-size: 5.559354043813727rem;">★</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4533.359253230887px, -4049.159732893556px) rotate(28.69051114966398deg); font-size: 5.806524582933777rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-4351.405190254247px, 1011.4579724536861px) rotate(71.5689188764283deg); font-size: 8.08806650505791rem;">✨</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(4641.805691468482px, 1180.565673385663px) rotate(235.48101789060152deg); font-size: 6.109059287970129rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(8340.19477701474px, -873.1767576093553px) rotate(77.28929822697317deg); font-size: 5.341162985129987rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-997.3616975140344px, -4997.693388437937px) rotate(46.95257765721882deg); font-size: 6.333538540507535rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(10509.895968036288px, 1159.3476162941797px) rotate(128.64682359702726deg); font-size: 8.895783207584508rem;">♫</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(10561.556104716541px, -4279.858623789027px) rotate(359.57425448690526deg); font-size: 6.494026763417651rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(16364.096976878922px, -1852.059115327114px) rotate(197.4336469293823deg); font-size: 4.730853661888953rem;">★</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(23622.975207014515px, -457.23200591372006px) rotate(337.30694258424995deg); font-size: 8.400703596830132rem;">A+</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(9450.510200404828px, -3272.9916744089196px) rotate(353.20219544595466deg); font-size: 7.224604991314704rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(3405.4061309214303px, -2617.8549571243225px) rotate(271.50309825220353deg); font-size: 5.5589324809412695rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(11006.311176741247px, -4843.799336913358px) rotate(313.3695746157061deg); font-size: 4.017171422458749rem;">♪</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(15850.838383752944px, 3742.3648936834616px) rotate(288.74909756962194deg); font-size: 4.862512138426516rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(21118.973811692867px, -2593.890821092262px) rotate(58.29486419389664deg); font-size: 7.208539897260602rem;">✓</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(22753.121056491473px, 1022.4856464050226px) rotate(7.222843520235611deg); font-size: 4.77683909047175rem;">✨</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-2576.661855870257px, -4218.60557421018px) rotate(44.64221998492321deg); font-size: 8.563916851930202rem;">♫</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-3817.8861736653025px, -479.95111968466244px) rotate(313.659481331929deg); font-size: 4.903685397879581rem;">♪</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(20936.22380998697px, 1835.3984766792864px) rotate(3.0810403555641708deg); font-size: 7.252600455350575rem;">✨</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(20958.737760363794px, -1518.4616614517067px) rotate(111.61430440689524deg); font-size: 8.829089569989385rem;">A+</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(8309.000840207224px, 850.4621445784833px) rotate(39.54953541357254deg); font-size: 4.177139939731627rem;">☼</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(6067.705501455886px, 1624.0424799620832px) rotate(219.1782942080893deg); font-size: 4.5680347591454415rem;">✓</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(18481.394698579137px, 4466.916293640512px) rotate(175.0157808136309deg); font-size: 4.351261272613118rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(9044.499692144178px, -2297.1572733119515px) rotate(319.0150657630304deg); font-size: 7.61417181528217rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(353.7998526144647px, -3409.1032149390057px) rotate(36.46731862485939deg); font-size: 8.418417111571628rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(14547.860342400294px, -2830.65851824847px) rotate(319.1181758240853deg); font-size: 7.606061594950764rem;">♪</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(13887.136114168927px, 2852.302693230151px) rotate(66.95026646086285deg); font-size: 5.671315252433682rem;">✏️</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(7050.868550567129px, 2646.463897343925px) rotate(309.27738880082524deg); font-size: 7.751830366146256rem;">✿</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-3381.328542412434px, 3116.5680172007424px) rotate(214.27808847748287deg); font-size: 4.456891806790293rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(10794.051531597412px, 1051.491672574556px) rotate(272.5259914454473deg); font-size: 6.040093064598388rem;">♪</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(24975.178656784246px, 587.4564303635407px) rotate(97.47521821581283deg); font-size: 7.037725281477095rem;">♫</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(11651.510721339011px, -3156.2457997204965px) rotate(309.42450237658215deg); font-size: 5.312750987819841rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(16936.259283361036px, 1541.128280476959px) rotate(86.53055757598975deg); font-size: 4.047970769365627rem;">★</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(-4131.507244609392px, -4211.856777204384px) rotate(151.86124441228316deg); font-size: 7.020074305685303rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(13221.016507350618px, -3541.1422647340532px) rotate(313.4399147145081deg); font-size: 7.5692020063786085rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(1085.7861568417584px, -2782.514236610861px) rotate(357.1051010060193deg); font-size: 7.95158413657706rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(15581.603101553643px, -171.75915848994282px) rotate(243.87938149440265deg); font-size: 5.0509925410703rem;">♫</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(3257.1562110805116px, -3452.3079064655058px) rotate(339.347118013869deg); font-size: 6.167368787759994rem;">★</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(18188.788055595393px, -2444.635578517398px) rotate(214.2054224689049deg); font-size: 7.260935246488842rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(22189.452945151508px, 1211.9380513086408px) rotate(252.12978315606722deg); font-size: 5.794365922863498rem;">♫</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(18067.802509981568px, 1086.9776539591594px) rotate(177.35972482193446deg); font-size: 4.124667816987717rem;">A+</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-3055.8765605355743px, 2379.445908983981px) rotate(138.0902397759149deg); font-size: 5.2462215895854065rem;">✿</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-2891.7866579104943px, -687.6227823068612px) rotate(2.605411714723034deg); font-size: 6.183291913163261rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(18792.834856081296px, -1601.6287526935748px) rotate(0.8531834338122923deg); font-size: 4.142431448166834rem;">♫</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(281.34022022104364px, -2794.8837598289256px) rotate(169.086646295257deg); font-size: 7.011568697394312rem;">♪</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(881.9682604158543px, -1471.3738178503354px) rotate(58.646747177730035deg); font-size: 4.734195314493161rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-2467.966531593829px, 3467.7722688268204px) rotate(162.4057277875782deg); font-size: 7.520152642162449rem;">✏️</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(23713.213961410383px, -3636.415834418918px) rotate(190.98089131086718deg); font-size: 5.562148283376862rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(8946.706949538415px, -3615.6162808906292px) rotate(53.52326404976653deg); font-size: 8.05495750457759rem;">✿</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(14473.584018465452px, 2141.2509235001853px) rotate(60.08672737454774deg); font-size: 8.886906981405104rem;">✿</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-3296.4893504569436px, -3487.458689513758px) rotate(12.526307844643224deg); font-size: 6.950626447006184rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(1404.6698916518571px, 4582.286990558734px) rotate(359.31769907023886deg); font-size: 5.299560238296011rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(22806.06753015916px, -4879.665138885667px) rotate(95.13605172981983deg); font-size: 4.697728626066468rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-2268.979595802073px, 4393.282211691318px) rotate(120.64531942006336deg); font-size: 6.961235759146907rem;">A+</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(21231.550336308454px, -4689.526373493403px) rotate(298.0569382488324deg); font-size: 8.552119516454386rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(24852.317969046493px, 4805.278814704823px) rotate(342.51070811675305deg); font-size: 4.095933108774686rem;">♫</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(11725.578510176678px, 3913.633026050142px) rotate(248.3860667688008deg); font-size: 6.0009417526646835rem;">✿</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(7362.864233475168px, -4820.762576956387px) rotate(130.70667136425843deg); font-size: 5.98942079615656rem;">♪</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(23850.242725407395px, 4307.867739534897px) rotate(350.08071372035636deg); font-size: 8.717289747753018rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(1057.7815477781505px, -1375.4997279625313px) rotate(73.6840305481671deg); font-size: 6.482903654923684rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(2100.900688700347px, -4686.562850784567px) rotate(254.5329025120714deg); font-size: 6.034313579043223rem;">✨</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(23409.589007465238px, 3399.5155175866876px) rotate(161.37265244474892deg); font-size: 7.2510417786006505rem;">♡</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(10139.47192877484px, 429.04662353178173px) rotate(23.895010741775415deg); font-size: 5.654789929160515rem;">❀</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(7018.3061005007785px, -4930.9672139503655px) rotate(329.88727086667535deg); font-size: 8.987527774781007rem;">✿</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(14565.340621223757px, 1134.6507189902395px) rotate(15.430048574924049deg); font-size: 5.6254977993688895rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(20892.88198430303px, -1955.140263987861px) rotate(53.57065409221478deg); font-size: 5.5846927342511234rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(15995.580317482767px, 2963.8616390035486px) rotate(279.2105231121765deg); font-size: 8.760121700570204rem;">♪</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(12663.144837593627px, -71.53437301156555px) rotate(319.7812863364628deg); font-size: 6.056772680985558rem;">✨</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(16724.8972859108px, 2854.7838307576058px) rotate(351.71019490496474deg); font-size: 5.261345417254425rem;">♪</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(23363.861809852333px, -640.1730156536687px) rotate(289.6711121809274deg); font-size: 8.789259976353915rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(22434.216499035054px, -1177.0982520107755px) rotate(180.4053373638243deg); font-size: 7.101331292107077rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(4366.588423579693px, -3663.1290781092484px) rotate(207.1023271065888deg); font-size: 6.349750271991972rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(2984.411986778742px, -3581.4492738268846px) rotate(355.4755044461638deg); font-size: 4.48220679201023rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(19667.881208122893px, 1900.0189220690409px) rotate(167.37812885407945deg); font-size: 4.803998072078647rem;">♡</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(24631.882930761163px, -4059.3602010085706px) rotate(151.17365855334668deg); font-size: 5.534039520466273rem;">❀</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-2798.333194277958px, -2387.5236579798243px) rotate(254.42279836019407deg); font-size: 6.679255900736162rem;">✿</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-3634.853205506237px, 4685.750938908806px) rotate(317.8934434289446deg); font-size: 6.949002690212rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(-4239.573108619752px, -1213.4178371240855px) rotate(326.6905928559756deg); font-size: 6.281702152517588rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(21122.985285749728px, -4711.896450032338px) rotate(293.7051073437369deg); font-size: 7.4497334973575535rem;">♫</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(-4138.823178075492px, 4205.886524353755px) rotate(145.9013361625145deg); font-size: 8.863885318451135rem;">❀</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(3524.7035317810096px, 2361.1436065398757px) rotate(155.0223085758189deg); font-size: 7.025103380639579rem;">A+</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(7105.576195387755px, -3167.532705099423px) rotate(125.40679255220348deg); font-size: 5.404548399562637rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(11075.960542767243px, -1793.460626757666px) rotate(246.1303333604728deg); font-size: 7.4419180759265995rem;">★</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(1804.7932889418662px, -2362.9479146718436px) rotate(163.0961197190436deg); font-size: 8.04474615919536rem;">❀</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(21084.732729934487px, -3241.8567716781945px) rotate(201.65012546824462deg); font-size: 7.736113973853216rem;">✨</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(4669.66780076493px, 865.3592663428726px) rotate(15.272446912540945deg); font-size: 5.675087085973587rem;">A+</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(20974.230528919827px, -3634.619028862003px) rotate(218.87981676649954deg); font-size: 6.505995764215394rem;">✓</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(497.00125485878743px, -2478.6992682620466px) rotate(299.5021846777909deg); font-size: 6.007958262109432rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(19440.98606212583px, 3123.8210670248436px) rotate(339.6948165847394deg); font-size: 7.62031491280411rem;">❀</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(1574.3363604406322px, 466.09578315380895px) rotate(187.61357746130074deg); font-size: 4.498372369919331rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(12434.69780420572px, 4399.063888048269px) rotate(88.4183701981255deg); font-size: 8.097029640627994rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(11390.65819351725px, 256.6993699113227px) rotate(256.81429196740794deg); font-size: 8.3540995914716rem;">📖</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(24100.171397849444px, -1151.5557549643486px) rotate(116.00939299863948deg); font-size: 5.569771395630866rem;">❀</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(13748.426800169222px, 1031.0955227786453px) rotate(152.67135473559924deg); font-size: 4.142207708432288rem;">★</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(15364.022794956632px, -4834.340600762793px) rotate(330.7654778891354deg); font-size: 7.580841031772117rem;">♡</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(5981.772639269993px, -1641.8225046515122px) rotate(125.38139754188786deg); font-size: 7.256973424150309rem;">✿</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(3288.172325648904px, 1003.0633991857676px) rotate(141.08868876962862deg); font-size: 5.267579042176542rem;">✓</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(19273.84520394516px, 3148.4711748398768px) rotate(335.45641174032073deg); font-size: 6.4035383880037475rem;">❀</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(10828.615260323477px, -4911.192728997022px) rotate(256.70217429942244deg); font-size: 4.09537678255074rem;">A+</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(6222.442150384624px, 474.9912362881123px) rotate(314.4464799753361deg); font-size: 7.9146862082760165rem;">♡</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(15212.143414864371px, 179.24314410881925px) rotate(125.15099020103291deg); font-size: 7.1385335252772295rem;">♪</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(15982.916109461428px, -3583.9377359782698px) rotate(251.84180528039923deg); font-size: 8.305699656745643rem;">✨</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(17775.52880787674px, 228.99359530821312px) rotate(253.28507215448795deg); font-size: 4.1460988603816835rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(21720.264784127507px, -3757.538961453296px) rotate(291.1133711645333deg); font-size: 8.712638933023563rem;">♡</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-1171.1579791637296px, -1619.2195318679028px) rotate(38.326338984466176deg); font-size: 8.83678086291381rem;">📖</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(8085.426050640808px, -1863.721825208815px) rotate(122.62211649515157deg); font-size: 8.087740681585055rem;">❀</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(2526.076066785764px, 2073.6743768862607px) rotate(49.55867541361448deg); font-size: 8.46372178064188rem;">✓</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(15127.731433875673px, -660.3113908890509px) rotate(146.78041969485238deg); font-size: 5.946225997212828rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(12130.87918025336px, -4078.2576943976424px) rotate(216.52907369302994deg); font-size: 6.4318182163121165rem;">♪</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-3021.8679099611977px, -4853.635646638893px) rotate(88.10598190432087deg); font-size: 8.50429788680281rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(-2839.1915037037597px, -3538.20583788078px) rotate(299.41786296082535deg); font-size: 6.359196267328425rem;">✏️</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(13530.377350065912px, -1904.750734494215px) rotate(259.94718417363737deg); font-size: 8.2032123376051rem;">✿</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(627.490568574919px, -409.01962812577403px) rotate(102.8849050780652deg); font-size: 4.322193607733073rem;">♫</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(11251.316142385773px, 1134.1690296554098px) rotate(265.88530541311786deg); font-size: 5.729569715897213rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(8481.266964478575px, -3010.5610176150444px) rotate(303.80461412262173deg); font-size: 5.5676234538057rem;">★</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(17752.294696782552px, 3582.076142985885px) rotate(158.6407504274336deg); font-size: 4.64393433630062rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(-3269.4515753546275px, 4539.1865669331455px) rotate(162.2759429784812deg); font-size: 4.099734371270407rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(16320.450542043021px, -3062.4154505961965px) rotate(274.7653746568344deg); font-size: 5.514240949169682rem;">✨</div>
+<div class="doodle" style="color: rgba(180,255,180,0.5); transform: translate(18168.07734331406px, -4464.618840716441px) rotate(303.91312392273886deg); font-size: 7.001536307899954rem;">📖</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(2019.1869969886202px, 834.2585570008532px) rotate(254.5573900928863deg); font-size: 8.008533315237147rem;">✨</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(10305.029221841796px, 2004.968925182572px) rotate(19.946590645410836deg); font-size: 5.969739109385559rem;">✏️</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(20021.03868791401px, -3947.155493037119px) rotate(79.83378271353617deg); font-size: 8.385651803433337rem;">♪</div>
+<div class="doodle" style="color: rgba(180,180,255,0.5); transform: translate(12429.26110400238px, -1284.7107701889504px) rotate(326.3535177961302deg); font-size: 5.217327437750771rem;">☼</div>
+<div class="doodle" style="color: rgba(255,255,180,0.5); transform: translate(13550.4546575823px, 2271.4374434144956px) rotate(69.17528987296214deg); font-size: 5.385240438341654rem;">A+</div>
+<div class="doodle" style="color: rgba(255,180,180,0.5); transform: translate(7080.4986931719195px, 1019.693287235209px) rotate(72.40809086719331deg); font-size: 5.66908859292177rem;">♪</div>
+<div class="doodle" style="color: rgba(255,255,255,0.4); transform: translate(19320.68411216762px, 2203.0907460816898px) rotate(58.28488982335281deg); font-size: 5.783729070517852rem;">♫</div>
 
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-19zk6t8jn" 
-                 style="--cx: 0px; --cy: -500px; --rot: -0.7346981026202681deg; z-index: 100; background-color: #fbcfe8;"
+                 id="slide-996jntkvb" 
+                 style="--cx: 0px; --cy: -500px; --rot: 1.5335084232292902deg; z-index: 100; background-color: #fbcfe8;"
                  onclick="zoomToSlide(0)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Ice Breaker / Motivation</h2></div>
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-na6ptg0h3" 
-                 style="--cx: 120px; --cy: -420px; --rot: -1.7958774161640148deg; z-index: 99; background-color: #fef08a;"
+                 id="slide-ckc57wkno" 
+                 style="--cx: 120px; --cy: -420px; --rot: 0.7570347833515023deg; z-index: 99; background-color: #fef08a;"
                  onclick="zoomToSlide(1)">
                 <div class="tape"></div>
                 <div class="content-slide">
@@ -429,8 +431,8 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-ucnnv4gex" 
-                 style="--cx: 240px; --cy: -340px; --rot: 1.414605869694387deg; z-index: 98; background-color: #bbf7d0;"
+                 id="slide-bh505jpxj" 
+                 style="--cx: 240px; --cy: -340px; --rot: 1.5740035603090212deg; z-index: 98; background-color: #bbf7d0;"
                  onclick="zoomToSlide(2)">
                 <div class="tape"></div>
                 <div class="content-slide">
@@ -446,8 +448,8 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-y204zghzv" 
-                 style="--cx: 360px; --cy: -260px; --rot: -1.3927798545599548deg; z-index: 97; background-color: #bfdbfe;"
+                 id="slide-kz7lmxhop" 
+                 style="--cx: 360px; --cy: -260px; --rot: -1.368668800855295deg; z-index: 97; background-color: #bfdbfe;"
                  onclick="zoomToSlide(3)">
                 <div class="tape"></div>
                 <div class="content-slide">
@@ -463,54 +465,48 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-jcy2hb98p" 
-                 style="--cx: 3500px; --cy: 500px; --rot: -0.36164542183616133deg; z-index: 10; background-color: #bbf7d0;"
+                 id="slide-hwww19pwl" 
+                 style="--cx: 3500px; --cy: 500px; --rot: -0.453622970406665deg; z-index: 10; background-color: #bbf7d0;"
                  onclick="zoomToSlide(4)">
                 <div class="tape"></div>
-                <div class="content-slide" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-        <div class="focus-group" style="text-align: center;">
-            <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:3.5rem; margin-bottom:2rem;">Motivation</h2>
-            <h3 style="font-family:'Kalam', cursive; color:#374151; font-size:2.2rem; margin-bottom:1rem;">Philippians 4:13</h3>
-            <p style="font-size: 2rem; line-height: 1.6; font-style: italic;">"I can do all things through Christ who strengthens me."</p>
-        </div>
-    </div>
+                <div class="title-slide"><h2>Motivation</h2></div>
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-37ov6z9fy" 
-                 style="--cx: 7000px; --cy: -500px; --rot: -0.849672780192638deg; z-index: 10; background-color: #fbcfe8;"
+                 id="slide-ice0sht1y" 
+                 style="--cx: 7000px; --cy: -500px; --rot: -0.8819679969629157deg; z-index: 10; background-color: #fbcfe8;"
                  onclick="zoomToSlide(5)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Recap of Previous Lesson</h2></div>
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-5o5bya067" 
-                 style="--cx: 10050px; --cy: 500px; --rot: -0.5487000986016874deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-6dc2zm00b" 
+                 style="--cx: 10050px; --cy: 500px; --rot: 1.0142211421838319deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(6)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Objectives of the Lesson</h2></div>
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-eekb9pc0x" 
-                 style="--cx: 10950px; --cy: 500px; --rot: -0.828632653608711deg; z-index: 11; background-color: #fef08a;"
+                 id="slide-jwylfgc9k" 
+                 style="--cx: 10950px; --cy: 500px; --rot: -0.8885298962179089deg; z-index: 11; background-color: #fef08a;"
                  onclick="zoomToSlide(7)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content focus-group"><h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2rem; margin-bottom:1rem;">Objectives</h2><ul><li><strong>Understand</strong> the core elements of the teaching-learning process.</li><li><strong>Identify</strong> the various roles of a teacher in a classroom.</li><li><strong>Explore</strong> different learning styles and multiple intelligences.</li><li><strong>Apply</strong> Thorndike's Laws of Learning and other learning theories.</li></ul></div></div>
             </div>
             
             <div class="card presenter-1  unrevealed" 
-                 id="slide-z82uxfd3q" 
-                 style="--cx: 13550px; --cy: -500px; --rot: -1.6978058717023905deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-vpu6b3o8a" 
+                 style="--cx: 13550px; --cy: -500px; --rot: -0.06946564413964706deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(8)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>The Teaching-Learning Process</h2></div>
             </div>
             
             <div class="card presenter-1  unrevealed" 
-                 id="slide-ktzw3jexn" 
-                 style="--cx: 14450px; --cy: -500px; --rot: 1.7699759768433179deg; z-index: 11; background-color: #bbf7d0;"
+                 id="slide-vdvvxc8ev" 
+                 style="--cx: 14450px; --cy: -500px; --rot: -1.1758165209249078deg; z-index: 11; background-color: #bbf7d0;"
                  onclick="zoomToSlide(9)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -525,16 +521,16 @@
             </div>
             
             <div class="card presenter-2  unrevealed" 
-                 id="slide-75j7pssaz" 
-                 style="--cx: 17050px; --cy: 500px; --rot: 0.26882050026519355deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-axyqyknjg" 
+                 style="--cx: 17050px; --cy: 500px; --rot: -1.5887354214156395deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(10)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Roles of the Teacher</h2></div>
             </div>
             
             <div class="card presenter-2  unrevealed" 
-                 id="slide-u6bw09v6o" 
-                 style="--cx: 17950px; --cy: 500px; --rot: 0.19604011806064925deg; z-index: 11; background-color: #bfdbfe;"
+                 id="slide-ev2j4gg5m" 
+                 style="--cx: 17950px; --cy: 500px; --rot: -0.4832366406920605deg; z-index: 11; background-color: #bfdbfe;"
                  onclick="zoomToSlide(11)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -551,16 +547,16 @@
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-101hgkbia" 
-                 style="--cx: 20550px; --cy: -500px; --rot: -0.6800693091499479deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-boios0cm3" 
+                 style="--cx: 20550px; --cy: -500px; --rot: 0.7776826816061115deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(12)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>What is the Learning Environment?</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-a8cj57ga5" 
-                 style="--cx: 21450px; --cy: -500px; --rot: 1.947848864567033deg; z-index: 11; background-color: #fef08a;"
+                 id="slide-p0b141og7" 
+                 style="--cx: 21450px; --cy: -500px; --rot: 0.7067210635698786deg; z-index: 11; background-color: #fef08a;"
                  onclick="zoomToSlide(13)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -573,16 +569,16 @@
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-30a5r03z2" 
-                 style="--cx: 24050px; --cy: 500px; --rot: 0.26779185599221433deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-nzbazj9jd" 
+                 style="--cx: 24050px; --cy: 500px; --rot: 0.9432175767343685deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(14)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Visual Learning Style</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-of29xt6yy" 
-                 style="--cx: 24950px; --cy: 500px; --rot: 0.24544853390640098deg; z-index: 11; background-color: #fbcfe8;"
+                 id="slide-jcis8nhdz" 
+                 style="--cx: 24950px; --cy: 500px; --rot: -0.1655200048166443deg; z-index: 11; background-color: #fbcfe8;"
                  onclick="zoomToSlide(15)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -594,16 +590,16 @@
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-35fwk2lad" 
-                 style="--cx: 27550px; --cy: -500px; --rot: 0.9554618069718002deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-7ddfx74nw" 
+                 style="--cx: 27550px; --cy: -500px; --rot: 0.831726782131851deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(16)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Aural Learning Style</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-jfdtcj4nk" 
-                 style="--cx: 28450px; --cy: -500px; --rot: 0.7205627496482196deg; z-index: 11; background-color: #bbf7d0;"
+                 id="slide-xkn2kid0u" 
+                 style="--cx: 28450px; --cy: -500px; --rot: -0.3797098847450835deg; z-index: 11; background-color: #bbf7d0;"
                  onclick="zoomToSlide(17)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -615,16 +611,16 @@
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-6sioydu44" 
-                 style="--cx: 31050px; --cy: 500px; --rot: -0.39576270140147685deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-9vhdji26z" 
+                 style="--cx: 31050px; --cy: 500px; --rot: 1.629387488227525deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(18)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Read/Write Learning Style</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-gg36mtkcu" 
-                 style="--cx: 31950px; --cy: 500px; --rot: 1.0484285572270413deg; z-index: 11; background-color: #bfdbfe;"
+                 id="slide-3u6rj7mqz" 
+                 style="--cx: 31950px; --cy: 500px; --rot: -0.10578729433680456deg; z-index: 11; background-color: #bfdbfe;"
                  onclick="zoomToSlide(19)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -636,16 +632,16 @@
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-rkksz9vf3" 
-                 style="--cx: 34550px; --cy: -500px; --rot: -1.9367639389894484deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-trahuk8dt" 
+                 style="--cx: 34550px; --cy: -500px; --rot: 0.6353951577856742deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(20)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Kinesthetic Learning Style</h2></div>
             </div>
             
             <div class="card presenter-3  unrevealed" 
-                 id="slide-etrs76a9m" 
-                 style="--cx: 35450px; --cy: -500px; --rot: 1.027443898526963deg; z-index: 11; background-color: #fbcfe8;"
+                 id="slide-mk14nftot" 
+                 style="--cx: 35450px; --cy: -500px; --rot: 1.1563492334780472deg; z-index: 11; background-color: #fbcfe8;"
                  onclick="zoomToSlide(21)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -657,16 +653,16 @@
             </div>
             
             <div class="card presenter-4  unrevealed" 
-                 id="slide-d7t2w0zn7" 
-                 style="--cx: 38050px; --cy: 500px; --rot: 0.05365670963388647deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-9sin4lmpw" 
+                 style="--cx: 38050px; --cy: 500px; --rot: 0.21300503432664142deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(22)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Multiple Intelligences Part 1</h2></div>
             </div>
             
             <div class="card presenter-4  unrevealed" 
-                 id="slide-hvng3ows6" 
-                 style="--cx: 38950px; --cy: 500px; --rot: -0.04329335767967191deg; z-index: 11; background-color: #fbcfe8;"
+                 id="slide-8s3b0fm61" 
+                 style="--cx: 38950px; --cy: 500px; --rot: -1.4652631774552898deg; z-index: 11; background-color: #fbcfe8;"
                  onclick="zoomToSlide(23)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -680,16 +676,16 @@
             </div>
             
             <div class="card presenter-4  unrevealed" 
-                 id="slide-mwdsivg1y" 
-                 style="--cx: 41550px; --cy: -500px; --rot: -0.8066989443412176deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-ks5x708n5" 
+                 style="--cx: 41550px; --cy: -500px; --rot: 1.5324923052463157deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(24)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Multiple Intelligences Part 2</h2></div>
             </div>
             
             <div class="card presenter-4  unrevealed" 
-                 id="slide-akuj7ptpc" 
-                 style="--cx: 42450px; --cy: -500px; --rot: -1.2315562804540954deg; z-index: 11; background-color: #fef08a;"
+                 id="slide-pjnjwiz2y" 
+                 style="--cx: 42450px; --cy: -500px; --rot: -0.555361143877195deg; z-index: 11; background-color: #fef08a;"
                  onclick="zoomToSlide(25)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -703,16 +699,16 @@
             </div>
             
             <div class="card presenter-5  unrevealed" 
-                 id="slide-3mgyi158j" 
-                 style="--cx: 45050px; --cy: 500px; --rot: 1.7135021202033647deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-jfjhh2897" 
+                 style="--cx: 45050px; --cy: 500px; --rot: -1.6215409353942922deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(26)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Thorndike's Laws of Learning</h2></div>
             </div>
             
             <div class="card presenter-5  unrevealed" 
-                 id="slide-y3lur4jc0" 
-                 style="--cx: 45950px; --cy: 500px; --rot: 0.9967815341588246deg; z-index: 11; background-color: #bbf7d0;"
+                 id="slide-ivlpc8js5" 
+                 style="--cx: 45950px; --cy: 500px; --rot: 1.1756265451044756deg; z-index: 11; background-color: #bbf7d0;"
                  onclick="zoomToSlide(27)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; gap:10px;">
@@ -737,16 +733,16 @@
             </div>
             
             <div class="card presenter-6  unrevealed" 
-                 id="slide-odm1331pf" 
-                 style="--cx: 48550px; --cy: -500px; --rot: -0.061597737602787195deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-47o7x287l" 
+                 style="--cx: 48550px; --cy: -500px; --rot: -0.021894131576241982deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(28)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Other Learning Theories Part 1</h2></div>
             </div>
             
             <div class="card presenter-6  unrevealed" 
-                 id="slide-l6d0bmdcb" 
-                 style="--cx: 49450px; --cy: -500px; --rot: 1.3551054401314473deg; z-index: 11; background-color: #bfdbfe;"
+                 id="slide-1p5w4fu63" 
+                 style="--cx: 49450px; --cy: -500px; --rot: -0.8054437751998345deg; z-index: 11; background-color: #bfdbfe;"
                  onclick="zoomToSlide(29)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -766,16 +762,16 @@
             </div>
             
             <div class="card presenter-6  unrevealed" 
-                 id="slide-s31692ziq" 
-                 style="--cx: 52050px; --cy: 500px; --rot: 1.4679772691436015deg; z-index: 10; background-color: #fdfdfd;"
+                 id="slide-hte081qse" 
+                 style="--cx: 52050px; --cy: 500px; --rot: 1.4918861045863445deg; z-index: 10; background-color: #fdfdfd;"
                  onclick="zoomToSlide(30)">
                 <div class="tape"></div>
                 <div class="title-slide"><h2>Other Learning Theories Part 2</h2></div>
             </div>
             
             <div class="card presenter-6  unrevealed" 
-                 id="slide-jncbpobmo" 
-                 style="--cx: 52950px; --cy: 500px; --rot: -0.3892195590426142deg; z-index: 11; background-color: #fbcfe8;"
+                 id="slide-veeuw4dmz" 
+                 style="--cx: 52950px; --cy: 500px; --rot: -0.19155078994309793deg; z-index: 11; background-color: #fbcfe8;"
                  onclick="zoomToSlide(31)">
                 <div class="tape"></div>
                 <div class="content-slide"><div class="doc-content">
@@ -790,16 +786,16 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-gyml7nizy" 
-                 style="--cx: 55100px; --cy: -500px; --rot: 1.933037879548745deg; z-index: 10; background-color: transparent;"
+                 id="slide-2mt5iy0mt" 
+                 style="--cx: 55100px; --cy: -500px; --rot: -1.520191813907644deg; z-index: 10; background-color: transparent;"
                  onclick="zoomToSlide(32)">
                 
                 <div class="title-slide chalk-board-quiz"><h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Assessment</h2><p style="color: rgba(255,255,255,0.8); font-size: 1.5rem; font-family: 'Kalam', cursive;">Let's review what we've learned!</p></div>
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-66vryuvw4" 
-                 style="--cx: 56000px; --cy: -500px; --rot: -0.45460176789214923deg; z-index: 11; background-color: transparent;"
+                 id="slide-5pswt2dxj" 
+                 style="--cx: 56000px; --cy: -500px; --rot: 1.1628874081945186deg; z-index: 11; background-color: transparent;"
                  onclick="zoomToSlide(33)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
@@ -813,8 +809,8 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-7unv1xug6" 
-                 style="--cx: 56900px; --cy: -500px; --rot: -0.27795983964091064deg; z-index: 12; background-color: transparent;"
+                 id="slide-3cev1ohtk" 
+                 style="--cx: 56900px; --cy: -500px; --rot: 0.621330952461749deg; z-index: 12; background-color: transparent;"
                  onclick="zoomToSlide(34)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
@@ -828,8 +824,8 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-70sbxsudl" 
-                 style="--cx: 55100px; --cy: 250px; --rot: 0.713053527175564deg; z-index: 13; background-color: transparent;"
+                 id="slide-a6xz2cd0r" 
+                 style="--cx: 55100px; --cy: 250px; --rot: 1.04454740782029deg; z-index: 13; background-color: transparent;"
                  onclick="zoomToSlide(35)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
@@ -843,8 +839,8 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-wzdc74rry" 
-                 style="--cx: 56000px; --cy: 250px; --rot: 1.1636157220892573deg; z-index: 14; background-color: transparent;"
+                 id="slide-jaz112j3l" 
+                 style="--cx: 56000px; --cy: 250px; --rot: 1.287222727171593deg; z-index: 14; background-color: transparent;"
                  onclick="zoomToSlide(36)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
@@ -858,8 +854,8 @@
             </div>
             
             <div class="card presenter-0 chalk-card unrevealed" 
-                 id="slide-hvyvfoo9t" 
-                 style="--cx: 56900px; --cy: 250px; --rot: -1.3702686734636114deg; z-index: 15; background-color: transparent;"
+                 id="slide-y7j0zzm1v" 
+                 style="--cx: 56900px; --cy: 250px; --rot: 0.6760109588198353deg; z-index: 15; background-color: transparent;"
                  onclick="zoomToSlide(37)">
                 
                 <div class="content-slide chalk-board-quiz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
@@ -873,8 +869,8 @@
             </div>
             
             <div class="card presenter-0  unrevealed" 
-                 id="slide-a666tf6qh" 
-                 style="--cx: 59500px; --cy: 500px; --rot: -0.8208014196523323deg; z-index: 10; background-color: #fef08a;"
+                 id="slide-bdccs5k37" 
+                 style="--cx: 59500px; --cy: 500px; --rot: 1.5796468783722615deg; z-index: 10; background-color: #fef08a;"
                  onclick="zoomToSlide(38)">
                 <div class="tape"></div>
                 <div class="content-slide" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
@@ -905,7 +901,7 @@
         const topBar = document.getElementById('topBar');
         const focusModal = document.getElementById('focusModal');
         
-        const slidesData = [{"id":"slide-19zk6t8jn","x":0,"y":-500,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":0},{"id":"slide-na6ptg0h3","x":120,"y":-420,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":1},{"id":"slide-ucnnv4gex","x":240,"y":-340,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":2},{"id":"slide-y204zghzv","x":360,"y":-260,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":3},{"id":"slide-jcy2hb98p","x":3500,"y":500,"title":"Motivation","clusterTitle":"Motivation","indexInCluster":0},{"id":"slide-37ov6z9fy","x":7000,"y":-500,"title":"Recap","clusterTitle":"Recap","indexInCluster":0},{"id":"slide-5o5bya067","x":10050,"y":500,"title":"Objectives","clusterTitle":"Objectives","indexInCluster":0},{"id":"slide-eekb9pc0x","x":10950,"y":500,"title":"Objectives","clusterTitle":"Objectives","indexInCluster":1},{"id":"slide-z82uxfd3q","x":13550,"y":-500,"title":"The Teaching-Learning Process","clusterTitle":"The Teaching-Learning Process","indexInCluster":0},{"id":"slide-ktzw3jexn","x":14450,"y":-500,"title":"The Teaching-Learning Process","clusterTitle":"The Teaching-Learning Process","indexInCluster":1},{"id":"slide-75j7pssaz","x":17050,"y":500,"title":"Roles of the Teacher","clusterTitle":"Roles of the Teacher","indexInCluster":0},{"id":"slide-u6bw09v6o","x":17950,"y":500,"title":"Roles of the Teacher","clusterTitle":"Roles of the Teacher","indexInCluster":1},{"id":"slide-101hgkbia","x":20550,"y":-500,"title":"The Learning Environment","clusterTitle":"The Learning Environment","indexInCluster":0},{"id":"slide-a8cj57ga5","x":21450,"y":-500,"title":"The Learning Environment","clusterTitle":"The Learning Environment","indexInCluster":1},{"id":"slide-30a5r03z2","x":24050,"y":500,"title":"Visual Learning Style","clusterTitle":"Visual Learning Style","indexInCluster":0},{"id":"slide-of29xt6yy","x":24950,"y":500,"title":"Visual Learning Style","clusterTitle":"Visual Learning Style","indexInCluster":1},{"id":"slide-35fwk2lad","x":27550,"y":-500,"title":"Aural Learning Style","clusterTitle":"Aural Learning Style","indexInCluster":0},{"id":"slide-jfdtcj4nk","x":28450,"y":-500,"title":"Aural Learning Style","clusterTitle":"Aural Learning Style","indexInCluster":1},{"id":"slide-6sioydu44","x":31050,"y":500,"title":"Read/Write Learning Style","clusterTitle":"Read/Write Learning Style","indexInCluster":0},{"id":"slide-gg36mtkcu","x":31950,"y":500,"title":"Read/Write Learning Style","clusterTitle":"Read/Write Learning Style","indexInCluster":1},{"id":"slide-rkksz9vf3","x":34550,"y":-500,"title":"Kinesthetic Learning Style","clusterTitle":"Kinesthetic Learning Style","indexInCluster":0},{"id":"slide-etrs76a9m","x":35450,"y":-500,"title":"Kinesthetic Learning Style","clusterTitle":"Kinesthetic Learning Style","indexInCluster":1},{"id":"slide-d7t2w0zn7","x":38050,"y":500,"title":"Multiple Intelligences Part 1","clusterTitle":"Multiple Intelligences Part 1","indexInCluster":0},{"id":"slide-hvng3ows6","x":38950,"y":500,"title":"Multiple Intelligences Part 1","clusterTitle":"Multiple Intelligences Part 1","indexInCluster":1},{"id":"slide-mwdsivg1y","x":41550,"y":-500,"title":"Multiple Intelligences Part 2","clusterTitle":"Multiple Intelligences Part 2","indexInCluster":0},{"id":"slide-akuj7ptpc","x":42450,"y":-500,"title":"Multiple Intelligences Part 2","clusterTitle":"Multiple Intelligences Part 2","indexInCluster":1},{"id":"slide-3mgyi158j","x":45050,"y":500,"title":"Thorndike's Laws of Learning","clusterTitle":"Thorndike's Laws of Learning","indexInCluster":0},{"id":"slide-y3lur4jc0","x":45950,"y":500,"title":"Thorndike's Laws of Learning","clusterTitle":"Thorndike's Laws of Learning","indexInCluster":1},{"id":"slide-odm1331pf","x":48550,"y":-500,"title":"Other Learning Theories Part 1","clusterTitle":"Other Learning Theories Part 1","indexInCluster":0},{"id":"slide-l6d0bmdcb","x":49450,"y":-500,"title":"Other Learning Theories Part 1","clusterTitle":"Other Learning Theories Part 1","indexInCluster":1},{"id":"slide-s31692ziq","x":52050,"y":500,"title":"Other Learning Theories Part 2","clusterTitle":"Other Learning Theories Part 2","indexInCluster":0},{"id":"slide-jncbpobmo","x":52950,"y":500,"title":"Other Learning Theories Part 2","clusterTitle":"Other Learning Theories Part 2","indexInCluster":1},{"id":"slide-gyml7nizy","x":55100,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":0},{"id":"slide-66vryuvw4","x":56000,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":1},{"id":"slide-7unv1xug6","x":56900,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":2},{"id":"slide-70sbxsudl","x":55100,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":3},{"id":"slide-wzdc74rry","x":56000,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":4},{"id":"slide-hvyvfoo9t","x":56900,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":5},{"id":"slide-a666tf6qh","x":59500,"y":500,"title":"Bible Verse","clusterTitle":"Bible Verse","indexInCluster":0}];
+        const slidesData = [{"id":"slide-996jntkvb","x":0,"y":-500,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":0},{"id":"slide-ckc57wkno","x":120,"y":-420,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":1},{"id":"slide-bh505jpxj","x":240,"y":-340,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":2},{"id":"slide-kz7lmxhop","x":360,"y":-260,"title":"Ice Breaker","clusterTitle":"Ice Breaker","indexInCluster":3},{"id":"slide-hwww19pwl","x":3500,"y":500,"title":"Motivation","clusterTitle":"Motivation","indexInCluster":0},{"id":"slide-ice0sht1y","x":7000,"y":-500,"title":"Recap","clusterTitle":"Recap","indexInCluster":0},{"id":"slide-6dc2zm00b","x":10050,"y":500,"title":"Objectives","clusterTitle":"Objectives","indexInCluster":0},{"id":"slide-jwylfgc9k","x":10950,"y":500,"title":"Objectives","clusterTitle":"Objectives","indexInCluster":1},{"id":"slide-vpu6b3o8a","x":13550,"y":-500,"title":"The Teaching-Learning Process","clusterTitle":"The Teaching-Learning Process","indexInCluster":0},{"id":"slide-vdvvxc8ev","x":14450,"y":-500,"title":"The Teaching-Learning Process","clusterTitle":"The Teaching-Learning Process","indexInCluster":1},{"id":"slide-axyqyknjg","x":17050,"y":500,"title":"Roles of the Teacher","clusterTitle":"Roles of the Teacher","indexInCluster":0},{"id":"slide-ev2j4gg5m","x":17950,"y":500,"title":"Roles of the Teacher","clusterTitle":"Roles of the Teacher","indexInCluster":1},{"id":"slide-boios0cm3","x":20550,"y":-500,"title":"The Learning Environment","clusterTitle":"The Learning Environment","indexInCluster":0},{"id":"slide-p0b141og7","x":21450,"y":-500,"title":"The Learning Environment","clusterTitle":"The Learning Environment","indexInCluster":1},{"id":"slide-nzbazj9jd","x":24050,"y":500,"title":"Visual Learning Style","clusterTitle":"Visual Learning Style","indexInCluster":0},{"id":"slide-jcis8nhdz","x":24950,"y":500,"title":"Visual Learning Style","clusterTitle":"Visual Learning Style","indexInCluster":1},{"id":"slide-7ddfx74nw","x":27550,"y":-500,"title":"Aural Learning Style","clusterTitle":"Aural Learning Style","indexInCluster":0},{"id":"slide-xkn2kid0u","x":28450,"y":-500,"title":"Aural Learning Style","clusterTitle":"Aural Learning Style","indexInCluster":1},{"id":"slide-9vhdji26z","x":31050,"y":500,"title":"Read/Write Learning Style","clusterTitle":"Read/Write Learning Style","indexInCluster":0},{"id":"slide-3u6rj7mqz","x":31950,"y":500,"title":"Read/Write Learning Style","clusterTitle":"Read/Write Learning Style","indexInCluster":1},{"id":"slide-trahuk8dt","x":34550,"y":-500,"title":"Kinesthetic Learning Style","clusterTitle":"Kinesthetic Learning Style","indexInCluster":0},{"id":"slide-mk14nftot","x":35450,"y":-500,"title":"Kinesthetic Learning Style","clusterTitle":"Kinesthetic Learning Style","indexInCluster":1},{"id":"slide-9sin4lmpw","x":38050,"y":500,"title":"Multiple Intelligences Part 1","clusterTitle":"Multiple Intelligences Part 1","indexInCluster":0},{"id":"slide-8s3b0fm61","x":38950,"y":500,"title":"Multiple Intelligences Part 1","clusterTitle":"Multiple Intelligences Part 1","indexInCluster":1},{"id":"slide-ks5x708n5","x":41550,"y":-500,"title":"Multiple Intelligences Part 2","clusterTitle":"Multiple Intelligences Part 2","indexInCluster":0},{"id":"slide-pjnjwiz2y","x":42450,"y":-500,"title":"Multiple Intelligences Part 2","clusterTitle":"Multiple Intelligences Part 2","indexInCluster":1},{"id":"slide-jfjhh2897","x":45050,"y":500,"title":"Thorndike's Laws of Learning","clusterTitle":"Thorndike's Laws of Learning","indexInCluster":0},{"id":"slide-ivlpc8js5","x":45950,"y":500,"title":"Thorndike's Laws of Learning","clusterTitle":"Thorndike's Laws of Learning","indexInCluster":1},{"id":"slide-47o7x287l","x":48550,"y":-500,"title":"Other Learning Theories Part 1","clusterTitle":"Other Learning Theories Part 1","indexInCluster":0},{"id":"slide-1p5w4fu63","x":49450,"y":-500,"title":"Other Learning Theories Part 1","clusterTitle":"Other Learning Theories Part 1","indexInCluster":1},{"id":"slide-hte081qse","x":52050,"y":500,"title":"Other Learning Theories Part 2","clusterTitle":"Other Learning Theories Part 2","indexInCluster":0},{"id":"slide-veeuw4dmz","x":52950,"y":500,"title":"Other Learning Theories Part 2","clusterTitle":"Other Learning Theories Part 2","indexInCluster":1},{"id":"slide-2mt5iy0mt","x":55100,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":0},{"id":"slide-5pswt2dxj","x":56000,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":1},{"id":"slide-3cev1ohtk","x":56900,"y":-500,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":2},{"id":"slide-a6xz2cd0r","x":55100,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":3},{"id":"slide-jaz112j3l","x":56000,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":4},{"id":"slide-y7j0zzm1v","x":56900,"y":250,"title":"Assessment","clusterTitle":"Assessment","indexInCluster":5},{"id":"slide-bdccs5k37","x":59500,"y":500,"title":"Bible Verse","clusterTitle":"Bible Verse","indexInCluster":0}];
         
         let state = 'TITLE'; // TITLE, OVERVIEW, SLIDE
         let currentIndex = -1;

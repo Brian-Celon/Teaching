@@ -51,13 +51,7 @@ async function buildHtml() {
         </div>
     </div>`, 'presenter-0', stickyColors[2]);
 
-    addSlide('Motivation', `<div class="content-slide" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-        <div class="focus-group" style="text-align: center;">
-            <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:3.5rem; margin-bottom:2rem;">Motivation</h2>
-            <h3 style="font-family:'Kalam', cursive; color:#374151; font-size:2.2rem; margin-bottom:1rem;">Philippians 4:13</h3>
-            <p style="font-size: 2rem; line-height: 1.6; font-style: italic;">"I can do all things through Christ who strengthens me."</p>
-        </div>
-    </div>`, 'presenter-0', stickyColors[1]);
+    addSlide('Motivation', `<div class="title-slide"><h2>Motivation</h2></div>`, 'presenter-0', stickyColors[1]);
 
     addSlide('Recap', `<div class="title-slide"><h2>Recap of Previous Lesson</h2></div>`, 'presenter-0', stickyColors[3]);
 
@@ -431,8 +425,10 @@ async function buildHtml() {
         .flip-card { position: relative; width: 100%; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
         .flip-card.flipped { transform: rotateY(180deg); }
         .flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; width: 100%; }
-        .flip-face.flip-front { position: relative; }
-        .flip-back { position: absolute; top: 0; left: 0; height: 100%; transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; overflow-y: auto; }
+        .flip-face.flip-front { position: relative; z-index: 2; pointer-events: auto; }
+        .flip-card.flipped .flip-face.flip-front { position: absolute; top: 0; left: 0; z-index: 0; pointer-events: none; }
+        .flip-back { position: absolute; top: 0; left: 0; height: 100%; transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; overflow-y: hidden; z-index: 1; pointer-events: none; }
+        .flip-card.flipped .flip-back { position: relative; height: auto; z-index: 2; pointer-events: auto; }
         .flip-back .focus-content { color: #78350f; }
         .flip-btn { display: block; margin: 15px auto 0; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border: none; padding: 10px 22px; border-radius: 20px; font-size: 0.9rem; font-weight: 700; cursor: pointer; z-index: 50; box-shadow: 0 4px 12px rgba(30,58,138,0.4); transition: all 0.25s ease; font-family: 'Inter', sans-serif; flex-shrink: 0; }
         .flip-btn:hover { box-shadow: 0 6px 18px rgba(30,58,138,0.5); }
