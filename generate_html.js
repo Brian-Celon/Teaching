@@ -16,8 +16,10 @@ async function buildHtml() {
         });
     }
 
-    addSlide('Ice Breaker', `<div class="title-slide"><h2>Ice Breaker / Motivation</h2></div>`, 'presenter-0', stickyColors[3]);
 
+    // PRESENTER 1 (presenter-0) - Brian Celon
+    addSlide('Ice Breaker', `<div class="title-slide"><h2>Ice Breaker / Motivation</h2></div>`, 'presenter-0', stickyColors[3]);
+    
     addSlide('Ice Breaker', `<div class="content-slide">
         <div class="focus-group">
             <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2rem; margin-bottom:1rem;">Ice Breaker 1: The Multi-Role</h2>
@@ -53,13 +55,7 @@ async function buildHtml() {
 
     addSlide('Motivation', `<div class="title-slide"><h2>Motivation</h2></div>`, 'presenter-0', stickyColors[1]);
 
-    addSlide('Recap', `<div class="title-slide"><h2>Recap of Previous Lesson</h2></div>`, 'presenter-0', stickyColors[3]);
-
-    addSlide('Objectives', `<div class="title-slide"><h2>Objectives of the Lesson</h2></div>`, 'presenter-0', '#fdfdfd');
-    addSlide('Objectives', `<div class="content-slide"><div class="doc-content focus-group"><h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2rem; margin-bottom:1rem;">Objectives</h2><ul><li><strong>Understand</strong> the core elements of the teaching-learning process.</li><li><strong>Identify</strong> the various roles of a teacher in a classroom.</li><li><strong>Explore</strong> different learning styles and multiple intelligences.</li><li><strong>Apply</strong> Thorndike's Laws of Learning and other learning theories.</li></ul></div></div>`, 'presenter-0', stickyColors[0]);
-
-    
-    addSlide('The Teaching-Learning Process', `<div class="title-slide"><h2>The Teaching-Learning Process</h2></div>`, 'presenter-1', '#fdfdfd');
+    addSlide('The Teaching-Learning Process', `<div class="title-slide"><h2>The Teaching-Learning Process</h2></div>`, 'presenter-0', '#fdfdfd');
     addSlide('The Teaching-Learning Process', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1rem;">
             <li class="focus-group" data-detail="Teaching and learning involves the process of transferring knowledge from the one who is giving to the one who is receiving. Teaching process cannot be performed if there is one element that is missing among the three of the teaching and learning elements. These elements are necessary to be able to make teaching and learning possible. Without one of these elements, there could be no teaching-learning process." style="margin-bottom: 1.5rem;"><strong>Teaching & Learning:</strong> The transfer of knowledge from giver to receiver. Fails if any element is missing.</li>
@@ -68,46 +64,54 @@ async function buildHtml() {
             <li class="focus-group" data-detail="The favorable environment participates in the teaching-learning process by providing a place where there is a smooth flow of communication, avoiding some common barriers between the teacher and the learner. The presence of a good environment is so much important in the teaching and learning process. The good environment provides a smooth flow of communication between the learners and the teachers, thus it facilitates a well executed teaching and learning process." style="margin-bottom: 1.5rem;"><strong>The Environment:</strong> A favorable setting that removes communication barriers and facilitates smooth teaching.
             <br><img src="images/img_1.png" style="max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 10px;"></li>
         </ul>
-    </div></div>`, 'presenter-1', stickyColors[1]);
+    </div></div>`, 'presenter-0', stickyColors[1]);
 
-    addSlide('Roles of the Teacher', `<div class="title-slide"><h2>Roles of the Teacher</h2></div>`, 'presenter-2', '#fdfdfd');
+    // PRESENTER 2 (presenter-1)
+    addSlide('Recap', `<div class="title-slide"><h2>Recap of Previous Lesson</h2></div>`, 'presenter-1', stickyColors[3]);
+
+    addSlide('Objectives', `<div class="title-slide"><h2>Objectives of the Lesson</h2></div>`, 'presenter-1', '#fdfdfd');
+    addSlide('Objectives', `<div class="content-slide"><div class="doc-content focus-group"><h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:2rem; margin-bottom:1rem;">Objectives</h2><ul><li><strong>Understand</strong> the core elements of the teaching-learning process.</li><li><strong>Identify</strong> the various roles of a teacher in a classroom.</li><li><strong>Explore</strong> different learning styles and multiple intelligences.</li><li><strong>Apply</strong> Thorndike's Laws of Learning and other learning theories.</li></ul></div></div>`, 'presenter-1', stickyColors[0]);
+
+    addSlide('Roles of the Teacher', `<div class="title-slide"><h2>Roles of the Teacher</h2></div>`, 'presenter-1', '#fdfdfd');
     addSlide('Roles of the Teacher', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.5rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li class="focus-group" data-detail="As a manager, the teacher is responsible for maintaining a systematic order within the classroom. This involves organizing resources, managing time, setting rules, and ensuring that the classroom environment is conducive to learning." style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order.</li>
-            <li class="focus-group" data-detail="As a leader, the teacher acts as a director, coach, and supporter. They guide students through the learning process, motivate them to achieve their goals, and provide direction when students face challenges." style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
-            <li class="focus-group" data-detail="As a surrogate parent, the teacher provides a sense of security and emotional well-being to the students, especially younger learners. They create a safe space where students feel comfortable to learn and express themselves." style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security and emotional well-being.</li>
-            <li class="focus-group" data-detail="As a counselor, the teacher offers guidance for personal challenges that students may face. They help students navigate academic difficulties, social issues, and emotional problems, serving as a trusted advisor." style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges.</li>
-            <li class="focus-group" data-detail="As a model, the teacher serves as an exemplar for behavior and judgment. Students look up to their teachers and often emulate their actions, values, and attitudes. Teachers must therefore demonstrate integrity and professionalism." style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
-            <li class="focus-group" data-detail="As a public relations specialist, the teacher manages relationships with external stakeholders including parents, administrators, and the community. They communicate student progress and advocate for educational resources." style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages external stakeholders.</li>
-            <li class="focus-group" data-detail="As a facilitator and instructor, the teacher guides core instruction by designing lessons, presenting content, and facilitating discussions. They create opportunities for active learning and ensure all students can access the curriculum." style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction.</li>
+            <li class="focus-group" data-detail="As manager, the teacher is responsible for the effective management of her class from the start to the finish. The teacher carries throughout the day systematic activities to develop the pupils' cognitive, psychomotor, and effective aspects of the teaching-learning process. The pupils' eagerness and interest, therefore, to participate in all the learning activities prepared and conducted by the teachers in the classroom is a manifestation of an orderly classroom management by the teacher-manager." style="margin-bottom: 1rem;"><strong>Manager:</strong> Maintains systematic classroom order from start to finish.</li>
+            <li class="focus-group" data-detail="A teacher always assumes the position of a leader and he has to be credible in this regard. A leader directs, coaches, supports, and delegates depending on the needs of the situation. A leader is always looked upon as somebody dependable and responsible. He should, therefore, manifest the highest leadership potentials demanded of his role as teacher and leader. The teacher should set the example to emphasize his role of being a leader. He should also be aware that to be a good leader, he must first be a good follower." style="margin-bottom: 1rem;"><strong>Leader:</strong> Acts as a director, coach, and supporter.</li>
+            <li class="focus-group" data-detail="In the school, the teachers are the parents of the pupils/students. Parents have a feeling of security knowing that their children are in good hands. Added to their main function of developing the pupils intellectually, teachers are also expected to train the pupils socially and emotionally and to look after their physical and mental wellbeing. In school, teachers take over the role of the parents, attending to the needs of the pupils and offering them the comforts away from home. In the process, he guarantees that the individual rights of the pupils to education and safety are respected." style="margin-bottom: 1rem;"><strong>Surrogate Parent:</strong> Provides security, emotional well-being, and a home-away-from-home.</li>
+            <li class="focus-group" data-detail="Every teacher is a guidance teacher. He acts as counselor to the pupils especially when the pupils are beset by problems. In general, teachers comfort and make the pupils feel they have a ready shoulder to cry on. As counselor, the teacher religiously keeps tab of all the activities of the children under his care, carefully noting important information regarding the children's moods, health, and progress in their studies that will help him assess the over-all performance of the learners." style="margin-bottom: 1rem;"><strong>Counselor:</strong> Offers guidance for personal challenges and keeps track of student wellbeing.</li>
+            <li class="focus-group" data-detail="A teacher is an exemplar. He serves as model to his pupils. Pupils observe his interest in the children's welfare, show good behavior, and inculcate good work and attitudes, especially during trying moments inside the classroom; be fair in dealing with pupils; and exhibit good judgment when the situation calls for it." style="margin-bottom: 1rem;"><strong>Model:</strong> Serves as an exemplar for behavior and judgment.</li>
+            <li class="focus-group" data-detail="The credibility of the school is attributed most of the time to the ways the teachers deal with people outside the school, like the schools' benefactors, parents of the pupils, church leaders, government employees, and others. The teacher, in his role as a public relations specialist, will be able to solicit important donations in cash or in kind for the development of both the school and the pupils. More than this, the teacher who has good public relations will always make a name for his school." style="margin-bottom: 1rem;"><strong>Public Relations Specialist:</strong> Manages relationships with external stakeholders to benefit the school.</li>
+            <li class="focus-group" data-detail="The teacher is the facilitator of learning. The pupils must be given the chance to discuss things under the close supervision and monitoring of the teacher. As a facilitator, the teacher prepares guidelines which will serve as the focus of discussion and activities. The teacher oversees the activities inside the classroom. He allows pupils to discuss spontaneously with only his very minimal affirmation and confirmation. In the event, however, that some clarifications are needed, he can clarify vague points and correct wrong notions of the pupils. The main function of the teacher is instruction. All the other roles aforementioned are corollary to teaching. To effectively carry out this aspect of teaching, the pre-service education of teachers must be more than adequate to prepare them for a job involving varied responsibilities. Cooperate with other members of staff in planning instructional goals, objectives and methods." style="margin-bottom: 1rem;"><strong>Facilitator & Instructor:</strong> Guides core instruction and facilitates learning activities.</li>
         </ul>
-    </div></div>`, 'presenter-2', stickyColors[2]);
+    </div></div>`, 'presenter-1', stickyColors[2]);
 
-    addSlide('The Learning Environment', `<div class="title-slide"><h2>What is the Learning Environment?</h2></div>`, 'presenter-3', '#fdfdfd');
+    // PRESENTER 3 (presenter-2) - Raymundo
+    addSlide('The Learning Environment', `<div class="title-slide"><h2>What is the Learning Environment?</h2></div>`, 'presenter-2', '#fdfdfd');
     addSlide('The Learning Environment', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 1.5rem;">
             <li class="focus-group" data-detail="The learning environment refers to the entire setting in which students learn. This includes not just the physical classroom space, but also the psychological atmosphere, the arrangement of furniture, the availability of learning materials, and the overall climate that affects how students feel and behave." style="margin-bottom: 1.2rem;">Refers to the classroom or surroundings where students learn.</li>
             <li class="focus-group" data-detail="The learning environment is composed of multiple elements: teachers who guide instruction, classmates who contribute to collaborative learning, facilities such as libraries and laboratories, and the overall learning atmosphere including classroom culture and norms. All of these work together to shape the student experience." style="margin-bottom: 1.2rem;">Includes teachers, classmates, facilities, and learning atmosphere.</li>
             <li class="focus-group" data-detail="Research shows that a positive learning environment significantly improves student outcomes. When students feel safe, respected, and engaged, their focus sharpens, their motivation increases, and their participation in classroom activities rises. Positive environments also reduce anxiety and promote risk-taking in learning." style="margin-bottom: 1.2rem;">A positive environment improves focus, motivation, and participation.</li>
         </ul>
-    </div></div>`, 'presenter-3', stickyColors[0]);
+    </div></div>`, 'presenter-2', stickyColors[0]);
 
-    addSlide('Visual Learning Style', `<div class="title-slide"><h2>Visual Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
+    addSlide('Visual Learning Style', `<div class="title-slide"><h2>Visual Learning Style</h2></div>`, 'presenter-2', '#fdfdfd');
     addSlide('Visual Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
             <li class="focus-group" data-detail="Visual learners learn best by seeing information presented in pictures, charts, diagrams, maps, and other visual formats. They tend to think in images and can easily visualize concepts. They prefer to see the teacher's body language and facial expression to fully understand the content of a lesson. They may prefer to sit at the front of the classroom." style="margin-bottom: 1.5rem;">Learns by seeing (pictures, charts, diagrams).</li>
             <li class="focus-group" data-detail="Visual learners are often fast talkers who can easily create mental images. They remember faces rather than names, and they are good at spelling because they can visualize words. They tend to doodle during lectures and prefer reading over being read to." style="margin-bottom: 1.5rem;">Fast talkers, easily visualize ideas.</li>
         </ul>
-    </div></div>`, 'presenter-3', stickyColors[3]);
+    </div></div>`, 'presenter-2', stickyColors[3]);
 
-    addSlide('Aural Learning Style', `<div class="title-slide"><h2>Aural Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
+    addSlide('Aural Learning Style', `<div class="title-slide"><h2>Aural Learning Style</h2></div>`, 'presenter-2', '#fdfdfd');
     addSlide('Aural Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
             <li class="focus-group" data-detail="Aural or auditory learners learn best through listening. They prefer lectures, discussions, and talking things through. They remember information by hearing it spoken aloud and may repeat facts to themselves. They often enjoy music and can detect changes in tone of voice." style="margin-bottom: 1.5rem;">Learns by hearing (lectures, discussions).</li>
             <li class="focus-group" data-detail="Aural learners are natural listeners who tend to speak more slowly and deliberately. They process information through sound and can often remember details from conversations. They may hum or talk to themselves when bored and prefer verbal instructions over written ones." style="margin-bottom: 1.5rem;">Natural listeners, slow speakers.</li>
         </ul>
-    </div></div>`, 'presenter-3', stickyColors[1]);
+    </div></div>`, 'presenter-2', stickyColors[1]);
 
+    // PRESENTER 4 (presenter-3) - Ombao
     addSlide('Read/Write Learning Style', `<div class="title-slide"><h2>Read/Write Learning Style</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Read/Write Learning Style', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.8rem; line-height: 2; margin-top: 2rem;">
@@ -124,7 +128,7 @@ async function buildHtml() {
         </ul>
     </div></div>`, 'presenter-3', stickyColors[3]);
 
-    addSlide('Multiple Intelligences Part 1', `<div class="title-slide"><h2>Multiple Intelligences Part 1</h2></div>`, 'presenter-4', '#fdfdfd');
+    addSlide('Multiple Intelligences Part 1', `<div class="title-slide"><h2>Multiple Intelligences Part 1</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Multiple Intelligences Part 1', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
             <li class="focus-group" data-detail="Spatial Intelligence (Picture Smart): People with this intelligence think in three-dimensional images. They are good at puzzles, reading maps, and daydreaming. They often enjoy drawing, painting, and visual arts. Architects, pilots, and sculptors typically have high spatial intelligence." style="margin-bottom: 1rem;"><strong>Spatial (Picture Smart):</strong> Thinks in images.</li>
@@ -132,9 +136,9 @@ async function buildHtml() {
             <li class="focus-group" data-detail="Linguistic Intelligence (Word Smart): People with this intelligence have a strong ability to use words effectively, both in writing and speaking. They enjoy reading, writing stories, and playing word games. Poets, journalists, and writers typically have high linguistic intelligence." style="margin-bottom: 1rem;"><strong>Linguistic (Word Smart):</strong> Has a way with words.</li>
             <li class="focus-group" data-detail="Bodily-Kinesthetic Intelligence (Body Smart): This intelligence involves good body control and fine motor skills. People with this intelligence learn best through physical activity and movement. Athletes, dancers, surgeons, and craftspeople typically have high bodily-kinesthetic intelligence." style="margin-bottom: 1rem;"><strong>Bodily-Kinesthetic (Body Smart):</strong> Good body control, works with hands.</li>
         </ul>
-    </div></div>`, 'presenter-4', stickyColors[3]);
+    </div></div>`, 'presenter-3', stickyColors[0]);
 
-    addSlide('Multiple Intelligences Part 2', `<div class="title-slide"><h2>Multiple Intelligences Part 2</h2></div>`, 'presenter-4', '#fdfdfd');
+    addSlide('Multiple Intelligences Part 2', `<div class="title-slide"><h2>Multiple Intelligences Part 2</h2></div>`, 'presenter-3', '#fdfdfd');
     addSlide('Multiple Intelligences Part 2', `<div class="content-slide"><div class="doc-content">
         <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 2rem;">
             <li class="focus-group" data-detail="Logical-Mathematical Intelligence (Number Smart): This intelligence involves the ability to reason, calculate, and think logically. People with this intelligence excel at science and mathematics, and enjoy strategy games, puzzles, and experiments. Scientists, mathematicians, and programmers typically have high logical-mathematical intelligence." style="margin-bottom: 1rem;"><strong>Logical-Mathematical (Number Smart):</strong> Excels at science and math.</li>
@@ -142,9 +146,10 @@ async function buildHtml() {
             <li class="focus-group" data-detail="Intrapersonal Intelligence (Self-Smart): This intelligence involves the capacity to understand oneself deeply — your own feelings, motivations, and inner state. People with this intelligence are introspective and independent learners. They prefer working alone and are skilled at self-reflection. Philosophers, psychologists, and spiritual leaders often have high intrapersonal intelligence." style="margin-bottom: 1rem;"><strong>Intrapersonal (Self-Smart):</strong> Introspective and independent.</li>
             <li class="focus-group" data-detail="Naturalist Intelligence (Nature Smart): This intelligence involves the ability to understand and relate to the natural world — recognizing patterns in nature, classifying plants and animals, and being sensitive to environmental changes. Farmers, botanists, and ecologists typically have high naturalist intelligence." style="margin-bottom: 1rem;"><strong>Natural (Nature Smart):</strong> Understands patterns in nature.</li>
         </ul>
-    </div></div>`, 'presenter-4', stickyColors[0]);
+    </div></div>`, 'presenter-3', stickyColors[1]);
 
-    addSlide("Thorndike's Laws of Learning", `<div class="title-slide"><h2>Thorndike's Laws of Learning</h2></div>`, 'presenter-5', '#fdfdfd');
+    // PRESENTER 5 (presenter-4) - Cortez
+    addSlide("Thorndike's Laws of Learning", `<div class="title-slide"><h2>Thorndike's Laws of Learning (Primary)</h2></div>`, 'presenter-4', '#fdfdfd');
     addSlide("Thorndike's Laws of Learning", `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; gap:10px;">
         <div class="focus-group" data-detail="The Law of Readiness (The 'Get Ready' Rule): Learning starts with your mindset. When you are mentally prepared and genuinely motivated to learn, the entire process feels natural and rewarding. However, if you are forced to learn something when you are tired, distracted, or unwilling, the experience becomes frustrating and ineffective. Simply put, you have to be 'in the zone' to make learning stick." style="display:flex; align-items:center; gap: 15px;">
             <img src="images/img_2.jpeg" style="width: 120px; border-radius: 8px;">
@@ -158,40 +163,57 @@ async function buildHtml() {
             <img src="images/img_4.jpeg" style="width: 120px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Law of Effect:</strong> We repeat actions that lead to rewards and avoid those that lead to failure.</p>
         </div>
-        <ul style="font-size: 1.3rem; margin-top: 0.5rem; margin-left: 1.5rem;">
-            <li class="focus-group" data-detail="Law of Belongingness (Natural Association of Stimuli): Learning is faster and stronger when the learner perceives a natural connection or relationship between the stimuli involved. When content feels relevant and connected to what the learner already knows or cares about, it is absorbed more easily and retained longer. This is why contextualized and meaningful learning experiences outperform rote memorization." style="margin-bottom: 0.5rem;"><strong>Law of Belongingness:</strong> Learning is faster and stronger when the learner perceives a natural connection between stimuli involved.</li>
-            <li class="focus-group" data-detail="Law of Intensity (Strength of Experience): An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one. A dramatic demonstration, a real-world field trip, or an emotionally engaging story will leave a lasting impression compared to a monotone lecture. The more intense and multi-sensory the experience, the deeper the learning." style="margin-bottom: 0.5rem;"><strong>Law of Intensity:</strong> An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one.</li>
-            <li class="focus-group" data-detail="Law of Forgetting (Memory Linked to Usage): Skills and knowledge that are not used or reviewed over time gradually fade from memory. This aligns with Ebbinghaus's forgetting curve — without periodic review and reinforcement, learned material decays. Regular practice, spaced repetition, and active recall are essential strategies to combat forgetting." style="margin-bottom: 0.5rem;"><strong>Law of Forgetting:</strong> Skills and knowledge that are not used or reviewed over time gradually fade from memory.</li>
-        </ul>
-    </div></div>`, 'presenter-5', stickyColors[1]);
+    </div></div>`, 'presenter-4', stickyColors[1]);
 
-    addSlide('Other Learning Theories Part 1', `<div class="title-slide"><h2>Other Learning Theories Part 1</h2></div>`, 'presenter-6', '#fdfdfd');
-    addSlide('Other Learning Theories Part 1', `<div class="content-slide"><div class="doc-content">
-        <div class="focus-group" data-detail="Operant Conditioning was developed by B.F. Skinner. It is a method of learning that uses rewards and punishments to modify behavior. Through operant conditioning, an individual makes an association between a particular behavior and a consequence. There are two types of reinforcers: Primary (food, water — biological needs) and Secondary (money, praise — learned values). The theory also includes Escape Learning (learning to stop an unpleasant stimulus) and Avoidance Learning (learning to prevent an unpleasant stimulus from occurring)." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
-            <img src="images/img_5.jpeg" style="width: 100px; border-radius: 8px;">
-            <p style="font-size: 1.3rem;"><strong>Operant Conditioning:</strong> Learning through rewards and consequences.</p>
-        </div>
+    // PRESENTER 6 (presenter-5) - Amamangpang
+    addSlide("Thorndike's Laws of Learning (Secondary)", `<div class="title-slide"><h2>Thorndike's Laws of Learning (Secondary)</h2></div>`, 'presenter-5', '#fdfdfd');
+    addSlide("Thorndike's Laws of Learning (Secondary)", `<div class="content-slide"><div class="doc-content" style="display:flex; flex-direction:column; gap:10px;">
+        <ul style="font-size: 1.5rem; margin-top: 1.5rem;">
+            <li class="focus-group" data-detail="Law of Belongingness (Natural Association of Stimuli): Learning is faster and stronger when the learner perceives a natural connection or relationship between the stimuli involved. When content feels relevant and connected to what the learner already knows or cares about, it is absorbed more easily and retained longer. This is why contextualized and meaningful learning experiences outperform rote memorization." style="margin-bottom: 1.5rem;"><strong>Law of Belongingness:</strong> Learning is faster and stronger when the learner perceives a natural connection between stimuli involved.</li>
+            <li class="focus-group" data-detail="Law of Intensity (Strength of Experience): An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one. A dramatic demonstration, a real-world field trip, or an emotionally engaging story will leave a lasting impression compared to a monotone lecture. The more intense and multi-sensory the experience, the deeper the learning." style="margin-bottom: 1.5rem;"><strong>Law of Intensity:</strong> An experience that is vivid, dramatic, or striking is learned and remembered more deeply than an ordinary one.</li>
+            <li class="focus-group" data-detail="Law of Forgetting (Memory Linked to Usage): Skills and knowledge that are not used or reviewed over time gradually fade from memory. This aligns with Ebbinghaus's forgetting curve — without periodic review and reinforcement, learned material decays. Regular practice, spaced repetition, and active recall are essential strategies to combat forgetting." style="margin-bottom: 1.5rem;"><strong>Law of Forgetting:</strong> Skills and knowledge that are not used or reviewed over time gradually fade from memory.</li>
+        </ul>
+    </div></div>`, 'presenter-5', stickyColors[2]);
+
+    // PRESENTER 7 (presenter-6) - Domingo
+    addSlide('Operant Conditioning', `<div class="title-slide"><h2>Operant Conditioning</h2></div>`, 'presenter-6', '#fdfdfd');
+    addSlide('Operant Conditioning', `<div class="content-slide"><div class="doc-content">
+        <ul style="font-size: 1.6rem; line-height: 1.8; margin-top: 1.5rem;">
+            <li class="focus-group" data-detail="Operant Conditioning was developed by B.F. Skinner. It is a method of learning that uses rewards and punishments to modify behavior. Through operant conditioning, an individual makes an association between a particular behavior and a consequence." style="margin-bottom: 1.5rem;"><strong>Operant Conditioning:</strong> Learning through rewards and consequences (B.F. Skinner).</li>
+            <li class="focus-group" data-detail="There are two types of reinforcers in operant conditioning: Primary and Secondary. Primary reinforcers satisfy biological needs, such as food and water. Secondary reinforcers are learned values, such as money, praise, and good grades." style="margin-bottom: 1.5rem;"><strong>Types of Reinforcers:</strong> Primary (biological needs like food) and Secondary (learned values like praise).</li>
+            <li class="focus-group" data-detail="The theory also includes two specific types of learning related to negative outcomes. Escape Learning occurs when a learner performs a behavior to stop an ongoing unpleasant stimulus. Avoidance Learning occurs when a learner performs a behavior to prevent an unpleasant stimulus from occurring in the first place." style="margin-bottom: 1.5rem;"><strong>Escape and Avoidance:</strong> Learning to stop or prevent unpleasant outcomes.</li>
+        </ul>
+    </div></div>`, 'presenter-6', stickyColors[3]);
+
+    // PRESENTER 8 (presenter-7) - Silverio
+    addSlide('Cognitive Perspectives', `<div class="title-slide"><h2>Cognitive Perspectives</h2></div>`, 'presenter-7', '#fdfdfd');
+    addSlide('Cognitive Perspectives', `<div class="content-slide"><div class="doc-content">
         <div class="focus-group" data-detail="The Cognitive Perspective is a theory of learning that focuses on the mental processes involved in acquiring knowledge. Unlike behaviorism, which emphasizes observable behavior, the cognitive perspective explains that learning occurs through internal mental activities such as thinking, remembering, reasoning, problem-solving, decision-making, understanding, and perception. Cognitive psychologists believe that the human mind functions much like a computer — receiving, processing, storing, and retrieving information." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
-            <img src="images/img_6.jpeg" style="width: 100px; border-radius: 8px;">
+            <img src="images/img_5.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Cognitive Perspective:</strong> Learning is an internal mental activity. Mind works like a computer.</p>
         </div>
         <div class="focus-group" data-detail="Gestalt Theory proposes that people naturally perceive objects as organized, complete wholes rather than isolated parts. The famous phrase associated with this theory is 'The whole is greater than the sum of its parts.' Gestalt psychologists identified key principles of perception including proximity, similarity, continuity, and closure. In education, this means learners understand concepts better when they see the big picture first before breaking it down into details." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
-            <img src="images/img_7.jpeg" style="width: 100px; border-radius: 8px;">
+            <img src="images/img_6.jpeg" style="width: 100px; border-radius: 8px;">
             <p style="font-size: 1.3rem;"><strong>Gestalt Theory:</strong> People perceive objects as complete wholes.</p>
         </div>
-    </div></div>`, 'presenter-6', stickyColors[2]);
-
-    addSlide('Other Learning Theories Part 2', `<div class="title-slide"><h2>Other Learning Theories Part 2</h2></div>`, 'presenter-6', '#fdfdfd');
-    addSlide('Other Learning Theories Part 2', `<div class="content-slide"><div class="doc-content">
-        <ul style="font-size: 1.4rem; line-height: 1.8; margin-top: 1.5rem;">
-            <li class="focus-group" data-detail="Field Theory was developed by Kurt Lewin. This theory explains that learning and behavior are influenced by both the individual and the environment. Lewin believed that behavior cannot be explained by personal characteristics alone because the environment also plays a significant role. His formula B = f(P, E) means Behavior is a function of the Person and the Environment. A positive and supportive environment can significantly improve a student's performance, motivation, and attitude toward learning." style="margin-bottom: 1rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</li>
-        </ul>
-        <div class="focus-group" data-detail="Intelligence Theories explore how intelligence is defined and measured. Alfred Binet believed intelligence is the ability to reason, judge, and comprehend — and importantly, that it can be improved through education and training. Charles Spearman introduced the Theory of General Intelligence (g-factor Theory). He believed every person possesses one general mental ability called the g-factor, which influences performance across many different intellectual tasks. He also proposed the s-factor for specific, unique talents in individual areas." style="display:flex; align-items:center; gap: 15px; margin-top: 1.5rem;">
-            <img src="images/img_8.png" style="width: 120px; border-radius: 8px;">
-            <p style="font-size: 1.3rem;"><strong>Intelligence Theories:</strong><br><em>Alfred Binet:</em> Intelligence is reasoning, can improve.<br><em>Charles Spearman:</em> Proposed "g-factor" and "s-factor".</p>
+        <div class="focus-group" data-detail="Field Theory was developed by Kurt Lewin. This theory explains that learning and behavior are influenced by both the individual and the environment. Lewin believed that behavior cannot be explained by personal characteristics alone because the environment also plays a significant role. His formula B = f(P, E) means Behavior is a function of the Person and the Environment. A positive and supportive environment can significantly improve a student's performance, motivation, and attitude toward learning." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+            <p style="font-size: 1.3rem;"><strong>Field Theory (Kurt Lewin):</strong> Behavior = Person + Environment. A positive environment improves performance.</p>
         </div>
-    </div></div>`, 'presenter-6', stickyColors[3]);
-    // --- ASSESSMENT SLIDES (CHALK DUST MECHANIC) ---
+    </div></div>`, 'presenter-7', stickyColors[0]);
+
+    addSlide('Intelligence Theories', `<div class="title-slide"><h2>Intelligence Theories</h2></div>`, 'presenter-7', '#fdfdfd');
+    addSlide('Intelligence Theories', `<div class="content-slide"><div class="doc-content">
+        <div class="focus-group" data-detail="Intelligence Theories explore how intelligence is defined and measured. Alfred Binet believed intelligence is the ability to reason, judge, and comprehend — and importantly, that it can be improved through education and training." style="display:flex; align-items:center; gap: 15px; margin-bottom: 1rem;">
+            <img src="images/img_7.jpeg" style="width: 100px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Alfred Binet:</strong> Intelligence is reasoning, can improve.</p>
+        </div>
+        <div class="focus-group" data-detail="Charles Spearman introduced the Theory of General Intelligence (g-factor Theory). He believed every person possesses one general mental ability called the g-factor, which influences performance across many different intellectual tasks. He also proposed the s-factor for specific, unique talents in individual areas." style="display:flex; align-items:center; gap: 15px; margin-top: 1rem;">
+            <img src="images/img_8.png" style="width: 120px; border-radius: 8px;">
+            <p style="font-size: 1.3rem;"><strong>Charles Spearman:</strong> Proposed "g-factor" and "s-factor".</p>
+        </div>
+    </div></div>`, 'presenter-7', stickyColors[1]);
+
+    // ASSESSMENT
     const assessmentQuestions = [
         { q: "The systematic interaction among the teacher, learner, and environment.", a: "Teaching-Learning Process" },
         { q: "A learning style in which students learn best through physical activities.", a: "Kinesthetic Learning Style" },
@@ -213,15 +235,8 @@ async function buildHtml() {
         </div>`, 'presenter-0', 'transparent', true);
     });
 
-    addSlide('Bible Verse', `<div class="content-slide" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-        <div class="focus-group" style="text-align: center;">
-            <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:3rem; margin-bottom:1.5rem;">Proverbs 1:5</h2>
-            <p style="font-size: 2.2rem; line-height: 1.6; font-style: italic;">"Let the wise listen and add to their learning, and let the discerning get guidance."</p>
-        </div>
-    </div>`, 'presenter-0', stickyColors[0]);
 
-    // -------------------------------------------------------------
-    // KNOWLEDGE MAP (CLUSTERS & STACKING)
+        // KNOWLEDGE MAP (CLUSTERS & STACKING)
     // -------------------------------------------------------------
     const clusters = [];
     let currentCluster = null;
