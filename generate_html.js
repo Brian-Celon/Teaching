@@ -482,6 +482,7 @@ async function buildHtml() {
         .flip-back { position: absolute; top: 0; left: 0; height: 100%; transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; overflow-y: hidden; z-index: 1; pointer-events: none; }
         .flip-card.flipped .flip-back { position: relative; height: auto; z-index: 2; pointer-events: auto; }
         .flip-back .focus-content { color: #78350f; }
+        .flip-back .focus-content img { width: 100% !important; max-width: 500px !important; margin: 15px auto !important; display: block !important; border-radius: 12px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; }
         .flip-btn { display: block; margin: 15px auto 0; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border: none; padding: 10px 22px; border-radius: 20px; font-size: 0.9rem; font-weight: 700; cursor: pointer; z-index: 50; box-shadow: 0 4px 12px rgba(30,58,138,0.4); transition: all 0.25s ease; font-family: 'Inter', sans-serif; flex-shrink: 0; }
         .flip-btn:hover { box-shadow: 0 6px 18px rgba(30,58,138,0.5); }
         .flip-btn.on-back { background: linear-gradient(135deg, #92400e, #d97706); box-shadow: 0 4px 12px rgba(146,64,14,0.4); }
