@@ -427,18 +427,16 @@ async function buildHtml() {
         .focus-image-frame img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
 
         /* Flip Card in Focus Modal */
-        .flip-scene { perspective: 1200px; width: 100%; height: 100%; }
-        .flip-card { position: relative; width: 100%; height: 100%; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
+        .flip-scene { perspective: 1200px; width: 100%; }
+        .flip-card { position: relative; width: 100%; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
         .flip-card.flipped { transform: rotateY(180deg); }
-        .flip-face { position: absolute; top: 0; left: 0; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; }
-        .flip-back { transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; }
+        .flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; width: 100%; }
+        .flip-face.flip-front { position: relative; }
+        .flip-back { position: absolute; top: 0; left: 0; height: 100%; transform: rotateY(180deg); background: #fffbeb; background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(0,0,0,0.04) 31px, rgba(0,0,0,0.04) 32px); background-position: 0 30px; overflow-y: auto; }
         .flip-back .focus-content { color: #78350f; }
-        .flip-btn { position: absolute; bottom: 12px; right: 15px; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border: none; padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; cursor: pointer; z-index: 50; box-shadow: 0 4px 12px rgba(30,58,138,0.4); transition: all 0.25s ease; font-family: 'Inter', sans-serif; }
-        .flip-btn:hover { transform: scale(1.05); box-shadow: 0 6px 18px rgba(30,58,138,0.5); }
+        .flip-btn { display: block; margin: 15px auto 0; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border: none; padding: 10px 22px; border-radius: 20px; font-size: 0.9rem; font-weight: 700; cursor: pointer; z-index: 50; box-shadow: 0 4px 12px rgba(30,58,138,0.4); transition: all 0.25s ease; font-family: 'Inter', sans-serif; flex-shrink: 0; }
+        .flip-btn:hover { box-shadow: 0 6px 18px rgba(30,58,138,0.5); }
         .flip-btn.on-back { background: linear-gradient(135deg, #92400e, #d97706); box-shadow: 0 4px 12px rgba(146,64,14,0.4); }
-        .flip-label { position: absolute; top: 12px; right: 15px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 10px; z-index: 50; pointer-events: none; font-family: 'Inter', sans-serif; }
-        .flip-label.front-label { background: rgba(30,58,138,0.1); color: #1e3a8a; }
-        .flip-label.back-label { background: rgba(146,64,14,0.15); color: #92400e; }
         .controls { position: fixed; bottom: calc(30px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 200; opacity: 0; visibility: hidden; transition: opacity 0.5s; }
         .controls.visible { opacity: 1; visibility: visible; }
         .nav-btn { background: #ffffff; color: #374151; border: 1px solid #d1d5db; padding: 12px 25px; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s; }
@@ -733,17 +731,15 @@ async function buildHtml() {
                 let boardInner = '';
                 if (detailText) {
                     boardInner = \`
-                        <div class="flip-scene" style="flex: 1; min-height: 0;">
+                        <div class="flip-scene">
                             <div class="flip-card" id="activeFlipCard">
-                                <div class="flip-face">
-                                    <span class="flip-label front-label">Summary</span>
+                                <div class="flip-face flip-front">
                                     \${headingHtml}<div class="focus-content">\${contentHtml}</div>
-                                    <button class="flip-btn" onclick="event.stopPropagation(); document.getElementById('activeFlipCard').classList.add('flipped');">Flip for Details ↻</button>
+                                    <button class="flip-btn" onclick="event.stopPropagation(); var fc = document.getElementById('activeFlipCard'); fc.classList.add('flipped');">Flip for Details ↻</button>
                                 </div>
                                 <div class="flip-face flip-back">
-                                    <span class="flip-label back-label">Detailed</span>
                                     \${headingHtml}<div class="focus-content" style="font-size: 1.5rem; line-height: 1.9;">\${detailText}</div>
-                                    <button class="flip-btn on-back" onclick="event.stopPropagation(); document.getElementById('activeFlipCard').classList.remove('flipped');">Back to Summary ↻</button>
+                                    <button class="flip-btn on-back" onclick="event.stopPropagation(); var fc = document.getElementById('activeFlipCard'); fc.classList.remove('flipped');">Back to Summary ↻</button>
                                 </div>
                             </div>
                         </div>
