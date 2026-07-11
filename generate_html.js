@@ -265,6 +265,13 @@ async function buildHtml() {
         </div>`, 'presenter-0', 'transparent', true);
     });
 
+    addSlide('Bible Verse', `<div class="content-slide" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+        <div class="focus-group" style="text-align: center;">
+            <h2 style="font-family:'Kalam', cursive; color:#1e3a8a; font-size:3rem; margin-bottom:1.5rem;">Proverbs 1:5</h2>
+            <p style="font-size: 2.2rem; line-height: 1.6; font-style: italic;">"Let the wise listen and add to their learning, and let the discerning get guidance."</p>
+        </div>
+    </div>`, 'presenter-0', stickyColors[0]);
+
 
         // KNOWLEDGE MAP (CLUSTERS & STACKING)
     // -------------------------------------------------------------
