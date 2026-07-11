@@ -723,7 +723,11 @@ async function buildHtml() {
                     }
                 }
                 
-                const contentHtml = tempBlock.classList.contains('focus-group') ? tempBlock.innerHTML : tempBlock.outerHTML;
+                let contentHtml = tempBlock.classList.contains('focus-group') ? tempBlock.innerHTML : tempBlock.outerHTML;
+                // Fallback: if stripping the image left the content empty, use the original text
+                if (!contentHtml || !contentHtml.trim()) {
+                    contentHtml = targetBlock.textContent || targetBlock.innerText || '';
+                }
                 const detailText = targetBlock.getAttribute('data-detail');
 
                 let boardInner = '';
@@ -733,19 +737,19 @@ async function buildHtml() {
                             <div class="flip-card" id="activeFlipCard">
                                 <div class="flip-face">
                                     <span class="flip-label front-label">Summary</span>
-                                    <div class="tape"></div>\${headingHtml}<div class="focus-content">\${contentHtml}</div>
+                                    \${headingHtml}<div class="focus-content">\${contentHtml}</div>
                                     <button class="flip-btn" onclick="event.stopPropagation(); document.getElementById('activeFlipCard').classList.add('flipped');">Flip for Details ↻</button>
                                 </div>
                                 <div class="flip-face flip-back">
                                     <span class="flip-label back-label">Detailed</span>
-                                    <div class="tape"></div>\${headingHtml}<div class="focus-content" style="font-size: 1.5rem; line-height: 1.9;">\${detailText}</div>
+                                    \${headingHtml}<div class="focus-content" style="font-size: 1.5rem; line-height: 1.9;">\${detailText}</div>
                                     <button class="flip-btn on-back" onclick="event.stopPropagation(); document.getElementById('activeFlipCard').classList.remove('flipped');">Back to Summary ↻</button>
                                 </div>
                             </div>
                         </div>
                     \`;
                 } else {
-                    boardInner = \`<div class="tape"></div>\${headingHtml}<div class="focus-content">\${contentHtml}</div>\`;
+                    boardInner = \`\${headingHtml}<div class="focus-content">\${contentHtml}</div>\`;
                 }
 
                 let focusLayout = '';
